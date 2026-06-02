@@ -1,0 +1,1356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sumit Nandy — Chief AI Officer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0a0a0f;
+    --paper: #f5f2ec;
+    --gold: #c9a84c;
+    --gold-light: #e8c97a;
+    --cream: #ede8df;
+    --warm-mid: #8a7f72;
+    --warm-dark: #3d3530;
+    --accent-teal: #2d6a6a;
+    --accent-teal-light: #4a9999;
+    --line: rgba(201,168,76,0.25);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--ink);
+    color: var(--paper);
+    font-family: 'Syne', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.2rem 3rem;
+    background: rgba(10,10,15,0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem; font-weight: 300; letter-spacing: 0.18em;
+    color: var(--gold); text-transform: uppercase;
+  }
+  .nav-links {
+    display: flex; gap: 2.5rem; list-style: none;
+  }
+  .nav-links a {
+    font-family: 'DM Mono', monospace; font-size: 0.65rem;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--warm-mid); text-decoration: none;
+    transition: color 0.3s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center;
+    padding: 10rem 4rem 6rem 6rem;
+    position: relative; z-index: 2;
+  }
+
+  .hero-eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 2rem;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .hero-eyebrow::before {
+    content: ''; width: 40px; height: 1px; background: var(--gold);
+  }
+
+  .hero-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(4rem, 7vw, 7.5rem);
+    font-weight: 300; line-height: 0.9;
+    letter-spacing: -0.01em;
+    color: var(--paper);
+    margin-bottom: 0.3rem;
+  }
+  .hero-name span { color: var(--gold); font-style: italic; }
+
+  .hero-title {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(0.85rem, 1.3vw, 1.1rem);
+    font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--accent-teal-light); margin: 1.8rem 0 2.5rem;
+  }
+
+  .hero-tagline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.1rem, 1.6vw, 1.4rem);
+    font-style: italic; font-weight: 300;
+    color: var(--warm-mid); line-height: 1.7;
+    max-width: 480px; margin-bottom: 3.5rem;
+    border-left: 2px solid var(--gold);
+    padding-left: 1.5rem;
+  }
+
+  .hero-ctas {
+    display: flex; gap: 1.2rem; flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--gold);
+    color: var(--ink);
+    padding: 0.85rem 2.2rem;
+    font-family: 'Syne', sans-serif;
+    font-size: 0.72rem; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; text-decoration: none;
+    transition: all 0.3s;
+  }
+  .btn-primary:hover {
+    background: var(--gold-light); transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(201,168,76,0.3);
+  }
+
+  .btn-secondary {
+    border: 1px solid var(--warm-mid);
+    color: var(--warm-mid);
+    padding: 0.85rem 2.2rem;
+    font-family: 'Syne', sans-serif;
+    font-size: 0.72rem; font-weight: 600; letter-spacing: 0.2em;
+    text-transform: uppercase; text-decoration: none;
+    transition: all 0.3s;
+  }
+  .btn-secondary:hover {
+    border-color: var(--gold); color: var(--gold);
+    transform: translateY(-2px);
+  }
+
+  .hero-right {
+    position: relative; display: flex; align-items: center; justify-content: center;
+  }
+
+  .hero-graphic {
+    position: relative; width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+  }
+
+  .hero-bg-text {
+    position: absolute;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22vw; font-weight: 300;
+    color: rgba(201,168,76,0.04);
+    letter-spacing: -0.05em;
+    user-select: none; pointer-events: none;
+    right: -3vw; top: 50%; transform: translateY(-50%);
+    line-height: 1;
+  }
+
+  .hero-stats-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1px; background: var(--line);
+    border: 1px solid var(--line);
+    z-index: 2;
+    width: min(380px, 90%);
+  }
+
+  .hero-stat {
+    background: rgba(10,10,15,0.9);
+    padding: 2.5rem 2rem;
+    text-align: center;
+    transition: background 0.3s;
+  }
+  .hero-stat:hover { background: rgba(201,168,76,0.06); }
+
+  .hero-stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.2rem; font-weight: 300;
+    color: var(--gold); line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .hero-stat-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem; letter-spacing: 0.15em;
+    text-transform: uppercase; color: var(--warm-mid);
+    line-height: 1.5;
+  }
+
+  .hero-bottom-bar {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    opacity: 0.4;
+  }
+
+  /* ── SECTION SHARED ── */
+  section { padding: 7rem 0; }
+
+  .section-inner {
+    max-width: 1200px; margin: 0 auto;
+    padding: 0 4rem;
+  }
+
+  .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem; letter-spacing: 0.3em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .section-label::after {
+    content: ''; flex: 1; height: 1px;
+    background: linear-gradient(90deg, var(--line), transparent);
+  }
+
+  .section-heading {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    font-weight: 300; line-height: 1.1;
+    color: var(--paper); margin-bottom: 1rem;
+  }
+  .section-heading em { color: var(--gold); font-style: italic; }
+
+  /* ── ABOUT ── */
+  #about { background: #0e0e14; }
+
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1.5fr;
+    gap: 6rem; align-items: start;
+  }
+
+  .about-left { padding-top: 1rem; }
+
+  .about-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem; font-style: italic; font-weight: 300;
+    color: var(--cream); line-height: 1.7;
+    border-left: 3px solid var(--gold);
+    padding-left: 2rem; margin: 2.5rem 0;
+  }
+  .about-quote-attr {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.62rem; letter-spacing: 0.15em;
+    color: var(--warm-mid); padding-left: 2rem;
+    margin-top: -1.5rem;
+  }
+
+  .about-body {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem; line-height: 1.9;
+    color: rgba(245,242,236,0.75);
+    margin-top: 2rem;
+  }
+
+  .about-tags {
+    display: flex; flex-wrap: wrap; gap: 0.6rem;
+    margin-top: 3rem;
+  }
+  .tag {
+    background: rgba(201,168,76,0.08);
+    border: 1px solid rgba(201,168,76,0.2);
+    color: var(--gold);
+    padding: 0.4rem 1rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.58rem; letter-spacing: 0.15em; text-transform: uppercase;
+    transition: all 0.2s;
+  }
+  .tag:hover { background: rgba(201,168,76,0.15); border-color: var(--gold); }
+
+  .global-exposure {
+    margin-top: 3rem;
+    padding: 2rem; border: 1px solid var(--line);
+  }
+  .global-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1rem;
+  }
+  .global-countries {
+    display: flex; flex-wrap: wrap; gap: 0.8rem;
+  }
+  .country {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.75rem; font-weight: 600;
+    color: var(--warm-mid); letter-spacing: 0.05em;
+  }
+  .country::after { content: ' •'; color: var(--line); }
+  .country:last-child::after { content: ''; }
+
+  /* ── IMPACT NUMBERS ── */
+  #impact { background: var(--ink); }
+
+  .impact-intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; color: var(--warm-mid); line-height: 1.8;
+    max-width: 640px; margin-bottom: 5rem;
+  }
+
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px; background: var(--line);
+    border: 1px solid var(--line);
+  }
+
+  .kpi-card {
+    background: var(--ink);
+    padding: 3rem 2rem;
+    position: relative; overflow: hidden;
+    transition: background 0.4s;
+    cursor: default;
+  }
+  .kpi-card:hover { background: rgba(201,168,76,0.05); }
+  .kpi-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: var(--gold); transform: scaleX(0); transform-origin: left;
+    transition: transform 0.4s;
+  }
+  .kpi-card:hover::before { transform: scaleX(1); }
+
+  .kpi-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.8rem; font-weight: 300; line-height: 1;
+    color: var(--gold); margin-bottom: 0.5rem;
+  }
+  .kpi-unit {
+    font-size: 2rem; color: var(--gold-light);
+  }
+  .kpi-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 0.8rem; font-weight: 700; letter-spacing: 0.05em;
+    color: var(--paper); margin-bottom: 0.5rem; text-transform: uppercase;
+  }
+  .kpi-desc {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem; letter-spacing: 0.05em;
+    color: var(--warm-mid); line-height: 1.7;
+  }
+  .kpi-source {
+    margin-top: 1.2rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.55rem; letter-spacing: 0.1em;
+    color: rgba(138,127,114,0.5); text-transform: uppercase;
+    border-top: 1px solid rgba(201,168,76,0.1);
+    padding-top: 0.8rem;
+  }
+
+  /* ── CAREER ── */
+  #career { background: #0a0a10; }
+
+  .timeline {
+    position: relative; margin-top: 4rem;
+  }
+  .timeline::before {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 1px; background: linear-gradient(180deg, var(--gold), transparent);
+  }
+
+  .timeline-item {
+    padding-left: 3.5rem; margin-bottom: 5rem;
+    position: relative; opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s, transform 0.6s;
+  }
+  .timeline-item.visible { opacity: 1; transform: translateY(0); }
+
+  .timeline-dot {
+    position: absolute; left: -5px; top: 8px;
+    width: 11px; height: 11px;
+    background: var(--ink); border: 2px solid var(--gold);
+    border-radius: 50%;
+  }
+
+  .timeline-meta {
+    display: flex; gap: 1.5rem; align-items: center;
+    margin-bottom: 0.8rem; flex-wrap: wrap;
+  }
+  .timeline-co {
+    font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700;
+    color: var(--paper);
+  }
+  .timeline-period {
+    font-family: 'DM Mono', monospace; font-size: 0.6rem;
+    letter-spacing: 0.15em; color: var(--gold);
+    background: rgba(201,168,76,0.08);
+    border: 1px solid rgba(201,168,76,0.2);
+    padding: 0.2rem 0.8rem;
+  }
+
+  .timeline-role {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.2rem; font-style: italic;
+    color: var(--accent-teal-light); margin-bottom: 1.5rem;
+  }
+
+  .timeline-bullets {
+    list-style: none;
+    display: flex; flex-direction: column; gap: 0.9rem;
+  }
+  .timeline-bullets li {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem; line-height: 1.7;
+    color: rgba(245,242,236,0.7);
+    padding-left: 1.5rem; position: relative;
+  }
+  .timeline-bullets li::before {
+    content: '—'; position: absolute; left: 0;
+    color: var(--gold); font-size: 0.8rem;
+  }
+
+  .timeline-highlights {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    margin-top: 1.5rem;
+  }
+  .highlight-chip {
+    background: rgba(45,106,106,0.15);
+    border: 1px solid rgba(74,153,153,0.25);
+    color: var(--accent-teal-light);
+    padding: 0.3rem 0.9rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.58rem; letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .timeline-earlier {
+    padding-left: 3.5rem; padding-top: 3rem;
+    border-top: 1px solid var(--line);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+  }
+  .earlier-item {}
+  .earlier-co {
+    font-family: 'Syne', sans-serif; font-size: 0.9rem; font-weight: 700;
+    color: var(--paper); margin-bottom: 0.3rem;
+  }
+  .earlier-role {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 0.95rem; color: var(--warm-mid);
+  }
+  .earlier-period {
+    font-family: 'DM Mono', monospace; font-size: 0.58rem;
+    color: rgba(138,127,114,0.6); letter-spacing: 0.1em; margin-top: 0.2rem;
+  }
+
+  /* ── AWARDS ── */
+  #awards { background: #0e0e14; }
+
+  .awards-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1px; background: var(--line);
+    border: 1px solid var(--line); margin-top: 4rem;
+  }
+
+  .award-card {
+    background: #0e0e14;
+    padding: 3.5rem 2.5rem;
+    transition: background 0.4s;
+    position: relative; overflow: hidden;
+  }
+  .award-card:hover { background: rgba(201,168,76,0.04); }
+  .award-card::after {
+    content: attr(data-year);
+    position: absolute; right: 2rem; bottom: 2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem; font-weight: 300;
+    color: rgba(201,168,76,0.05); line-height: 1;
+    pointer-events: none;
+  }
+
+  .award-icon {
+    font-size: 2rem; margin-bottom: 1.5rem;
+  }
+  .award-title {
+    font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700;
+    color: var(--gold); margin-bottom: 0.5rem; letter-spacing: 0.03em;
+  }
+  .award-org {
+    font-family: 'DM Mono', monospace; font-size: 0.6rem;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--accent-teal-light); margin-bottom: 1.2rem;
+  }
+  .award-desc {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem; color: rgba(245,242,236,0.65); line-height: 1.8;
+  }
+
+  /* ── CLIENTS ── */
+  #clients { background: var(--ink); }
+
+  .clients-intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem; color: var(--warm-mid); line-height: 1.9;
+    max-width: 760px; margin-bottom: 4rem;
+  }
+
+  .clients-regions {
+    display: flex; flex-direction: column; gap: 3.5rem;
+  }
+
+  .clients-region {}
+  .clients-region-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.58rem; letter-spacing: 0.28em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1.5rem;
+    display: flex; align-items: center; gap: 1rem;
+  }
+  .clients-region-label::after {
+    content: ''; flex: 1; height: 1px;
+    background: linear-gradient(90deg, rgba(201,168,76,0.2), transparent);
+  }
+
+  .clients-marquee-wrapper {
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+    mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+  }
+
+  .clients-track {
+    display: flex; gap: 0; width: max-content;
+    animation: marquee 28s linear infinite;
+  }
+  .clients-track:hover { animation-play-state: paused; }
+  .clients-track-reverse {
+    animation-direction: reverse;
+    animation-duration: 32s;
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+
+  .client-pill {
+    display: inline-flex; align-items: center;
+    padding: 0.65rem 1.6rem;
+    margin: 0 0.5rem;
+    border: 1px solid rgba(201,168,76,0.15);
+    background: rgba(201,168,76,0.04);
+    white-space: nowrap;
+    transition: all 0.25s;
+    cursor: default;
+  }
+  .client-pill:hover {
+    border-color: var(--gold);
+    background: rgba(201,168,76,0.1);
+    transform: translateY(-2px);
+  }
+  .client-pill-name {
+    font-family: 'Syne', sans-serif; font-size: 0.75rem; font-weight: 600;
+    letter-spacing: 0.05em; color: rgba(245,242,236,0.75);
+    transition: color 0.25s;
+  }
+  .client-pill:hover .client-pill-name { color: var(--gold); }
+
+  .clients-all-grid {
+    display: flex; flex-wrap: wrap; gap: 0.75rem;
+    margin-top: 1.2rem;
+  }
+
+  .clients-stat-bar {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 1px; background: var(--line);
+    border: 1px solid var(--line);
+    margin-bottom: 4rem;
+  }
+  .clients-stat-cell {
+    background: var(--ink);
+    padding: 2rem 1.5rem; text-align: center;
+  }
+  .clients-stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem; font-weight: 300; color: var(--gold); line-height: 1;
+    margin-bottom: 0.4rem;
+  }
+  .clients-stat-lbl {
+    font-family: 'DM Mono', monospace; font-size: 0.58rem;
+    letter-spacing: 0.15em; text-transform: uppercase; color: var(--warm-mid);
+    line-height: 1.5;
+  }
+
+  /* ── SKILLS ── */
+  #skills { background: #0e0e14; }
+
+  .skills-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem; margin-top: 4rem;
+  }
+
+  .skill-cluster { }
+  .skill-cluster-name {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 1.2rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid var(--line);
+  }
+  .skill-list {
+    list-style: none;
+    display: flex; flex-direction: column; gap: 0.6rem;
+  }
+  .skill-list li {
+    font-family: 'Syne', sans-serif; font-size: 0.8rem; font-weight: 600;
+    color: rgba(245,242,236,0.75);
+    padding-left: 1rem; position: relative;
+    letter-spacing: 0.02em;
+    transition: color 0.2s;
+  }
+  .skill-list li::before {
+    content: '›'; position: absolute; left: 0; color: var(--gold);
+  }
+  .skill-list li:hover { color: var(--paper); }
+
+  /* ── CERTS / EDU ── */
+  #credentials { background: #0a0a10; }
+
+  .creds-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 5rem; margin-top: 4rem;
+  }
+
+  .cred-group-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 2rem;
+    padding-bottom: 0.8rem; border-bottom: 1px solid var(--line);
+  }
+
+  .cred-item {
+    padding: 1.5rem 0; border-bottom: 1px solid rgba(201,168,76,0.08);
+  }
+  .cred-item:last-child { border-bottom: none; }
+
+  .cred-title {
+    font-family: 'Syne', sans-serif; font-size: 0.85rem; font-weight: 700;
+    color: var(--paper); margin-bottom: 0.3rem;
+  }
+  .cred-org {
+    font-family: 'Cormorant Garamond', serif; font-style: italic;
+    font-size: 0.95rem; color: var(--warm-mid);
+  }
+  .cred-year {
+    font-family: 'DM Mono', monospace; font-size: 0.58rem;
+    letter-spacing: 0.1em; color: rgba(138,127,114,0.5); margin-top: 0.2rem;
+  }
+
+  /* ── CONTACT ── */
+  #contact {
+    background: linear-gradient(135deg, #0a0a0f 0%, #0f1010 50%, #090d0d 100%);
+    border-top: 1px solid var(--line);
+  }
+
+  .contact-inner {
+    max-width: 1200px; margin: 0 auto; padding: 0 4rem;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 6rem; align-items: center;
+  }
+
+  .contact-headline {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.5rem, 4vw, 4.5rem);
+    font-weight: 300; line-height: 1.1; color: var(--paper);
+    margin-bottom: 2rem;
+  }
+  .contact-headline em { color: var(--gold); font-style: italic; }
+
+  .contact-sub {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem; color: var(--warm-mid); line-height: 1.8;
+    margin-bottom: 3rem;
+  }
+
+  .contact-details {
+    display: flex; flex-direction: column; gap: 1.5rem;
+  }
+
+  .contact-row {
+    display: flex; align-items: center; gap: 1.5rem;
+  }
+  .contact-icon {
+    width: 40px; height: 40px;
+    border: 1px solid var(--line);
+    display: flex; align-items: center; justify-content: center;
+    color: var(--gold); font-size: 0.9rem;
+    flex-shrink: 0;
+  }
+  .contact-text {
+    font-family: 'DM Mono', monospace; font-size: 0.72rem;
+    letter-spacing: 0.08em; color: var(--cream);
+  }
+  .contact-text a { color: inherit; text-decoration: none; }
+  .contact-text a:hover { color: var(--gold); }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--ink);
+    border-top: 1px solid var(--line);
+    padding: 2rem 4rem;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer-note {
+    font-family: 'DM Mono', monospace; font-size: 0.58rem;
+    letter-spacing: 0.12em; color: rgba(138,127,114,0.4);
+    text-transform: uppercase;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; } to { opacity: 1; }
+  }
+  @keyframes lineGrow {
+    from { transform: scaleX(0); } to { transform: scaleX(1); }
+  }
+
+  .hero-eyebrow { animation: fadeIn 1s ease forwards; }
+  .hero-name { animation: fadeUp 1s 0.2s ease both; }
+  .hero-title { animation: fadeUp 1s 0.4s ease both; }
+  .hero-tagline { animation: fadeUp 1s 0.6s ease both; }
+  .hero-ctas { animation: fadeUp 1s 0.8s ease both; }
+  .hero-stats-grid { animation: fadeUp 1s 0.5s ease both; }
+
+  /* ── COUNTER ANIMATION ── */
+  .kpi-number[data-target] { transition: none; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    #hero { grid-template-columns: 1fr; }
+    .hero-left { padding: 8rem 2rem 4rem; }
+    .hero-right { display: none; }
+    .section-inner { padding: 0 2rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    .awards-grid { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: repeat(2, 1fr); }
+    .creds-grid { grid-template-columns: 1fr; }
+    .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .timeline-earlier { grid-template-columns: 1fr; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; }
+  }
+  @media (max-width: 600px) {
+    .kpi-grid { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: 1fr; }
+  }
+
+  /* Decorative corner */
+  .corner-deco {
+    position: absolute; width: 60px; height: 60px; pointer-events: none;
+  }
+  .corner-deco-tl { top: 0; left: 0; border-top: 2px solid var(--gold); border-left: 2px solid var(--gold); }
+  .corner-deco-br { bottom: 0; right: 0; border-bottom: 2px solid var(--gold); border-right: 2px solid var(--gold); }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Sumit Nandy</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#impact">Impact</a></li>
+    <li><a href="#career">Experience</a></li>
+    <li><a href="#clients">Clients</a></li>
+    <li><a href="#awards">Awards</a></li>
+    <li><a href="#skills">Expertise</a></li>
+    <li><a href="#contact">Engage</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Independent Consultant · AI & CX Transformation · Mumbai, India</div>
+    <h1 class="hero-name">Sumit<br><span>Nandy</span></h1>
+    <div class="hero-title">AI & CX Transformation Consultant &nbsp;·&nbsp; Enterprise Advisor &nbsp;·&nbsp; Independent Practice</div>
+    <p class="hero-tagline">
+      I help enterprises design and deploy AI strategies that transform customer experience, eliminate operational friction, and drive measurable ROI — as an independent advisor with 26+ years of enterprise depth across BFSI, HCM, and SaaS.
+    </p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-primary">Engage for a Project</a>
+      <a href="#impact" class="btn-secondary">View Delivered Impact</a>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-bg-text">AI</div>
+    <div class="hero-stats-grid">
+      <div class="hero-stat">
+        <div class="hero-stat-num">26<span style="font-size:1.5rem">+</span></div>
+        <div class="hero-stat-label">Years of<br>Enterprise<br>Experience</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">94<span style="font-size:1.5rem">%</span></div>
+        <div class="hero-stat-label">Customer<br>Retention<br>Rate</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">$7<span style="font-size:1.5rem">M+</span></div>
+        <div class="hero-stat-label">Annual<br>Business<br>Portfolio</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">6</div>
+        <div class="hero-stat-label">Global<br>Markets<br>Covered</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-bottom-bar"></div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="section-inner">
+    <div class="section-label">Executive Profile</div>
+    <div class="about-grid">
+      <div class="about-left">
+        <h2 class="section-heading">Advisor. <em>Builder.</em><br>Transformer.</h2>
+        <blockquote class="about-quote">
+          "He has demonstrated exceptional leadership and outcome focus, consistently aligning technology with business transformation goals."
+        </blockquote>
+        <div class="about-quote-attr">— Ruchir Dave, Head of HR Customer Advisory, SAP SuccessFactors</div>
+        <div class="global-exposure">
+          <div class="global-label">Global Assignments</div>
+          <div class="global-countries">
+            <span class="country">USA</span>
+            <span class="country">UK</span>
+            <span class="country">Singapore</span>
+            <span class="country">Hong Kong</span>
+            <span class="country">Netherlands</span>
+            <span class="country">Australia</span>
+            <span class="country">Dubai</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-right">
+        <p class="about-body">
+          Sumit Nandy is an independent AI and CX transformation consultant with 26+ years of global enterprise experience spanning IBM, Accenture, SAP, Cornerstone OnDemand, Cloud4C, and ZingHR. He has designed and deployed AI-powered tools that redefine customer success, operational efficiency, and business growth — from an award-winning Digital Concierge at SAP to intelligent payroll automation for 250K+ SBI employees.
+        </p>
+        <p class="about-body" style="margin-top:1.5rem">
+          As an independent advisor, Sumit partners with CXOs, CHROs, and boards to translate AI strategy into delivered outcomes. He brings end-to-end consulting capability — from diagnostic and roadmap design to tool build, deployment, and adoption — across BFSI, SaaS, HCM, and cloud-managed services. Whether you need to build an AI Centre of Excellence, modernize your CX function, or accelerate intelligent automation, Sumit delivers results with accountability.
+        </p>
+        <div class="about-tags">
+          <span class="tag">AI Strategy & Roadmaps</span>
+          <span class="tag">LLM Integration</span>
+          <span class="tag">Prompt Engineering</span>
+          <span class="tag">CX Transformation</span>
+          <span class="tag">BFSI Advisory</span>
+          <span class="tag">HCM Consulting</span>
+          <span class="tag">SaaS Transformation</span>
+          <span class="tag">AI Centre of Excellence</span>
+          <span class="tag">Churn Prediction</span>
+          <span class="tag">Intelligent Automation</span>
+          <span class="tag">Board Advisory</span>
+          <span class="tag">Change Management</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT -->
+<section id="impact">
+  <div class="section-inner">
+    <div class="section-label">Quantified Impact</div>
+    <h2 class="section-heading">Numbers that <em>matter</em></h2>
+    <p class="impact-intro">
+      Every engagement Sumit leads is anchored in measurable outcomes for clients. These are not projections — they are delivered results, validated by enterprises and recognised by industry.
+    </p>
+    <div class="kpi-grid">
+      <div class="kpi-card">
+        <div class="kpi-number"><span class="counter" data-target="94">0</span><span class="kpi-unit">%</span></div>
+        <div class="kpi-title">Customer Retention</div>
+        <div class="kpi-desc">Retention rate achieved through AI-powered health scoring and predictive engagement</div>
+        <div class="kpi-source">MarketsandMarkets · 2022–2023</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-number"><span class="counter" data-target="40">0</span><span class="kpi-unit">%+</span></div>
+        <div class="kpi-title">Manual Reduction</div>
+        <div class="kpi-desc">Reduction in manual intervention via AI-led automation for SBI's payroll & pension ops</div>
+        <div class="kpi-source">ZingHR / SBI · 2025</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-number"><span class="counter" data-target="37">0</span><span class="kpi-unit">%</span></div>
+        <div class="kpi-title">Operational Efficiency</div>
+        <div class="kpi-desc">Efficiency improvement via intelligent automation and AI-augmented decision tools</div>
+        <div class="kpi-source">MarketsandMarkets · 2022–2023</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-number"><span class="counter" data-target="36">0</span><span class="kpi-unit">%</span></div>
+        <div class="kpi-title">CSAT Improvement</div>
+        <div class="kpi-desc">Increase in customer satisfaction scores via AI-assisted change management at SAP</div>
+        <div class="kpi-source">SAP India · 2018–2022</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-number"><span class="counter" data-target="27">0</span><span class="kpi-unit">%</span></div>
+        <div class="kpi-title">Ticket Reduction</div>
+        <div class="kpi-desc">Reduction in service tickets via AI-powered Digital Concierge self-service tool</div>
+        <div class="kpi-source">SAP APJ Innovation Award · 2021</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-number"><span class="counter" data-target="20">0</span><span class="kpi-unit">%+</span></div>
+        <div class="kpi-title">Expansion Revenue</div>
+        <div class="kpi-desc">Revenue growth through AI-assisted health monitoring and predictive upsell playbooks</div>
+        <div class="kpi-source">MarketsandMarkets · 2022–2023</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-number"><span class="counter" data-target="18">0</span><span class="kpi-unit">%</span></div>
+        <div class="kpi-title">CX Index Uplift</div>
+        <div class="kpi-desc">Improvement in customer experience index through data-driven AI strategy</div>
+        <div class="kpi-source">MarketsandMarkets · 2022–2023</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-number"><span class="counter" data-target="12">0</span><span class="kpi-unit">%</span></div>
+        <div class="kpi-title">Cost Reduction</div>
+        <div class="kpi-desc">Client IT landscape optimization via AI-driven analysis and intelligent automation</div>
+        <div class="kpi-source">Cloud4C · 2023–2025</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAREER -->
+<section id="career">
+  <div class="section-inner">
+    <div class="section-label">Career Timeline</div>
+    <h2 class="section-heading">26 years of <em>enterprise delivery</em></h2>
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-meta">
+          <span class="timeline-co">Cnergyis Infotech (ZingHR)</span>
+          <span class="timeline-period">Aug 2025 – Present</span>
+        </div>
+        <div class="timeline-role">CX Director & AI Innovation Lead — Enterprise Solutions</div>
+        <ul class="timeline-bullets">
+          <li>Pioneered AI-powered process analysis tools embedded in ZingHR's enterprise HRMS platform — delivering intelligent dashboards, automated anomaly detection, and AI-driven workflow optimization for 250K+ employees and 350K+ pensioners at SBI.</li>
+          <li>Architected AI-led automation frameworks reducing manual payroll intervention by 40%+ with zero-error, audit-ready processing in India's most complex BFSI payroll environment.</li>
+          <li>Designed persona-based AI dashboards and intelligent ticketing systems using ML to prioritize, route, and resolve HR service requests — improving resolution speed and operational predictability.</li>
+          <li>Built AI-powered onboarding modernization tools integrating NLP for document digitization and intelligent process mapping, cutting onboarding cycle times significantly.</li>
+        </ul>
+        <div class="timeline-highlights">
+          <span class="highlight-chip">SBI BFSI Payroll</span>
+          <span class="highlight-chip">AI Dashboards</span>
+          <span class="highlight-chip">NLP Automation</span>
+          <span class="highlight-chip">250K+ Employees</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-meta">
+          <span class="timeline-co">Cloud4C Services</span>
+          <span class="timeline-period">Oct 2023 – Aug 2025</span>
+        </div>
+        <div class="timeline-role">Client Partner (VP) & AI Product Manager</div>
+        <ul class="timeline-bullets">
+          <li>Founded and led development of an intelligent AI-powered CX analytics platform — a rules-engine and ML-based tool generating proactive real-time alerts, churn risk prediction, and C-suite actionable insights for Middle East enterprise clients.</li>
+          <li>Drove end-to-end AI product lifecycle: ideation → requirements → model design → UAT → deployment — integrating the tool into live Customer Success workflows.</li>
+          <li>Leveraged AI-driven data analysis to optimize client IT landscapes, identifying inefficiencies and delivering 12% cost reduction across enterprise cloud accounts.</li>
+        </ul>
+        <div class="timeline-highlights">
+          <span class="highlight-chip">AI Product Lifecycle</span>
+          <span class="highlight-chip">Churn Prediction</span>
+          <span class="highlight-chip">Middle East Enterprise</span>
+          <span class="highlight-chip">ML Analytics</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-meta">
+          <span class="timeline-co">MarketsandMarkets Research</span>
+          <span class="timeline-period">Jan 2022 – Sep 2023</span>
+        </div>
+        <div class="timeline-role">Head of Customer Success & Delivery Excellence (AVP)</div>
+        <ul class="timeline-bullets">
+          <li>Architected a CS strategy powered by data-driven intelligence and AI-assisted account planning — driving retention to 94%+ and improving customer experience index by 18%.</li>
+          <li>Led digital transformation delivering 37% operational efficiency improvement and proactive risk mitigation through intelligent automation tools.</li>
+          <li>Drove 20%+ expansion revenue through AI-assisted health monitoring, behavioral signals analysis, and predictive cross-sell/upsell playbooks.</li>
+        </ul>
+        <div class="timeline-highlights">
+          <span class="highlight-chip">94% Retention</span>
+          <span class="highlight-chip">37% Efficiency Gain</span>
+          <span class="highlight-chip">20%+ Revenue Expansion</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-meta">
+          <span class="timeline-co">SAP India Pvt. Ltd.</span>
+          <span class="timeline-period">Mar 2018 – Jan 2022</span>
+        </div>
+        <div class="timeline-role">Customer Success Partner, Senior Advisor</div>
+        <ul class="timeline-bullets">
+          <li>Conceptualized and deployed the "Digital Concierge" — an AI-powered self-service intelligence tool recognized with the <strong style="color:var(--gold)">SAP APJ Grassroots Innovation Award (2021)</strong> by the APJ President & Board Member. Achieved 27% reduction in service tickets.</li>
+          <li>Directed the $7M+ annual SuccessFactors business, advising enterprise clients across India and Japan on AI-augmented digital HR transformation.</li>
+          <li>Led high-impact CS programs enabling AI-assisted change management, resulting in 36% increase in customer satisfaction scores.</li>
+          <li>Recognized in "League of Customer Champions" (2020) and earned "Business Cloud Champion – Gold" (2019) for highest cloud sales revenue in a single quarter.</li>
+        </ul>
+        <div class="timeline-highlights">
+          <span class="highlight-chip">APJ Innovation Award</span>
+          <span class="highlight-chip">$7M+ Portfolio</span>
+          <span class="highlight-chip">Digital Concierge AI</span>
+          <span class="highlight-chip">India + Japan</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-meta">
+          <span class="timeline-co">Cornerstone OnDemand</span>
+          <span class="timeline-period">Mar 2015 – Jan 2018</span>
+        </div>
+        <div class="timeline-role">Senior Client Success Consultant</div>
+        <ul class="timeline-bullets">
+          <li>Led large-scale SaaS and HCM transformation programs across Aviation, BFSI, and Manufacturing in Hong Kong and the Netherlands with rigorous governance and CxO stakeholder alignment.</li>
+          <li>Facilitated Business Process Alignment workshops and directed solution design for Performance Management transformations at global industry leaders.</li>
+        </ul>
+        <div class="timeline-highlights">
+          <span class="highlight-chip">Hong Kong</span>
+          <span class="highlight-chip">Netherlands</span>
+          <span class="highlight-chip">HCM Transformation</span>
+        </div>
+      </div>
+
+      <div class="timeline-earlier">
+        <div class="earlier-item">
+          <div class="earlier-co">Accenture Services</div>
+          <div class="earlier-role">Business & Integration Associate Manager (HCM)</div>
+          <div class="earlier-period">Feb 2010 – Mar 2015</div>
+        </div>
+        <div class="earlier-item">
+          <div class="earlier-co">IBM India Pvt. Ltd.</div>
+          <div class="earlier-role">Package Solution Consultant (HCM)</div>
+          <div class="earlier-period">Mar 2004 – Feb 2010</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- AWARDS -->
+<section id="awards">
+  <div class="section-inner">
+    <div class="section-label">Recognition</div>
+    <h2 class="section-heading">Awards & <em>Honours</em></h2>
+    <div class="awards-grid">
+      <div class="award-card" data-year="2021">
+        <div class="award-icon">🏆</div>
+        <div class="award-title">SAP APJ Grassroots Innovation Award</div>
+        <div class="award-org">SAP — APJ President & Board Member · 2021</div>
+        <div class="award-desc">Recognized for conceptualizing and deploying the AI-powered "Digital Concierge" — a self-service intelligence tool that transformed customer engagement and drove a 27% reduction in service tickets across the APJ region.</div>
+      </div>
+      <div class="award-card" data-year="2020">
+        <div class="award-icon">🎖️</div>
+        <div class="award-title">League of Customer Champions</div>
+        <div class="award-org">SAP SuccessFactors · 2020</div>
+        <div class="award-desc">Awarded for leading the SAP Customer Accreditation Series (SFX), driving exceptional customer outcomes and establishing a benchmark for enterprise client excellence across the region.</div>
+      </div>
+      <div class="award-card" data-year="2019">
+        <div class="award-icon">🥇</div>
+        <div class="award-title">Business Cloud Champion – Gold</div>
+        <div class="award-org">SAP Cloud · 2019</div>
+        <div class="award-desc">Awarded for achieving the highest cloud sales revenue in a single quarter through AI-augmented advisory, value-based consulting, and strategic portfolio expansion across enterprise accounts.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLIENTS -->
+<section id="clients">
+  <div class="section-inner">
+    <div class="section-label">Client Portfolio</div>
+    <h2 class="section-heading">Brands that <em>trusted</em> the work</h2>
+    <p class="clients-intro">
+      Over 26 years, Sumit has partnered with global industry leaders across North America, Europe, APAC, Australia, and India — helping define, transform, and optimize their enterprise AI, HRIT, and CX landscapes.
+    </p>
+
+    <!-- Stats bar -->
+    <div class="clients-stat-bar">
+      <div class="clients-stat-cell">
+        <div class="clients-stat-num">23<span style="font-size:1.4rem">+</span></div>
+        <div class="clients-stat-lbl">Enterprise<br>Clients</div>
+      </div>
+      <div class="clients-stat-cell">
+        <div class="clients-stat-num">5</div>
+        <div class="clients-stat-lbl">Global<br>Regions</div>
+      </div>
+      <div class="clients-stat-cell">
+        <div class="clients-stat-num">8</div>
+        <div class="clients-stat-lbl">Industry<br>Sectors</div>
+      </div>
+      <div class="clients-stat-cell">
+        <div class="clients-stat-num">26<span style="font-size:1.4rem">+</span></div>
+        <div class="clients-stat-lbl">Years of<br>Delivery</div>
+      </div>
+    </div>
+
+    <!-- Scrolling ticker — Global -->
+    <div class="clients-regions">
+
+      <div class="clients-region">
+        <div class="clients-region-label">Global &amp; Multi-National</div>
+        <div class="clients-marquee-wrapper">
+          <div class="clients-track">
+            <div class="client-pill"><span class="client-pill-name">Abbott Laboratories</span></div>
+            <div class="client-pill"><span class="client-pill-name">Kraft Foods</span></div>
+            <div class="client-pill"><span class="client-pill-name">United Utilities</span></div>
+            <div class="client-pill"><span class="client-pill-name">BHP Billiton</span></div>
+            <div class="client-pill"><span class="client-pill-name">Australian Government</span></div>
+            <div class="client-pill"><span class="client-pill-name">Alcatel-Lucent</span></div>
+            <div class="client-pill"><span class="client-pill-name">Cathay Pacific</span></div>
+            <div class="client-pill"><span class="client-pill-name">Jaguar Land Rover</span></div>
+            <div class="client-pill"><span class="client-pill-name">VFS Global</span></div>
+            <!-- duplicate for seamless loop -->
+            <div class="client-pill"><span class="client-pill-name">Abbott Laboratories</span></div>
+            <div class="client-pill"><span class="client-pill-name">Kraft Foods</span></div>
+            <div class="client-pill"><span class="client-pill-name">United Utilities</span></div>
+            <div class="client-pill"><span class="client-pill-name">BHP Billiton</span></div>
+            <div class="client-pill"><span class="client-pill-name">Australian Government</span></div>
+            <div class="client-pill"><span class="client-pill-name">Alcatel-Lucent</span></div>
+            <div class="client-pill"><span class="client-pill-name">Cathay Pacific</span></div>
+            <div class="client-pill"><span class="client-pill-name">Jaguar Land Rover</span></div>
+            <div class="client-pill"><span class="client-pill-name">VFS Global</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="clients-region">
+        <div class="clients-region-label">India — Conglomerates</div>
+        <div class="clients-marquee-wrapper">
+          <div class="clients-track clients-track-reverse">
+            <div class="client-pill"><span class="client-pill-name">State Bank of India</span></div>
+            <div class="client-pill"><span class="client-pill-name">IDFC FIRST Bank</span></div>
+            <div class="client-pill"><span class="client-pill-name">Aditya Birla Group</span></div>
+            <div class="client-pill"><span class="client-pill-name">Tata Motors</span></div>
+            <div class="client-pill"><span class="client-pill-name">Tata Consultancy Services</span></div>
+            <div class="client-pill"><span class="client-pill-name">JSW Group</span></div>
+            <div class="client-pill"><span class="client-pill-name">Jindal Stainless</span></div>
+            <div class="client-pill"><span class="client-pill-name">Sun Pharmaceutical</span></div>
+            <div class="client-pill"><span class="client-pill-name">Marico</span></div>
+            <div class="client-pill"><span class="client-pill-name">Apollo Tyres</span></div>
+            <div class="client-pill"><span class="client-pill-name">UPL</span></div>
+            <div class="client-pill"><span class="client-pill-name">Thermax</span></div>
+            <div class="client-pill"><span class="client-pill-name">Bajaj Electricals</span></div>
+            <div class="client-pill"><span class="client-pill-name">YASH Technologies</span></div>
+            <div class="client-pill"><span class="client-pill-name">Sterling and Wilson</span></div>
+            <!-- duplicate for seamless loop -->
+            <div class="client-pill"><span class="client-pill-name">State Bank of India</span></div>
+            <div class="client-pill"><span class="client-pill-name">IDFC FIRST Bank</span></div>
+            <div class="client-pill"><span class="client-pill-name">Aditya Birla Group</span></div>
+            <div class="client-pill"><span class="client-pill-name">Tata Motors</span></div>
+            <div class="client-pill"><span class="client-pill-name">Tata Consultancy Services</span></div>
+            <div class="client-pill"><span class="client-pill-name">JSW Group</span></div>
+            <div class="client-pill"><span class="client-pill-name">Jindal Stainless</span></div>
+            <div class="client-pill"><span class="client-pill-name">Sun Pharmaceutical</span></div>
+            <div class="client-pill"><span class="client-pill-name">Marico</span></div>
+            <div class="client-pill"><span class="client-pill-name">Apollo Tyres</span></div>
+            <div class="client-pill"><span class="client-pill-name">UPL</span></div>
+            <div class="client-pill"><span class="client-pill-name">Thermax</span></div>
+            <div class="client-pill"><span class="client-pill-name">Bajaj Electricals</span></div>
+            <div class="client-pill"><span class="client-pill-name">YASH Technologies</span></div>
+            <div class="client-pill"><span class="client-pill-name">Sterling and Wilson</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="section-inner">
+    <div class="section-label">Core Competencies</div>
+    <h2 class="section-heading">What I <em>bring</em><br>to your engagement</h2>
+    <div class="skills-grid">
+      <div class="skill-cluster">
+        <div class="skill-cluster-name">AI & Technology</div>
+        <ul class="skill-list">
+          <li>AI Strategy & Roadmap Leadership</li>
+          <li>LLM Integration & Prompt Engineering</li>
+          <li>Intelligent Automation & Process Optimization</li>
+          <li>Predictive Analytics & Risk Intelligence</li>
+          <li>AI Tool Design, Build & Deployment</li>
+          <li>AI-Powered Product Management</li>
+        </ul>
+      </div>
+      <div class="skill-cluster">
+        <div class="skill-cluster-name">Customer & Revenue</div>
+        <ul class="skill-list">
+          <li>Enterprise CX Transformation</li>
+          <li>Customer Retention & Revenue Expansion</li>
+          <li>Churn Prediction & Health Scoring</li>
+          <li>Cross-Functional AI Program Governance</li>
+          <li>Executive Stakeholder Management</li>
+          <li>AI-Powered Customer Success</li>
+        </ul>
+      </div>
+      <div class="skill-cluster">
+        <div class="skill-cluster-name">Domain Expertise</div>
+        <ul class="skill-list">
+          <li>BFSI — Payroll, Pension, Compliance</li>
+          <li>HCM — SAP SuccessFactors, Cornerstone</li>
+          <li>SaaS — Cloud Managed Services</li>
+          <li>Change Management & AI Adoption</li>
+          <li>AI Governance & Regulatory Alignment</li>
+          <li>Enterprise Architecture & Blueprinting</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CREDENTIALS -->
+<section id="credentials">
+  <div class="section-inner">
+    <div class="section-label">Education & Certifications</div>
+    <h2 class="section-heading">Credentials that <em>ground</em> the vision</h2>
+    <div class="creds-grid">
+      <div>
+        <div class="cred-group-title">Education</div>
+        <div class="cred-item">
+          <div class="cred-title">PG Diploma — Information Technology</div>
+          <div class="cred-org">SCDL, Symbiosis — Pune</div>
+          <div class="cred-year">2004 – 2008</div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-title">B.Sc. — Computer Science</div>
+          <div class="cred-org">Nagpur University</div>
+          <div class="cred-year">1996 – 1999</div>
+        </div>
+      </div>
+      <div>
+        <div class="cred-group-title">Certifications</div>
+        <div class="cred-item">
+          <div class="cred-title">SAP SuccessFactors Employee Central</div>
+          <div class="cred-org">SAP Certified Consultant</div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-title">Cornerstone OnDemand — All Modules</div>
+          <div class="cred-org">Cornerstone Certified</div>
+        </div>
+        <div class="cred-item">
+          <div class="cred-title">ITIL V3 Foundation</div>
+          <div class="cred-org">AXELOS Certified</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="contact-inner">
+    <div>
+      <div class="section-label">Start a Conversation</div>
+      <h2 class="contact-headline">Let's solve your <em>AI challenge</em> together.</h2>
+      <p class="contact-sub">
+        Sumit is available for independent consulting engagements — AI strategy & roadmaps, CX transformation, intelligent automation, and enterprise HCM advisory. Short-term projects, retainers, and board advisory welcome.
+      </p>
+      <a href="mailto:nandy.sumit@gmail.com" class="btn-primary">Start a Conversation</a>
+    </div>
+    <div class="contact-details">
+      <div class="contact-row">
+        <div class="contact-icon">✉</div>
+        <div class="contact-text"><a href="mailto:nandy.sumit@gmail.com">nandy.sumit@gmail.com</a></div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">📱</div>
+        <div class="contact-text"><a href="tel:+919082243191">+91 908-224-3191</a></div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">📍</div>
+        <div class="contact-text">Mumbai, India</div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">in</div>
+        <div class="contact-text"><a href="https://www.linkedin.com/in/sumit-nandy/" target="_blank">linkedin.com/in/sumit-nandy</a></div>
+      </div>
+      <div class="contact-row">
+        <div class="contact-icon">↓</div>
+        <div class="contact-text"><a href="#" onclick="alert('Please host the PDF resume alongside this file and update this link.')">Download Resume (PDF)</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-note">© 2025 Sumit Nandy — Independent AI & CX Transformation Consultant · Mumbai, India</div>
+  <div class="footer-note">Built to perform. Designed to impress.</div>
+</footer>
+
+<script>
+  // ── Intersection Observer for timeline fade-in ──
+  const timelineItems = document.querySelectorAll('.timeline-item');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 120);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  timelineItems.forEach(item => observer.observe(item));
+
+  // ── Counter animation ──
+  function animateCounter(el) {
+    const target = parseInt(el.dataset.target);
+    const duration = 1800;
+    const step = 16;
+    const steps = duration / step;
+    const increment = target / steps;
+    let current = 0;
+    const timer = setInterval(() => {
+      current += increment;
+      if (current >= target) {
+        current = target;
+        clearInterval(timer);
+      }
+      el.textContent = Math.floor(current);
+    }, step);
+  }
+
+  const counters = document.querySelectorAll('.counter');
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCounter(entry.target);
+        counterObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+  counters.forEach(c => counterObserver.observe(c));
+
+  // ── Smooth active nav highlighting ──
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 120) current = s.id;
+    });
+    navLinks.forEach(a => {
+      a.style.color = a.getAttribute('href') === '#' + current
+        ? 'var(--gold)' : '';
+    });
+  });
+</script>
+
+</body>
+</html>
