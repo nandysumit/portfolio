@@ -3,58 +3,350 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sumit Nandy — Chief AI Officer</title>
+<title>Sumit Nandy — AI & CX Transformation Consultant</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Mono:wght@300;400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
+  /* ── LIGHT THEME (default) ── */
   :root {
-    --ink: #0a0a0f;
-    --paper: #f5f2ec;
-    --gold: #c9a84c;
-    --gold-light: #e8c97a;
-    --cream: #ede8df;
-    --warm-mid: #8a7f72;
-    --warm-dark: #3d3530;
-    --accent-teal: #2d6a6a;
-    --accent-teal-light: #4a9999;
-    --line: rgba(201,168,76,0.25);
+    --ink: #ffffff;
+    --paper: #111827;
+    --gold: #c47f17;
+    --gold-light: #e09820;
+    --gold-bg: rgba(196,127,23,0.1);
+    --gold-border: rgba(196,127,23,0.35);
+    --accent-teal: #0e7490;
+    --accent-teal-light: #0891b2;
+    --accent-teal-bg: rgba(14,116,144,0.1);
+    --line: rgba(196,127,23,0.25);
+    --surface: #ffffff;
+    --surface2: #f9fafb;
+    --surface3: #f3f4f6;
+    --nav-bg: rgba(255,255,255,0.95);
+    --shadow: 0 2px 16px rgba(0,0,0,0.07);
+    --shadow-card: 0 4px 24px rgba(0,0,0,0.09);
+    --text-primary: #111827;
+    --text-secondary: #374151;
+    --text-muted: #6b7280;
+    --warm-mid: #6b7280;
+  }
+
+  /* ── DARK THEME ── */
+  [data-theme="dark"] {
+    --ink: #0d1117;
+    --paper: #f0f6fc;
+    --gold: #e3a818;
+    --gold-light: #f0c040;
+    --gold-bg: rgba(227,168,24,0.12);
+    --gold-border: rgba(227,168,24,0.3);
+    --accent-teal: #22d3ee;
+    --accent-teal-light: #67e8f9;
+    --accent-teal-bg: rgba(34,211,238,0.1);
+    --line: rgba(227,168,24,0.2);
+    --surface: #161b22;
+    --surface2: #0d1117;
+    --surface3: #1c2128;
+    --nav-bg: rgba(13,17,23,0.95);
+    --shadow: 0 2px 16px rgba(0,0,0,0.4);
+    --shadow-card: 0 4px 24px rgba(0,0,0,0.4);
+    --text-primary: #f0f6fc;
+    --text-secondary: #c9d1d9;
+    --text-muted: #8b949e;
+    --warm-mid: #8b949e;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
-
-  body {
-    background: var(--ink);
-    color: var(--paper);
-    font-family: 'Syne', sans-serif;
-    overflow-x: hidden;
-  }
+  body { background: var(--ink); color: var(--text-primary); font-family: 'Syne', sans-serif; overflow-x: hidden; transition: background 0.35s, color 0.35s; }
 
   /* ── NAV ── */
-  nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    display: flex; align-items: center; justify-content: space-between;
-    padding: 1.2rem 3rem;
-    background: rgba(10,10,15,0.85);
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid var(--line);
-  }
-  .nav-logo {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.15rem; font-weight: 300; letter-spacing: 0.18em;
-    color: var(--gold); text-transform: uppercase;
-  }
-  .nav-links {
-    display: flex; gap: 2.5rem; list-style: none;
-  }
-  .nav-links a {
-    font-family: 'DM Mono', monospace; font-size: 0.65rem;
-    letter-spacing: 0.15em; text-transform: uppercase;
-    color: var(--warm-mid); text-decoration: none;
-    transition: color 0.3s;
-  }
+  nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1rem 2rem; background: var(--nav-bg); backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); transition: background 0.35s; }
+  .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 300; letter-spacing: 0.15em; color: var(--gold); text-transform: uppercase; flex-shrink: 0; }
+  .nav-links { display: flex; gap: 1.4rem; list-style: none; align-items: center; }
+  .nav-links a { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
   .nav-links a:hover { color: var(--gold); }
+  .theme-toggle { background: none; border: 1px solid var(--line); color: var(--text-muted); cursor: pointer; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; transition: all 0.3s; flex-shrink: 0; }
+  .theme-toggle:hover { border-color: var(--gold); color: var(--gold); }
+  .hamburger { display: none; background: none; border: 1px solid var(--line); color: var(--text-muted); cursor: pointer; width: 34px; height: 34px; border-radius: 4px; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+  .mobile-nav { display: none; flex-direction: column; position: fixed; top: 60px; left: 0; right: 0; z-index: 99; background: var(--nav-bg); backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); padding: 1.2rem 1.5rem; gap: 0.8rem; }
+  .mobile-nav.open { display: flex; }
+  .mobile-nav a { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-secondary); text-decoration: none; padding: 0.5rem 0; border-bottom: 1px solid var(--line); }
+  .mobile-nav a:last-child { border-bottom: none; }
+
+  /* ── HERO ── */
+  #hero { min-height: 100vh; display: grid; grid-template-columns: 1fr 1fr; position: relative; overflow: hidden; background: linear-gradient(135deg, var(--surface) 0%, var(--surface2) 100%); }
+  .hero-left { display: flex; flex-direction: column; justify-content: center; padding: 9rem 3rem 5rem 5rem; position: relative; z-index: 2; }
+  .hero-eyebrow { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.28em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.8rem; display: flex; align-items: center; gap: 0.8rem; }
+  .hero-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--gold); }
+  .hero-name { font-family: 'Cormorant Garamond', serif; font-size: clamp(3.5rem, 6vw, 7rem); font-weight: 300; line-height: 0.92; letter-spacing: -0.01em; color: var(--text-primary); margin-bottom: 0.3rem; }
+  .hero-name span { color: var(--gold); font-style: italic; }
+  .hero-title { font-family: 'Syne', sans-serif; font-size: clamp(0.7rem, 1.1vw, 0.9rem); font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent-teal-light); margin: 1.6rem 0 2rem; }
+  .hero-tagline { font-family: 'Cormorant Garamond', serif; font-size: clamp(1rem, 1.4vw, 1.25rem); font-style: italic; font-weight: 400; color: var(--text-secondary); line-height: 1.75; max-width: 500px; margin-bottom: 3rem; border-left: 3px solid var(--gold); padding-left: 1.2rem; }
+  .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary { background: var(--gold); color: #fff; padding: 0.8rem 2rem; font-family: 'Syne', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; transition: all 0.3s; border-radius: 2px; }
+  .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(196,127,23,0.3); }
+  .btn-secondary { border: 1.5px solid var(--gold); color: var(--gold); padding: 0.8rem 2rem; font-family: 'Syne', sans-serif; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; transition: all 0.3s; border-radius: 2px; background: transparent; }
+  .btn-secondary:hover { background: var(--gold-bg); transform: translateY(-2px); }
+  .hero-right { position: relative; display: flex; align-items: center; justify-content: center; padding: 4rem 3rem; }
+  .hero-bg-text { position: absolute; font-family: 'Cormorant Garamond', serif; font-size: 20vw; font-weight: 300; color: rgba(196,127,23,0.05); letter-spacing: -0.05em; user-select: none; pointer-events: none; right: -2vw; top: 50%; transform: translateY(-50%); line-height: 1; }
+  .hero-stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; z-index: 2; width: min(360px, 90%); }
+  .hero-stat { background: var(--surface); border: 1px solid var(--line); padding: 2rem 1.5rem; text-align: center; box-shadow: var(--shadow-card); border-radius: 6px; transition: transform 0.2s, box-shadow 0.2s; }
+  .hero-stat:hover { transform: translateY(-3px); box-shadow: 0 8px 32px rgba(196,127,23,0.15); }
+  .hero-stat-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; color: var(--gold); line-height: 1; margin-bottom: 0.5rem; }
+  .hero-stat-label { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); line-height: 1.5; }
+  .hero-bottom-bar { position: absolute; bottom: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0.5; }
+
+  /* ── SHARED ── */
+  section { padding: 6rem 0; }
+  .section-inner { max-width: 1200px; margin: 0 auto; padding: 0 3rem; }
+  .section-label { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, var(--line), transparent); }
+  .section-heading { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 3.5vw, 3.5rem); font-weight: 300; line-height: 1.1; color: var(--text-primary); margin-bottom: 1rem; }
+  .section-heading em { color: var(--gold); font-style: italic; }
+
+  /* ── ABOUT ── */
+  #about { background: var(--surface2); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 5rem; align-items: start; }
+  .about-quote { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-style: italic; font-weight: 400; color: var(--text-primary); line-height: 1.7; border-left: 3px solid var(--gold); padding-left: 1.5rem; margin: 2rem 0; }
+  .about-quote-attr { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.12em; color: var(--text-muted); padding-left: 1.5rem; margin-top: -1.2rem; }
+  .about-body { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; line-height: 1.9; color: var(--text-secondary); margin-top: 1.5rem; }
+  .about-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2.5rem; }
+  .tag { background: var(--gold-bg); border: 1px solid var(--gold-border); color: var(--gold); padding: 0.35rem 0.9rem; font-family: 'DM Mono', monospace; font-size: 0.57rem; letter-spacing: 0.12em; text-transform: uppercase; border-radius: 2px; transition: all 0.2s; }
+  .tag:hover { background: rgba(196,127,23,0.18); }
+  .global-exposure { margin-top: 2.5rem; padding: 1.5rem; border: 1px solid var(--line); background: var(--surface); border-radius: 4px; }
+  .global-label { font-family: 'DM Mono', monospace; font-size: 0.57rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; font-weight: 700; }
+  .global-countries { display: flex; flex-wrap: wrap; gap: 0.7rem; }
+  .country { font-family: 'Syne', sans-serif; font-size: 0.75rem; font-weight: 600; color: var(--text-muted); letter-spacing: 0.04em; }
+  .country::after { content: ' •'; color: var(--line); }
+  .country:last-child::after { content: ''; }
+
+  /* ── IMPACT ── */
+  #impact { background: var(--surface3); }
+  .impact-intro { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; color: var(--text-secondary); line-height: 1.8; max-width: 640px; margin-bottom: 3.5rem; }
+  .kpi-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .kpi-card { background: var(--surface); border: 1px solid var(--line); padding: 2rem 1.6rem; position: relative; overflow: hidden; transition: transform 0.3s, box-shadow 0.3s; cursor: default; box-shadow: var(--shadow); border-radius: 6px; }
+  .kpi-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(196,127,23,0.15); }
+  .kpi-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--gold), var(--gold-light)); border-radius: 6px 6px 0 0; }
+  .kpi-number { font-family: 'Cormorant Garamond', serif; font-size: 3.2rem; font-weight: 300; line-height: 1; color: var(--gold); margin-bottom: 0.4rem; }
+  .kpi-unit { font-size: 1.6rem; color: var(--gold-light); }
+  .kpi-title { font-family: 'Syne', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.05em; color: var(--text-primary); margin-bottom: 0.5rem; text-transform: uppercase; }
+  .kpi-desc { font-family: 'DM Mono', monospace; font-size: 0.57rem; letter-spacing: 0.03em; color: var(--text-muted); line-height: 1.7; }
+  .kpi-benchmark { margin-top: 0.75rem; font-family: 'DM Mono', monospace; font-size: 0.54rem; letter-spacing: 0.03em; color: var(--accent-teal-light); line-height: 1.6; padding: 0.4rem 0.6rem; background: var(--accent-teal-bg); border-left: 2px solid var(--accent-teal); border-radius: 0 2px 2px 0; }
+  .kpi-source { margin-top: 0.8rem; font-family: 'DM Mono', monospace; font-size: 0.52rem; letter-spacing: 0.08em; color: var(--text-muted); opacity: 0.65; text-transform: uppercase; border-top: 1px solid var(--line); padding-top: 0.6rem; }
+
+  /* ── CAREER ── */
+  #career { background: var(--ink); }
+  .timeline { position: relative; margin-top: 3.5rem; }
+  .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: linear-gradient(180deg, var(--gold), transparent); }
+  .timeline-item { padding-left: 3rem; margin-bottom: 4rem; position: relative; opacity: 0; transform: translateY(20px); transition: opacity 0.6s, transform 0.6s; }
+  .timeline-item.visible { opacity: 1; transform: translateY(0); }
+  .timeline-dot { position: absolute; left: -5px; top: 8px; width: 12px; height: 12px; background: var(--surface); border: 2px solid var(--gold); border-radius: 50%; }
+  .timeline-meta { display: flex; gap: 1rem; align-items: center; margin-bottom: 0.6rem; flex-wrap: wrap; }
+  .timeline-co { font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700; color: var(--text-primary); }
+  .timeline-period { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.12em; color: var(--gold); background: var(--gold-bg); border: 1px solid var(--gold-border); padding: 0.18rem 0.7rem; border-radius: 2px; }
+  .timeline-role { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-style: italic; color: var(--accent-teal-light); margin-bottom: 1.2rem; }
+  .timeline-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
+  .timeline-bullets li { font-family: 'Cormorant Garamond', serif; font-size: 1rem; line-height: 1.7; color: var(--text-secondary); padding-left: 1.4rem; position: relative; }
+  .timeline-bullets li::before { content: '—'; position: absolute; left: 0; color: var(--gold); font-size: 0.8rem; }
+  .timeline-highlights { display: flex; gap: 0.7rem; flex-wrap: wrap; margin-top: 1.2rem; }
+  .highlight-chip { background: var(--accent-teal-bg); border: 1px solid rgba(14,116,144,0.25); color: var(--accent-teal-light); padding: 0.28rem 0.8rem; font-family: 'DM Mono', monospace; font-size: 0.56rem; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px; }
+  .timeline-earlier { padding-left: 3rem; padding-top: 2.5rem; border-top: 1px solid var(--line); display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .earlier-co { font-family: 'Syne', sans-serif; font-size: 0.85rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.25rem; }
+  .earlier-role { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.9rem; color: var(--text-secondary); }
+  .earlier-period { font-family: 'DM Mono', monospace; font-size: 0.56rem; color: var(--text-muted); letter-spacing: 0.08em; margin-top: 0.2rem; }
+
+  /* ── AWARDS ── */
+  #awards { background: var(--surface2); }
+  .awards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+  .award-card { background: var(--surface); border: 1px solid var(--line); border-top: 3px solid var(--gold); padding: 2.5rem 2rem; transition: transform 0.25s, box-shadow 0.25s; position: relative; overflow: hidden; box-shadow: var(--shadow); border-radius: 4px; }
+  .award-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(196,127,23,0.12); }
+  .award-card::after { content: attr(data-year); position: absolute; right: 1rem; bottom: 1rem; font-family: 'Cormorant Garamond', serif; font-size: 4rem; font-weight: 300; color: var(--line); line-height: 1; pointer-events: none; }
+  .award-icon { font-size: 1.8rem; margin-bottom: 1.2rem; }
+  .award-title { font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--gold); margin-bottom: 0.4rem; }
+  .award-org { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-teal-light); margin-bottom: 1rem; }
+  .award-desc { font-family: 'Cormorant Garamond', serif; font-size: 0.98rem; color: var(--text-secondary); line-height: 1.8; }
+
+  /* ── CLIENTS ── */
+  #clients { background: var(--surface3); }
+  .clients-intro { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--text-secondary); line-height: 1.9; max-width: 720px; margin-bottom: 3rem; }
+  .clients-regions { display: flex; flex-direction: column; gap: 3rem; }
+  .clients-region-label { font-family: 'DM Mono', monospace; font-size: 0.57rem; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.8rem; font-weight: 700; }
+  .clients-region-label::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, var(--line), transparent); }
+  .clients-marquee-wrapper { overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%); mask-image: linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%); }
+  .clients-track { display: flex; width: max-content; animation: marquee 32s linear infinite; }
+  .clients-track:hover { animation-play-state: paused; }
+  .clients-track-reverse { animation-direction: reverse; animation-duration: 38s; }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .client-pill { display: inline-flex; flex-direction: column; align-items: center; padding: 0.65rem 1.3rem; margin: 0 0.4rem; border: 1px solid var(--line); background: var(--surface); white-space: nowrap; transition: all 0.25s; cursor: default; box-shadow: var(--shadow); border-radius: 4px; }
+  .client-pill:hover { border-color: var(--gold); background: var(--gold-bg); transform: translateY(-2px); }
+  .client-pill-name { font-family: 'Syne', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.04em; color: var(--text-primary); transition: color 0.25s; }
+  .client-pill:hover .client-pill-name { color: var(--gold); }
+  .client-pill-sector { font-family: 'DM Mono', monospace; font-size: 0.48rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent-teal-light); margin-top: 0.18rem; }
+  .clients-stat-bar { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 3rem; }
+  .clients-stat-cell { background: var(--surface); border: 1px solid var(--line); border-top: 3px solid var(--gold); padding: 1.8rem 1.2rem; text-align: center; box-shadow: var(--shadow); border-radius: 4px; }
+  .clients-stat-num { font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; font-weight: 300; color: var(--gold); line-height: 1; margin-bottom: 0.35rem; }
+  .clients-stat-lbl { font-family: 'DM Mono', monospace; font-size: 0.57rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); line-height: 1.5; }
+
+  /* ── TESTIMONIALS ── */
+  #testimonials { background: var(--ink); }
+  .testimonials-intro { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--text-secondary); line-height: 1.9; max-width: 640px; margin-bottom: 2.5rem; }
+  .testimonials-list { display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-card); }
+  .t-item { border-bottom: 1px solid var(--line); background: var(--surface); transition: background 0.3s; }
+  .t-item:last-child { border-bottom: none; }
+  .t-item.t-open { background: var(--surface2); }
+  .t-header { display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 1.8rem; cursor: pointer; user-select: none; gap: 1rem; }
+  .t-header:hover { background: var(--surface3); }
+  .t-header-left { display: flex; align-items: center; gap: 1.2rem; flex: 1; min-width: 0; }
+  .t-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), var(--gold-light)); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-family: 'Syne', sans-serif; font-size: 0.78rem; font-weight: 700; color: white; }
+  .t-header-info { min-width: 0; }
+  .t-name { font-family: 'Syne', sans-serif; font-size: 0.88rem; font-weight: 700; color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .t-role-line { font-family: 'DM Mono', monospace; font-size: 0.56rem; letter-spacing: 0.07em; color: var(--accent-teal-light); text-transform: uppercase; line-height: 1.5; margin-top: 0.15rem; }
+  .t-relation { font-family: 'DM Mono', monospace; font-size: 0.52rem; color: var(--text-muted); margin-top: 0.1rem; }
+  .t-chevron { font-size: 0.7rem; color: var(--gold); transition: transform 0.3s; flex-shrink: 0; }
+  .t-open .t-chevron { transform: rotate(180deg); }
+  .t-body { max-height: 0; overflow: hidden; transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1); padding: 0 1.8rem; }
+  .t-open .t-body { max-height: 600px; padding: 0 1.8rem 1.8rem; }
+  .t-quote-mark { font-family: 'Cormorant Garamond', serif; font-size: 3rem; line-height: 0.5; color: var(--gold); opacity: 0.3; display: block; margin-bottom: 0.6rem; }
+  .t-text { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-style: italic; color: var(--text-secondary); line-height: 1.85; border-left: 2px solid var(--gold); padding-left: 1.2rem; }
+
+  /* ── CASE STUDIES TABS ── */
+  .cs-tabs-wrapper {
+    position: relative; margin-top: 2.5rem;
+  }
+  .cs-tabs {
+    display: flex;
+    border-bottom: 2px solid var(--line);
+    overflow-x: auto; -webkit-overflow-scrolling: touch;
+    scrollbar-width: none; -ms-overflow-style: none;
+    scroll-behavior: smooth;
+  }
+  .cs-tabs::-webkit-scrollbar { display: none; }
+  .cs-tab-btn {
+    font-family: 'DM Mono', monospace; font-size: 0.58rem;
+    letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--text-muted); background: none; border: none;
+    padding: 0.85rem 1.3rem; cursor: pointer;
+    border-bottom: 2px solid transparent; margin-bottom: -2px;
+    transition: all 0.2s; white-space: nowrap; flex-shrink: 0;
+  }
+  .cs-tab-btn:hover { color: var(--gold); }
+  .cs-tab-btn.cs-active {
+    color: var(--gold); border-bottom-color: var(--gold);
+    background: var(--surface); font-weight: 700;
+  }
+  .cs-tab-arrow {
+    position: absolute; top: 0; bottom: 2px;
+    width: 36px; display: flex; align-items: center; justify-content: center;
+    cursor: pointer; z-index: 2;
+    background: none; border: none;
+    color: var(--gold); font-size: 1rem;
+    opacity: 0; transition: opacity 0.25s;
+    pointer-events: none;
+  }
+  .cs-tab-arrow.visible { opacity: 1; pointer-events: auto; }
+  .cs-tab-arrow-left {
+    left: 0;
+    background: linear-gradient(90deg, var(--surface2) 60%, transparent);
+  }
+  .cs-tab-arrow-right {
+    right: 0;
+    background: linear-gradient(270deg, var(--surface2) 60%, transparent);
+  }
+  .cs-tab-arrow:hover { color: var(--gold-light); }
+
+  /* ── CASE STUDIES PANELS ── */
+  #casestudies { background: var(--surface2); }
+  .cs-panels { margin-top: 0; }
+  .cs-panel { display: none; background: var(--surface); border: 1px solid var(--line); border-top: none; padding: 2.5rem; box-shadow: var(--shadow-card); border-radius: 0 0 8px 8px; }
+  .cs-panel.cs-visible { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; }
+  .cs-tag { font-family: 'DM Mono', monospace; font-size: 0.54rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent-teal-light); background: var(--accent-teal-bg); border: 1px solid rgba(14,116,144,0.25); padding: 0.22rem 0.7rem; display: inline-block; margin-bottom: 1rem; border-radius: 2px; }
+  .cs-title { font-family: 'Syne', sans-serif; font-size: 1.05rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.3rem; line-height: 1.3; }
+  .cs-company { font-family: 'DM Mono', monospace; font-size: 0.57rem; letter-spacing: 0.12em; color: var(--text-muted); text-transform: uppercase; margin-bottom: 1.8rem; }
+  .cs-block { margin-bottom: 1.4rem; }
+  .cs-section-label { font-family: 'DM Mono', monospace; font-size: 0.57rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.45rem; display: flex; align-items: center; gap: 0.5rem; font-weight: 700; }
+  .cs-section-label::before { content: ''; width: 16px; height: 2px; background: var(--gold); flex-shrink: 0; }
+  .cs-text { font-family: 'Cormorant Garamond', serif; font-size: 1rem; line-height: 1.85; color: var(--text-secondary); }
+  .cs-outcomes { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
+  .cs-outcome-chip { background: var(--gold-bg); border: 1px solid var(--gold-border); color: var(--gold); padding: 0.28rem 0.8rem; font-family: 'DM Mono', monospace; font-size: 0.55rem; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 2px; }
+
+  /* ── SKILLS ── */
+  #skills { background: var(--surface3); }
+  .skills-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; margin-top: 3rem; }
+  .skill-cluster { background: var(--surface); border: 1px solid var(--line); border-top: 3px solid var(--gold); padding: 1.8rem; box-shadow: var(--shadow); border-radius: 4px; }
+  .skill-cluster-name { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; padding-bottom: 0.7rem; border-bottom: 1px solid var(--line); font-weight: 700; }
+  .skill-list { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+  .skill-list li { font-family: 'Syne', sans-serif; font-size: 0.78rem; font-weight: 600; color: var(--text-secondary); padding-left: 1rem; position: relative; transition: color 0.2s; }
+  .skill-list li::before { content: '›'; position: absolute; left: 0; color: var(--gold); }
+  .skill-list li:hover { color: var(--text-primary); }
+
+  /* ── CREDENTIALS ── */
+  #credentials { background: var(--ink); }
+  .creds-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; margin-top: 3rem; }
+  .cred-group-title { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 1.2rem; padding-bottom: 0.7rem; border-bottom: 1px solid var(--line); font-weight: 700; }
+  .cred-cards { display: flex; flex-direction: column; gap: 0.9rem; }
+  .cred-card { background: var(--surface); border: 1px solid var(--line); border-left: 4px solid var(--gold); padding: 1.3rem 1.5rem; box-shadow: var(--shadow); border-radius: 0 6px 6px 0; transition: transform 0.2s, box-shadow 0.2s; }
+  .cred-card:hover { transform: translateX(4px); box-shadow: 0 4px 20px rgba(196,127,23,0.12); }
+  .cred-icon { font-size: 1.1rem; margin-bottom: 0.5rem; }
+  .cred-title { font-family: 'Syne', sans-serif; font-size: 0.85rem; font-weight: 700; color: var(--text-primary); margin-bottom: 0.25rem; }
+  .cred-org { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 0.92rem; color: var(--text-secondary); }
+  .cred-year { font-family: 'DM Mono', monospace; font-size: 0.56rem; letter-spacing: 0.08em; color: var(--text-muted); margin-top: 0.25rem; }
+
+  /* ── CONTACT ── */
+  #contact { background: var(--surface2); border-top: 1px solid var(--line); }
+  .contact-inner { max-width: 1200px; margin: 0 auto; padding: 0 3rem; display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+  .contact-headline { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 3.5vw, 3.8rem); font-weight: 300; line-height: 1.1; color: var(--text-primary); margin-bottom: 1.5rem; }
+  .contact-headline em { color: var(--gold); font-style: italic; }
+  .contact-sub { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--text-secondary); line-height: 1.8; margin-bottom: 2.5rem; }
+  .contact-details { display: flex; flex-direction: column; gap: 1.2rem; }
+  .contact-row { display: flex; align-items: center; gap: 1.2rem; }
+  .contact-icon { width: 38px; height: 38px; border: 1px solid var(--line); background: var(--surface); display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 0.9rem; flex-shrink: 0; border-radius: 4px; box-shadow: var(--shadow); }
+  .contact-text { font-family: 'DM Mono', monospace; font-size: 0.7rem; letter-spacing: 0.07em; color: var(--text-primary); }
+  .contact-text a { color: inherit; text-decoration: none; }
+  .contact-text a:hover { color: var(--gold); }
+
+  /* ── FOOTER ── */
+  footer { background: var(--surface); border-top: 1px solid var(--line); padding: 1.8rem 3rem; display: flex; justify-content: space-between; align-items: center; }
+  .footer-note { font-family: 'DM Mono', monospace; font-size: 0.56rem; letter-spacing: 0.1em; color: var(--text-muted); text-transform: uppercase; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+  .hero-eyebrow { animation: fadeIn 1s ease forwards; }
+  .hero-name { animation: fadeUp 1s 0.2s ease both; }
+  .hero-title { animation: fadeUp 1s 0.4s ease both; }
+  .hero-tagline { animation: fadeUp 1s 0.6s ease both; }
+  .hero-ctas { animation: fadeUp 1s 0.8s ease both; }
+  .hero-stats-grid { animation: fadeUp 1s 0.5s ease both; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    nav { padding: 0.9rem 1.2rem; }
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    #hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-left { padding: 6rem 1.5rem 3rem; }
+    .hero-right { display: none; }
+    section { padding: 4rem 0; }
+    .section-inner { padding: 0 1.2rem; }
+    .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .kpi-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .awards-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .timeline-earlier { grid-template-columns: 1fr 1fr; }
+    .clients-stat-bar { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    .skills-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .creds-grid { grid-template-columns: 1fr; }
+    .cs-panel.cs-visible { grid-template-columns: 1fr; }
+    .contact-inner { grid-template-columns: 1fr; gap: 2.5rem; padding: 0 1.2rem; }
+    footer { flex-direction: column; gap: 0.8rem; text-align: center; padding: 1.5rem; }
+  }
+  @media (max-width: 480px) {
+    .hero-name { font-size: 2.8rem; }
+    .kpi-grid { grid-template-columns: 1fr; }
+    .skills-grid { grid-template-columns: 1fr; }
+    .timeline-earlier { grid-template-columns: 1fr; }
+    .hero-ctas { flex-direction: column; }
+    .cs-tab-btn { padding: 0.7rem 0.8rem; font-size: 0.52rem; }
+  }
 
   /* ── HERO ── */
   #hero {
@@ -169,12 +461,13 @@
   }
 
   .hero-stat {
-    background: rgba(10,10,15,0.9);
+    background: var(--surface);
     padding: 2.5rem 2rem;
     text-align: center;
     transition: background 0.3s;
+    box-shadow: var(--shadow);
   }
-  .hero-stat:hover { background: rgba(201,168,76,0.06); }
+  .hero-stat:hover { background: var(--surface2); }
 
   .hero-stat-num {
     font-family: 'Cormorant Garamond', serif;
@@ -223,7 +516,7 @@
   .section-heading em { color: var(--gold); font-style: italic; }
 
   /* ── ABOUT ── */
-  #about { background: #0e0e14; }
+  #about { background: var(--surface2); }
 
   .about-grid {
     display: grid; grid-template-columns: 1fr 1.5fr;
@@ -235,7 +528,7 @@
   .about-quote {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.5rem; font-style: italic; font-weight: 300;
-    color: var(--cream); line-height: 1.7;
+    color: var(--paper); line-height: 1.7;
     border-left: 3px solid var(--gold);
     padding-left: 2rem; margin: 2.5rem 0;
   }
@@ -249,7 +542,7 @@
   .about-body {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.15rem; line-height: 1.9;
-    color: rgba(245,242,236,0.75);
+    color: var(--warm-mid);
     margin-top: 2rem;
   }
 
@@ -258,19 +551,20 @@
     margin-top: 3rem;
   }
   .tag {
-    background: rgba(201,168,76,0.08);
-    border: 1px solid rgba(201,168,76,0.2);
+    background: rgba(184,146,46,0.08);
+    border: 1px solid rgba(184,146,46,0.2);
     color: var(--gold);
     padding: 0.4rem 1rem;
     font-family: 'DM Mono', monospace;
     font-size: 0.58rem; letter-spacing: 0.15em; text-transform: uppercase;
     transition: all 0.2s;
   }
-  .tag:hover { background: rgba(201,168,76,0.15); border-color: var(--gold); }
+  .tag:hover { background: rgba(184,146,46,0.15); border-color: var(--gold); }
 
   .global-exposure {
     margin-top: 3rem;
     padding: 2rem; border: 1px solid var(--line);
+    background: var(--surface);
   }
   .global-label {
     font-family: 'DM Mono', monospace;
@@ -305,13 +599,14 @@
   }
 
   .kpi-card {
-    background: var(--ink);
-    padding: 3rem 2rem;
+    background: var(--surface);
+    padding: 2.2rem 1.8rem;
     position: relative; overflow: hidden;
     transition: background 0.4s;
     cursor: default;
+    box-shadow: var(--shadow);
   }
-  .kpi-card:hover { background: rgba(201,168,76,0.05); }
+  .kpi-card:hover { background: var(--surface2); }
   .kpi-card::before {
     content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
     background: var(--gold); transform: scaleX(0); transform-origin: left;
@@ -324,34 +619,41 @@
     font-size: 3.8rem; font-weight: 300; line-height: 1;
     color: var(--gold); margin-bottom: 0.5rem;
   }
-  .kpi-unit {
-    font-size: 2rem; color: var(--gold-light);
-  }
+  .kpi-unit { font-size: 2rem; color: var(--gold-light); }
   .kpi-title {
     font-family: 'Syne', sans-serif;
-    font-size: 0.8rem; font-weight: 700; letter-spacing: 0.05em;
+    font-size: 0.78rem; font-weight: 700; letter-spacing: 0.05em;
     color: var(--paper); margin-bottom: 0.5rem; text-transform: uppercase;
   }
   .kpi-desc {
     font-family: 'DM Mono', monospace;
-    font-size: 0.6rem; letter-spacing: 0.05em;
+    font-size: 0.58rem; letter-spacing: 0.04em;
     color: var(--warm-mid); line-height: 1.7;
   }
-  .kpi-source {
-    margin-top: 1.2rem;
+  .kpi-benchmark {
+    margin-top: 0.8rem;
     font-family: 'DM Mono', monospace;
-    font-size: 0.55rem; letter-spacing: 0.1em;
-    color: rgba(138,127,114,0.5); text-transform: uppercase;
-    border-top: 1px solid rgba(201,168,76,0.1);
-    padding-top: 0.8rem;
+    font-size: 0.55rem; letter-spacing: 0.04em;
+    color: var(--accent-teal-light);
+    line-height: 1.6;
+    padding: 0.45rem 0.65rem;
+    background: rgba(45,106,106,0.08);
+    border-left: 2px solid var(--accent-teal);
+  }
+  .kpi-source {
+    margin-top: 0.9rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.53rem; letter-spacing: 0.08em;
+    color: var(--warm-mid); opacity: 0.55;
+    text-transform: uppercase;
+    border-top: 1px solid var(--line);
+    padding-top: 0.7rem;
   }
 
   /* ── CAREER ── */
-  #career { background: #0a0a10; }
+  #career { background: var(--surface2); }
 
-  .timeline {
-    position: relative; margin-top: 4rem;
-  }
+  .timeline { position: relative; margin-top: 4rem; }
   .timeline::before {
     content: ''; position: absolute; left: 0; top: 0; bottom: 0;
     width: 1px; background: linear-gradient(180deg, var(--gold), transparent);
@@ -359,8 +661,7 @@
 
   .timeline-item {
     padding-left: 3.5rem; margin-bottom: 5rem;
-    position: relative; opacity: 0;
-    transform: translateY(20px);
+    position: relative; opacity: 0; transform: translateY(20px);
     transition: opacity 0.6s, transform 0.6s;
   }
   .timeline-item.visible { opacity: 1; transform: translateY(0); }
@@ -368,8 +669,7 @@
   .timeline-dot {
     position: absolute; left: -5px; top: 8px;
     width: 11px; height: 11px;
-    background: var(--ink); border: 2px solid var(--gold);
-    border-radius: 50%;
+    background: var(--ink); border: 2px solid var(--gold); border-radius: 50%;
   }
 
   .timeline-meta {
@@ -383,52 +683,44 @@
   .timeline-period {
     font-family: 'DM Mono', monospace; font-size: 0.6rem;
     letter-spacing: 0.15em; color: var(--gold);
-    background: rgba(201,168,76,0.08);
-    border: 1px solid rgba(201,168,76,0.2);
+    background: rgba(184,146,46,0.08);
+    border: 1px solid rgba(184,146,46,0.2);
     padding: 0.2rem 0.8rem;
   }
-
   .timeline-role {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1.2rem; font-style: italic;
     color: var(--accent-teal-light); margin-bottom: 1.5rem;
   }
-
   .timeline-bullets {
-    list-style: none;
-    display: flex; flex-direction: column; gap: 0.9rem;
+    list-style: none; display: flex; flex-direction: column; gap: 0.9rem;
   }
   .timeline-bullets li {
     font-family: 'Cormorant Garamond', serif;
     font-size: 1rem; line-height: 1.7;
-    color: rgba(245,242,236,0.7);
+    color: var(--warm-mid);
     padding-left: 1.5rem; position: relative;
   }
   .timeline-bullets li::before {
     content: '—'; position: absolute; left: 0;
     color: var(--gold); font-size: 0.8rem;
   }
-
   .timeline-highlights {
-    display: flex; gap: 1rem; flex-wrap: wrap;
-    margin-top: 1.5rem;
+    display: flex; gap: 1rem; flex-wrap: wrap; margin-top: 1.5rem;
   }
   .highlight-chip {
-    background: rgba(45,106,106,0.15);
-    border: 1px solid rgba(74,153,153,0.25);
+    background: rgba(45,106,106,0.12);
+    border: 1px solid rgba(45,106,106,0.25);
     color: var(--accent-teal-light);
     padding: 0.3rem 0.9rem;
     font-family: 'DM Mono', monospace;
-    font-size: 0.58rem; letter-spacing: 0.12em;
-    text-transform: uppercase;
+    font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase;
   }
-
   .timeline-earlier {
     padding-left: 3.5rem; padding-top: 3rem;
     border-top: 1px solid var(--line);
     display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
   }
-  .earlier-item {}
   .earlier-co {
     font-family: 'Syne', sans-serif; font-size: 0.9rem; font-weight: 700;
     color: var(--paper); margin-bottom: 0.3rem;
@@ -439,37 +731,33 @@
   }
   .earlier-period {
     font-family: 'DM Mono', monospace; font-size: 0.58rem;
-    color: rgba(138,127,114,0.6); letter-spacing: 0.1em; margin-top: 0.2rem;
+    color: var(--warm-mid); opacity: 0.6; letter-spacing: 0.1em; margin-top: 0.2rem;
   }
 
   /* ── AWARDS ── */
-  #awards { background: #0e0e14; }
+  #awards { background: var(--surface3); }
 
   .awards-grid {
     display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 1px; background: var(--line);
-    border: 1px solid var(--line); margin-top: 4rem;
+    gap: 1.5rem; margin-top: 4rem;
   }
-
   .award-card {
-    background: #0e0e14;
-    padding: 3.5rem 2.5rem;
-    transition: background 0.4s;
+    background: var(--surface);
+    border: 1px solid var(--line);
+    padding: 3rem 2.5rem;
+    transition: box-shadow 0.3s, transform 0.3s;
     position: relative; overflow: hidden;
+    box-shadow: var(--shadow);
   }
-  .award-card:hover { background: rgba(201,168,76,0.04); }
+  .award-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(184,146,46,0.12); }
   .award-card::after {
     content: attr(data-year);
-    position: absolute; right: 2rem; bottom: 2rem;
+    position: absolute; right: 1.5rem; bottom: 1.5rem;
     font-family: 'Cormorant Garamond', serif;
-    font-size: 5rem; font-weight: 300;
-    color: rgba(201,168,76,0.05); line-height: 1;
-    pointer-events: none;
+    font-size: 4.5rem; font-weight: 300;
+    color: var(--line); line-height: 1; pointer-events: none;
   }
-
-  .award-icon {
-    font-size: 2rem; margin-bottom: 1.5rem;
-  }
+  .award-icon { font-size: 2rem; margin-bottom: 1.5rem; }
   .award-title {
     font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700;
     color: var(--gold); margin-bottom: 0.5rem; letter-spacing: 0.03em;
@@ -481,7 +769,7 @@
   }
   .award-desc {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1rem; color: rgba(245,242,236,0.65); line-height: 1.8;
+    font-size: 1rem; color: var(--warm-mid); line-height: 1.8;
   }
 
   /* ── CLIENTS ── */
@@ -492,12 +780,7 @@
     font-size: 1.15rem; color: var(--warm-mid); line-height: 1.9;
     max-width: 760px; margin-bottom: 4rem;
   }
-
-  .clients-regions {
-    display: flex; flex-direction: column; gap: 3.5rem;
-  }
-
-  .clients-region {}
+  .clients-regions { display: flex; flex-direction: column; gap: 3.5rem; }
   .clients-region-label {
     font-family: 'DM Mono', monospace;
     font-size: 0.58rem; letter-spacing: 0.28em; text-transform: uppercase;
@@ -506,132 +789,268 @@
   }
   .clients-region-label::after {
     content: ''; flex: 1; height: 1px;
-    background: linear-gradient(90deg, rgba(201,168,76,0.2), transparent);
+    background: linear-gradient(90deg, var(--line), transparent);
   }
-
   .clients-marquee-wrapper {
     overflow: hidden;
     -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
     mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
   }
-
   .clients-track {
     display: flex; gap: 0; width: max-content;
     animation: marquee 28s linear infinite;
   }
   .clients-track:hover { animation-play-state: paused; }
-  .clients-track-reverse {
-    animation-direction: reverse;
-    animation-duration: 32s;
-  }
-
+  .clients-track-reverse { animation-direction: reverse; animation-duration: 32s; }
   @keyframes marquee {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
   }
-
   .client-pill {
     display: inline-flex; align-items: center;
-    padding: 0.65rem 1.6rem;
-    margin: 0 0.5rem;
-    border: 1px solid rgba(201,168,76,0.15);
-    background: rgba(201,168,76,0.04);
-    white-space: nowrap;
-    transition: all 0.25s;
-    cursor: default;
+    padding: 0.65rem 1.6rem; margin: 0 0.5rem;
+    border: 1px solid var(--line);
+    background: var(--surface);
+    white-space: nowrap; transition: all 0.25s; cursor: default;
+    box-shadow: var(--shadow);
   }
-  .client-pill:hover {
-    border-color: var(--gold);
-    background: rgba(201,168,76,0.1);
-    transform: translateY(-2px);
-  }
+  .client-pill:hover { border-color: var(--gold); background: var(--surface2); transform: translateY(-2px); }
   .client-pill-name {
     font-family: 'Syne', sans-serif; font-size: 0.75rem; font-weight: 600;
-    letter-spacing: 0.05em; color: rgba(245,242,236,0.75);
-    transition: color 0.25s;
+    letter-spacing: 0.05em; color: var(--paper); transition: color 0.25s;
   }
   .client-pill:hover .client-pill-name { color: var(--gold); }
-
-  .clients-all-grid {
-    display: flex; flex-wrap: wrap; gap: 0.75rem;
-    margin-top: 1.2rem;
-  }
-
   .clients-stat-bar {
     display: grid; grid-template-columns: repeat(4, 1fr);
     gap: 1px; background: var(--line);
-    border: 1px solid var(--line);
-    margin-bottom: 4rem;
+    border: 1px solid var(--line); margin-bottom: 4rem;
   }
   .clients-stat-cell {
-    background: var(--ink);
-    padding: 2rem 1.5rem; text-align: center;
+    background: var(--surface); padding: 2rem 1.5rem; text-align: center;
   }
   .clients-stat-num {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 2.8rem; font-weight: 300; color: var(--gold); line-height: 1;
-    margin-bottom: 0.4rem;
+    font-size: 2.8rem; font-weight: 300; color: var(--gold); line-height: 1; margin-bottom: 0.4rem;
   }
   .clients-stat-lbl {
     font-family: 'DM Mono', monospace; font-size: 0.58rem;
-    letter-spacing: 0.15em; text-transform: uppercase; color: var(--warm-mid);
-    line-height: 1.5;
+    letter-spacing: 0.15em; text-transform: uppercase; color: var(--warm-mid); line-height: 1.5;
+  }
+
+  /* ── TESTIMONIALS — Collapsible accordion style ── */
+  #testimonials { background: var(--surface2); }
+
+  .testimonials-intro {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem; color: var(--warm-mid); line-height: 1.9;
+    max-width: 640px; margin-bottom: 3rem;
+  }
+
+  .testimonials-list {
+    display: flex; flex-direction: column;
+    border: 1px solid var(--line);
+    margin-top: 1rem;
+  }
+
+  .t-item {
+    border-bottom: 1px solid var(--line);
+    overflow: hidden;
+    background: var(--surface);
+    transition: background 0.3s;
+  }
+  .t-item:last-child { border-bottom: none; }
+  .t-item.t-open { background: var(--surface2); }
+
+  .t-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 1.4rem 2rem; cursor: pointer;
+    user-select: none;
+    gap: 1.5rem;
+  }
+  .t-header:hover { background: var(--surface3); }
+
+  .t-header-left {
+    display: flex; align-items: center; gap: 1.5rem; flex: 1; min-width: 0;
+  }
+  .t-avatar {
+    width: 42px; height: 42px; border-radius: 50%;
+    background: var(--gold); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Syne', sans-serif; font-size: 0.85rem; font-weight: 700;
+    color: white;
+  }
+  .t-header-info { min-width: 0; }
+  .t-name {
+    font-family: 'Syne', sans-serif; font-size: 0.9rem; font-weight: 700;
+    color: var(--paper); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+  }
+  .t-role-line {
+    font-family: 'DM Mono', monospace; font-size: 0.58rem;
+    letter-spacing: 0.08em; color: var(--accent-teal-light);
+    text-transform: uppercase; line-height: 1.5; margin-top: 0.2rem;
+  }
+  .t-relation {
+    font-family: 'DM Mono', monospace; font-size: 0.53rem;
+    color: var(--warm-mid); opacity: 0.6; margin-top: 0.1rem;
+  }
+
+  .t-chevron {
+    font-size: 0.75rem; color: var(--gold); transition: transform 0.3s;
+    flex-shrink: 0; font-style: normal;
+  }
+  .t-open .t-chevron { transform: rotate(180deg); }
+
+  .t-body {
+    max-height: 0; overflow: hidden;
+    transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1), padding 0.3s;
+    padding: 0 2rem;
+  }
+  .t-open .t-body { max-height: 500px; padding: 0 2rem 2rem; }
+
+  .t-quote-mark {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem; line-height: 0.5; color: var(--gold); opacity: 0.2;
+    display: block; margin-bottom: 0.8rem;
+  }
+  .t-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem; font-style: italic; font-weight: 300;
+    color: var(--warm-mid); line-height: 1.85;
+    border-left: 2px solid var(--gold); padding-left: 1.5rem;
+  }
+
+  /* ── CASE STUDIES — Tabbed ── */
+  #casestudies { background: var(--surface3); }
+
+  .cs-tabs {
+    display: flex; gap: 0; margin-top: 3rem;
+    border-bottom: 1px solid var(--line);
+    overflow-x: auto;
+  }
+  .cs-tab-btn {
+    font-family: 'DM Mono', monospace; font-size: 0.6rem;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--warm-mid); background: none; border: none;
+    padding: 0.9rem 1.5rem; cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px; transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .cs-tab-btn:hover { color: var(--gold); }
+  .cs-tab-btn.cs-active {
+    color: var(--gold); border-bottom-color: var(--gold);
+    background: var(--surface);
+  }
+
+  .cs-panels { margin-top: 0; }
+
+  .cs-panel {
+    display: none;
+    background: var(--surface);
+    border: 1px solid var(--line); border-top: none;
+    padding: 3rem;
+    box-shadow: var(--shadow);
+  }
+  .cs-panel.cs-visible { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; }
+  .cs-panel-left {}
+  .cs-panel-right {}
+
+  .cs-tag {
+    font-family: 'DM Mono', monospace; font-size: 0.55rem;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--accent-teal-light);
+    background: rgba(45,106,106,0.1);
+    border: 1px solid rgba(45,106,106,0.2);
+    padding: 0.25rem 0.75rem; display: inline-block; margin-bottom: 1.2rem;
+  }
+  .cs-title {
+    font-family: 'Syne', sans-serif; font-size: 1.1rem; font-weight: 700;
+    color: var(--paper); margin-bottom: 0.4rem; line-height: 1.3;
+  }
+  .cs-company {
+    font-family: 'DM Mono', monospace; font-size: 0.58rem;
+    letter-spacing: 0.15em; color: var(--warm-mid);
+    text-transform: uppercase; margin-bottom: 2rem;
+  }
+  .cs-block { margin-bottom: 1.5rem; }
+  .cs-section-label {
+    font-family: 'DM Mono', monospace; font-size: 0.58rem;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 0.5rem;
+    display: flex; align-items: center; gap: 0.6rem;
+  }
+  .cs-section-label::before {
+    content: ''; width: 20px; height: 1px; background: var(--gold); flex-shrink: 0;
+  }
+  .cs-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem; line-height: 1.85; color: var(--warm-mid);
+  }
+  .cs-outcomes {
+    display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.5rem;
+  }
+  .cs-outcome-chip {
+    background: rgba(184,146,46,0.08);
+    border: 1px solid rgba(184,146,46,0.2);
+    color: var(--gold); padding: 0.3rem 0.85rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.57rem; letter-spacing: 0.1em; text-transform: uppercase;
   }
 
   /* ── SKILLS ── */
-  #skills { background: #0e0e14; }
+  #skills { background: var(--surface2); }
 
   .skills-grid {
     display: grid; grid-template-columns: repeat(3, 1fr);
-    gap: 2.5rem; margin-top: 4rem;
+    gap: 1.5rem; margin-top: 4rem;
   }
-
-  .skill-cluster { }
+  .skill-cluster {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    padding: 2rem;
+    box-shadow: var(--shadow);
+  }
   .skill-cluster-name {
     font-family: 'DM Mono', monospace;
     font-size: 0.6rem; letter-spacing: 0.2em; text-transform: uppercase;
     color: var(--gold); margin-bottom: 1.2rem;
-    padding-bottom: 0.8rem;
-    border-bottom: 1px solid var(--line);
+    padding-bottom: 0.8rem; border-bottom: 1px solid var(--line);
   }
-  .skill-list {
-    list-style: none;
-    display: flex; flex-direction: column; gap: 0.6rem;
-  }
+  .skill-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; }
   .skill-list li {
     font-family: 'Syne', sans-serif; font-size: 0.8rem; font-weight: 600;
-    color: rgba(245,242,236,0.75);
-    padding-left: 1rem; position: relative;
-    letter-spacing: 0.02em;
-    transition: color 0.2s;
+    color: var(--warm-mid); padding-left: 1rem; position: relative;
+    letter-spacing: 0.02em; transition: color 0.2s;
   }
-  .skill-list li::before {
-    content: '›'; position: absolute; left: 0; color: var(--gold);
-  }
+  .skill-list li::before { content: '›'; position: absolute; left: 0; color: var(--gold); }
   .skill-list li:hover { color: var(--paper); }
 
-  /* ── CERTS / EDU ── */
-  #credentials { background: #0a0a10; }
+  /* ── CREDENTIALS — Card Style ── */
+  #credentials { background: var(--surface3); }
 
   .creds-grid {
     display: grid; grid-template-columns: 1fr 1fr;
-    gap: 5rem; margin-top: 4rem;
+    gap: 2.5rem; margin-top: 4rem;
   }
-
   .cred-group-title {
     font-family: 'DM Mono', monospace;
     font-size: 0.6rem; letter-spacing: 0.25em; text-transform: uppercase;
-    color: var(--gold); margin-bottom: 2rem;
+    color: var(--gold); margin-bottom: 1.5rem;
     padding-bottom: 0.8rem; border-bottom: 1px solid var(--line);
   }
-
-  .cred-item {
-    padding: 1.5rem 0; border-bottom: 1px solid rgba(201,168,76,0.08);
+  .cred-cards { display: flex; flex-direction: column; gap: 1rem; }
+  .cred-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--gold);
+    padding: 1.5rem 1.8rem;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s, box-shadow 0.2s;
   }
-  .cred-item:last-child { border-bottom: none; }
-
+  .cred-card:hover { transform: translateX(4px); box-shadow: 0 4px 20px rgba(184,146,46,0.1); }
+  .cred-icon { font-size: 1.2rem; margin-bottom: 0.7rem; }
   .cred-title {
-    font-family: 'Syne', sans-serif; font-size: 0.85rem; font-weight: 700;
+    font-family: 'Syne', sans-serif; font-size: 0.88rem; font-weight: 700;
     color: var(--paper); margin-bottom: 0.3rem;
   }
   .cred-org {
@@ -640,66 +1059,54 @@
   }
   .cred-year {
     font-family: 'DM Mono', monospace; font-size: 0.58rem;
-    letter-spacing: 0.1em; color: rgba(138,127,114,0.5); margin-top: 0.2rem;
+    letter-spacing: 0.1em; color: var(--warm-mid); opacity: 0.55; margin-top: 0.3rem;
   }
 
   /* ── CONTACT ── */
   #contact {
-    background: linear-gradient(135deg, #0a0a0f 0%, #0f1010 50%, #090d0d 100%);
+    background: var(--surface2);
     border-top: 1px solid var(--line);
   }
-
   .contact-inner {
     max-width: 1200px; margin: 0 auto; padding: 0 4rem;
     display: grid; grid-template-columns: 1fr 1fr;
     gap: 6rem; align-items: center;
   }
-
   .contact-headline {
     font-family: 'Cormorant Garamond', serif;
     font-size: clamp(2.5rem, 4vw, 4.5rem);
-    font-weight: 300; line-height: 1.1; color: var(--paper);
-    margin-bottom: 2rem;
+    font-weight: 300; line-height: 1.1; color: var(--paper); margin-bottom: 2rem;
   }
   .contact-headline em { color: var(--gold); font-style: italic; }
-
   .contact-sub {
     font-family: 'Cormorant Garamond', serif;
-    font-size: 1.15rem; color: var(--warm-mid); line-height: 1.8;
-    margin-bottom: 3rem;
+    font-size: 1.15rem; color: var(--warm-mid); line-height: 1.8; margin-bottom: 3rem;
   }
-
-  .contact-details {
-    display: flex; flex-direction: column; gap: 1.5rem;
-  }
-
-  .contact-row {
-    display: flex; align-items: center; gap: 1.5rem;
-  }
+  .contact-details { display: flex; flex-direction: column; gap: 1.5rem; }
+  .contact-row { display: flex; align-items: center; gap: 1.5rem; }
   .contact-icon {
-    width: 40px; height: 40px;
-    border: 1px solid var(--line);
+    width: 40px; height: 40px; border: 1px solid var(--line);
     display: flex; align-items: center; justify-content: center;
-    color: var(--gold); font-size: 0.9rem;
-    flex-shrink: 0;
+    color: var(--gold); font-size: 0.9rem; flex-shrink: 0;
+    background: var(--surface); box-shadow: var(--shadow);
   }
   .contact-text {
     font-family: 'DM Mono', monospace; font-size: 0.72rem;
-    letter-spacing: 0.08em; color: var(--cream);
+    letter-spacing: 0.08em; color: var(--paper);
   }
   .contact-text a { color: inherit; text-decoration: none; }
   .contact-text a:hover { color: var(--gold); }
 
   /* ── FOOTER ── */
   footer {
-    background: var(--ink);
+    background: var(--surface);
     border-top: 1px solid var(--line);
     padding: 2rem 4rem;
     display: flex; justify-content: space-between; align-items: center;
   }
   .footer-note {
     font-family: 'DM Mono', monospace; font-size: 0.58rem;
-    letter-spacing: 0.12em; color: rgba(138,127,114,0.4);
+    letter-spacing: 0.12em; color: var(--warm-mid); opacity: 0.5;
     text-transform: uppercase;
   }
 
@@ -708,12 +1115,7 @@
     from { opacity: 0; transform: translateY(30px); }
     to { opacity: 1; transform: translateY(0); }
   }
-  @keyframes fadeIn {
-    from { opacity: 0; } to { opacity: 1; }
-  }
-  @keyframes lineGrow {
-    from { transform: scaleX(0); } to { transform: scaleX(1); }
-  }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
   .hero-eyebrow { animation: fadeIn 1s ease forwards; }
   .hero-name { animation: fadeUp 1s 0.2s ease both; }
@@ -721,9 +1123,6 @@
   .hero-tagline { animation: fadeUp 1s 0.6s ease both; }
   .hero-ctas { animation: fadeUp 1s 0.8s ease both; }
   .hero-stats-grid { animation: fadeUp 1s 0.5s ease both; }
-
-  /* ── COUNTER ANIMATION ── */
-  .kpi-number[data-target] { transition: none; }
 
   /* ── RESPONSIVE ── */
   @media (max-width: 900px) {
@@ -740,6 +1139,7 @@
     .creds-grid { grid-template-columns: 1fr; }
     .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
     .timeline-earlier { grid-template-columns: 1fr; }
+    .cs-panel.cs-visible { grid-template-columns: 1fr; }
     footer { flex-direction: column; gap: 1rem; text-align: center; }
   }
   @media (max-width: 600px) {
@@ -747,10 +1147,7 @@
     .skills-grid { grid-template-columns: 1fr; }
   }
 
-  /* Decorative corner */
-  .corner-deco {
-    position: absolute; width: 60px; height: 60px; pointer-events: none;
-  }
+  .corner-deco { position: absolute; width: 60px; height: 60px; pointer-events: none; }
   .corner-deco-tl { top: 0; left: 0; border-top: 2px solid var(--gold); border-left: 2px solid var(--gold); }
   .corner-deco-br { bottom: 0; right: 0; border-bottom: 2px solid var(--gold); border-right: 2px solid var(--gold); }
 </style>
@@ -765,20 +1162,38 @@
     <li><a href="#impact">Impact</a></li>
     <li><a href="#career">Experience</a></li>
     <li><a href="#clients">Clients</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="#casestudies">Case Studies</a></li>
     <li><a href="#awards">Awards</a></li>
     <li><a href="#skills">Expertise</a></li>
-    <li><a href="#contact">Engage</a></li>
+    <li><a href="#contact">Contact</a></li>
   </ul>
+  <div style="display:flex;gap:0.6rem;align-items:center;">
+    <button class="hamburger" id="hamburger" aria-label="Menu">☰</button>
+    <button class="theme-toggle" id="themeToggle" title="Toggle dark/light mode">🌙</button>
+  </div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+  <a href="#about" onclick="closeMobileNav()">About</a>
+  <a href="#impact" onclick="closeMobileNav()">Impact</a>
+  <a href="#career" onclick="closeMobileNav()">Experience</a>
+  <a href="#clients" onclick="closeMobileNav()">Clients</a>
+  <a href="#testimonials" onclick="closeMobileNav()">Testimonials</a>
+  <a href="#casestudies" onclick="closeMobileNav()">Case Studies</a>
+  <a href="#awards" onclick="closeMobileNav()">Awards</a>
+  <a href="#skills" onclick="closeMobileNav()">Expertise</a>
+  <a href="#contact" onclick="closeMobileNav()">Contact</a>
+</div>
 </nav>
 
 <!-- HERO -->
 <section id="hero">
   <div class="hero-left">
-    <div class="hero-eyebrow">Independent Consultant · AI & CX Transformation · Mumbai, India</div>
+    <div class="hero-eyebrow">Consultant · AI &amp; CX Transformation · Mumbai, India</div>
     <h1 class="hero-name">Sumit<br><span>Nandy</span></h1>
-    <div class="hero-title">AI & CX Transformation Consultant &nbsp;·&nbsp; Enterprise Advisor &nbsp;·&nbsp; Independent Practice</div>
+    <div class="hero-title">AI &amp; CX Transformation Consultant &nbsp;·&nbsp; Enterprise Advisor</div>
     <p class="hero-tagline">
-      I help enterprises design and deploy AI strategies that transform customer experience, eliminate operational friction, and drive measurable ROI — as an independent advisor with 26+ years of enterprise depth across BFSI, HCM, and SaaS.
+      I help enterprises design and deploy AI strategies that transform customer experience, eliminate operational friction, and drive measurable ROI — as an advisor with 26+ years of enterprise depth across HCM and SaaS products. Helped choose the right product increasing operation efficiency and improving productivity.
     </p>
     <div class="hero-ctas">
       <a href="#contact" class="btn-primary">Engage for a Project</a>
@@ -797,8 +1212,8 @@
         <div class="hero-stat-label">Customer<br>Retention<br>Rate</div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num">$7<span style="font-size:1.5rem">M+</span></div>
-        <div class="hero-stat-label">Annual<br>Business<br>Portfolio</div>
+        <div class="hero-stat-num">30<span style="font-size:1.5rem">+</span></div>
+        <div class="hero-stat-label">Enterprise<br>Accounts<br>Managed</div>
       </div>
       <div class="hero-stat">
         <div class="hero-stat-num">6</div>
@@ -817,9 +1232,9 @@
       <div class="about-left">
         <h2 class="section-heading">Advisor. <em>Builder.</em><br>Transformer.</h2>
         <blockquote class="about-quote">
-          "He has demonstrated exceptional leadership and outcome focus, consistently aligning technology with business transformation goals."
+          "He always took ownership of challenges, collaborated effectively across teams, and worked diligently to find solutions that benefited both customers and the organisation."
         </blockquote>
-        <div class="about-quote-attr">— Ruchir Dave, Head of HR Customer Advisory, SAP SuccessFactors</div>
+        <div class="about-quote-attr">— Jithender Reddy, VP AI Automation, Cloud4C Services</div>
         <div class="global-exposure">
           <div class="global-label">Global Assignments</div>
           <div class="global-countries">
@@ -835,10 +1250,13 @@
       </div>
       <div class="about-right">
         <p class="about-body">
-          Sumit Nandy is an independent AI and CX transformation consultant with 26+ years of global enterprise experience spanning IBM, Accenture, SAP, Cornerstone OnDemand, Cloud4C, and ZingHR. He has designed and deployed AI-powered tools that redefine customer success, operational efficiency, and business growth — from an award-winning Digital Concierge at SAP to intelligent payroll automation for 250K+ SBI employees.
+          Across 26 years and 30+ enterprise engagements, one theme emerges consistently in how clients describe Sumit: he ensures solutions are <em>used</em>, not just implemented. Whether stabilising India's largest PSU Bank's BFSI payroll landscape, steering SuccessFactors transformations across India and Japan, or driving adoption at global enterprises in Hong Kong and the Netherlands — clients note that Sumit's drive to deliver real outcomes sets him apart.
         </p>
         <p class="about-body" style="margin-top:1.5rem">
-          As an independent advisor, Sumit partners with CXOs, CHROs, and boards to translate AI strategy into delivered outcomes. He brings end-to-end consulting capability — from diagnostic and roadmap design to tool build, deployment, and adoption — across BFSI, SaaS, HCM, and cloud-managed services. Whether you need to build an AI Centre of Excellence, modernize your CX function, or accelerate intelligent automation, Sumit delivers results with accountability.
+          Leaders who have worked with him highlight a rare combination: the technical depth to navigate complex enterprise landscapes, and the strategic instinct to identify risks early and steer programmes before they go off-track. He is described as a long-term thinking partner — someone who speaks his mind in the interest of the project, advocates persistently for the client with product and vendor teams, and builds the kind of trust that outlasts individual engagements.
+        </p>
+        <p class="about-body" style="margin-top:1.5rem">
+          What clients consistently value most is his accountability beyond the contract. He takes ownership of challenges, collaborates across teams to find solutions that work for both the client and the organisation, and maintains the kind of transparency that keeps everyone aligned — even through delays and disruptions. The result, as one client put it, is always an all-round win-win.
         </p>
         <div class="about-tags">
           <span class="tag">AI Strategy & Roadmaps</span>
@@ -871,50 +1289,58 @@
       <div class="kpi-card">
         <div class="kpi-number"><span class="counter" data-target="94">0</span><span class="kpi-unit">%</span></div>
         <div class="kpi-title">Customer Retention</div>
-        <div class="kpi-desc">Retention rate achieved through AI-powered health scoring and predictive engagement</div>
-        <div class="kpi-source">MarketsandMarkets · 2022–2023</div>
+        <div class="kpi-desc">Sustained retention via AI-powered health scoring and predictive engagement across 4 CX roles spanning 10 years</div>
+        <div class="kpi-benchmark">Industry avg: 72–85% · Source: Gainsight CS Index 2023</div>
+        <div class="kpi-source">Cornerstone · SAP · M&amp;M · Cloud4C · 2015–2025</div>
       </div>
       <div class="kpi-card">
         <div class="kpi-number"><span class="counter" data-target="40">0</span><span class="kpi-unit">%+</span></div>
-        <div class="kpi-title">Manual Reduction</div>
-        <div class="kpi-desc">Reduction in manual intervention via AI-led automation for SBI's payroll & pension ops</div>
-        <div class="kpi-source">ZingHR / SBI · 2025</div>
+        <div class="kpi-title">Manual Process Reduction</div>
+        <div class="kpi-desc">Reduction in manual intervention via AI-led automation — 6.6 Lakh users, 150+ HR services across payroll & pension</div>
+        <div class="kpi-benchmark">Industry avg: 20–30% · Source: McKinsey Automation Report 2023</div>
+        <div class="kpi-source">SAP · M&amp;M · Cloud4C · ZingHR · 2018–2025</div>
       </div>
       <div class="kpi-card">
         <div class="kpi-number"><span class="counter" data-target="37">0</span><span class="kpi-unit">%</span></div>
         <div class="kpi-title">Operational Efficiency</div>
-        <div class="kpi-desc">Efficiency improvement via intelligent automation and AI-augmented decision tools</div>
-        <div class="kpi-source">MarketsandMarkets · 2022–2023</div>
+        <div class="kpi-desc">Efficiency improvement via intelligent automation and AI-augmented decision tools across enterprise accounts</div>
+        <div class="kpi-benchmark">Industry avg: 15–25% · Source: Deloitte AI Enterprise Survey 2023</div>
+        <div class="kpi-source">M&amp;M · Cloud4C · ZingHR · 2022–2025</div>
       </div>
       <div class="kpi-card">
         <div class="kpi-number"><span class="counter" data-target="36">0</span><span class="kpi-unit">%</span></div>
         <div class="kpi-title">CSAT Improvement</div>
-        <div class="kpi-desc">Increase in customer satisfaction scores via AI-assisted change management at SAP</div>
-        <div class="kpi-source">SAP India · 2018–2022</div>
+        <div class="kpi-desc">Increase in customer satisfaction scores via AI-assisted change management and adoption programmes</div>
+        <div class="kpi-benchmark">Industry avg: 10–15% · Source: Forrester CX Index 2023</div>
+        <div class="kpi-source">CSOD · SAP · M&amp;M · 2015–2023</div>
       </div>
       <div class="kpi-card">
         <div class="kpi-number"><span class="counter" data-target="27">0</span><span class="kpi-unit">%</span></div>
-        <div class="kpi-title">Ticket Reduction</div>
-        <div class="kpi-desc">Reduction in service tickets via AI-powered Digital Concierge self-service tool</div>
-        <div class="kpi-source">SAP APJ Innovation Award · 2021</div>
+        <div class="kpi-title">Support Ticket Reduction</div>
+        <div class="kpi-desc">Reduction in service tickets via AI-powered Digital Concierge self-service tool — SAP APJ Innovation Award 2021</div>
+        <div class="kpi-benchmark">Industry avg: 15–20% · Source: Gartner IT Service Desk 2022</div>
+        <div class="kpi-source">SAP APJ · 2021</div>
       </div>
       <div class="kpi-card">
         <div class="kpi-number"><span class="counter" data-target="20">0</span><span class="kpi-unit">%+</span></div>
         <div class="kpi-title">Expansion Revenue</div>
-        <div class="kpi-desc">Revenue growth through AI-assisted health monitoring and predictive upsell playbooks</div>
-        <div class="kpi-source">MarketsandMarkets · 2022–2023</div>
+        <div class="kpi-desc">Revenue growth through AI-assisted health monitoring, behavioural signals analysis and predictive upsell playbooks</div>
+        <div class="kpi-benchmark">Industry NRR avg: 10–15% · Source: OpenView SaaS Benchmarks 2023</div>
+        <div class="kpi-source">CSOD · SAP · M&amp;M · 2015–2023</div>
       </div>
       <div class="kpi-card">
         <div class="kpi-number"><span class="counter" data-target="18">0</span><span class="kpi-unit">%</span></div>
         <div class="kpi-title">CX Index Uplift</div>
-        <div class="kpi-desc">Improvement in customer experience index through data-driven AI strategy</div>
-        <div class="kpi-source">MarketsandMarkets · 2022–2023</div>
+        <div class="kpi-desc">Improvement in customer experience index through data-driven AI strategy and proactive account management</div>
+        <div class="kpi-benchmark">Industry avg: 8–12% · Source: PwC CX Report 2023</div>
+        <div class="kpi-source">SAP · M&amp;M · CSOD · 2015–2023</div>
       </div>
       <div class="kpi-card">
         <div class="kpi-number"><span class="counter" data-target="12">0</span><span class="kpi-unit">%</span></div>
-        <div class="kpi-title">Cost Reduction</div>
-        <div class="kpi-desc">Client IT landscape optimization via AI-driven analysis and intelligent automation</div>
-        <div class="kpi-source">Cloud4C · 2023–2025</div>
+        <div class="kpi-title">Client Cost Reduction</div>
+        <div class="kpi-desc">IT landscape optimisation via AI-driven analysis, cloud rightsizing and intelligent automation advisory</div>
+        <div class="kpi-benchmark">Industry avg: 8–10% · Source: IDC Cloud ROI Study 2023</div>
+        <div class="kpi-source">SAP · M&amp;M · Cloud4C · 2018–2025</div>
       </div>
     </div>
   </div>
@@ -935,13 +1361,17 @@
         </div>
         <div class="timeline-role">CX Director & AI Innovation Lead — Enterprise Solutions</div>
         <ul class="timeline-bullets">
-          <li>Pioneered AI-powered process analysis tools embedded in ZingHR's enterprise HRMS platform — delivering intelligent dashboards, automated anomaly detection, and AI-driven workflow optimization for 250K+ employees and 350K+ pensioners at SBI.</li>
-          <li>Architected AI-led automation frameworks reducing manual payroll intervention by 40%+ with zero-error, audit-ready processing in India's most complex BFSI payroll environment.</li>
-          <li>Designed persona-based AI dashboards and intelligent ticketing systems using ML to prioritize, route, and resolve HR service requests — improving resolution speed and operational predictability.</li>
-          <li>Built AI-powered onboarding modernization tools integrating NLP for document digitization and intelligent process mapping, cutting onboarding cycle times significantly.</li>
+          <li>Spearheaded large-scale stabilisation and transformation of India's largest PSU Bank's HRMS landscape — spanning payroll, pension, claims, transfers, foreign postings, and core HR for 250K+ employees and 350K+ pensioners — strengthening compliance, resilience, and risk controls.</li>
+          <li>Directed mission-critical payroll and pension operations, ensuring precise, timely, and audit-ready disbursements across one of India's largest BFSI payroll environments.</li>
+          <li>Drove enterprise HR digitisation including onboarding modernisation, AI-led automation, persona-based dashboards, and a fit-for-purpose ticketing platform aligned to complex business and control needs.</li>
+          <li>Established target operating models, SOPs, and governance frameworks — accelerating efficiency, predictability, and issue resolution across HR, IT, payroll, and multi-vendor ecosystems.</li>
+          <li>Advised senior leadership, translating business priorities into scalable architectures, de-risking delivery, and steering complex programmes in a highly regulated BFSI environment.</li>
+          <li>Built an AI-powered Ticketing tool to prioritise, route, and resolve HR service requests — improving resolution speed and operational predictability.</li>
+          <li>Created an AI Roadmap and implemented key AI Agents capable of performing transactions and key process actions based on natural language prompts.</li>
+          <li>Designed persona-based AI dashboards for leadership to drive strategic decisions with real-time operational intelligence.</li>
         </ul>
         <div class="timeline-highlights">
-          <span class="highlight-chip">SBI BFSI Payroll</span>
+          <span class="highlight-chip">Largest PSU Bank</span>
           <span class="highlight-chip">AI Dashboards</span>
           <span class="highlight-chip">NLP Automation</span>
           <span class="highlight-chip">250K+ Employees</span>
@@ -995,7 +1425,7 @@
         </div>
         <div class="timeline-role">Customer Success Partner, Senior Advisor</div>
         <ul class="timeline-bullets">
-          <li>Conceptualized and deployed the "Digital Concierge" — an AI-powered self-service intelligence tool recognized with the <strong style="color:var(--gold)">SAP APJ Grassroots Innovation Award (2021)</strong> by the APJ President & Board Member. Achieved 27% reduction in service tickets.</li>
+          <li>Conceptualized and deployed the "Digital Concierge" — an AI-powered self-service intelligence tool recognised with the <strong style="color:var(--gold)">SAP APJ Grassroots Innovation Award (2021)</strong> by the APJ President &amp; Board Member, accelerating self-service adoption across enterprise accounts.</li>
           <li>Directed the $7M+ annual SuccessFactors business, advising enterprise clients across India and Japan on AI-augmented digital HR transformation.</li>
           <li>Led high-impact CS programs enabling AI-assisted change management, resulting in 36% increase in customer satisfaction scores.</li>
           <li>Recognized in "League of Customer Champions" (2020) and earned "Business Cloud Champion – Gold" (2019) for highest cloud sales revenue in a single quarter.</li>
@@ -1037,6 +1467,21 @@
           <div class="earlier-role">Package Solution Consultant (HCM)</div>
           <div class="earlier-period">Mar 2004 – Feb 2010</div>
         </div>
+        <div class="earlier-item">
+          <div class="earlier-co">Convergys Services Pvt. Ltd.</div>
+          <div class="earlier-role">Customer Care Officer</div>
+          <div class="earlier-period">Apr 2003 – Mar 2004</div>
+        </div>
+        <div class="earlier-item">
+          <div class="earlier-co">Phoebus Creations Media Pvt. Ltd.</div>
+          <div class="earlier-role">Senior Executive – Human Resource</div>
+          <div class="earlier-period">Jan 2002 – Apr 2003</div>
+        </div>
+        <div class="earlier-item">
+          <div class="earlier-co">Global Reach Pvt. Ltd.</div>
+          <div class="earlier-role">Senior Executive – Human Resource</div>
+          <div class="earlier-period">Jan 2000 – Jan 2002</div>
+        </div>
       </div>
 
     </div>
@@ -1053,7 +1498,7 @@
         <div class="award-icon">🏆</div>
         <div class="award-title">SAP APJ Grassroots Innovation Award</div>
         <div class="award-org">SAP — APJ President & Board Member · 2021</div>
-        <div class="award-desc">Recognized for conceptualizing and deploying the AI-powered "Digital Concierge" — a self-service intelligence tool that transformed customer engagement and drove a 27% reduction in service tickets across the APJ region.</div>
+        <div class="award-desc">Recognised for conceptualising and deploying the AI-powered "Digital Concierge" — a self-service intelligence tool that transformed customer engagement and accelerated self-service adoption across the APJ region.</div>
       </div>
       <div class="award-card" data-year="2020">
         <div class="award-icon">🎖️</div>
@@ -1083,7 +1528,7 @@
     <!-- Stats bar -->
     <div class="clients-stat-bar">
       <div class="clients-stat-cell">
-        <div class="clients-stat-num">23<span style="font-size:1.4rem">+</span></div>
+        <div class="clients-stat-num">30<span style="font-size:1.4rem">+</span></div>
         <div class="clients-stat-lbl">Enterprise<br>Clients</div>
       </div>
       <div class="clients-stat-cell">
@@ -1107,25 +1552,27 @@
         <div class="clients-region-label">Global &amp; Multi-National</div>
         <div class="clients-marquee-wrapper">
           <div class="clients-track">
-            <div class="client-pill"><span class="client-pill-name">Abbott Laboratories</span></div>
-            <div class="client-pill"><span class="client-pill-name">Kraft Foods</span></div>
-            <div class="client-pill"><span class="client-pill-name">United Utilities</span></div>
-            <div class="client-pill"><span class="client-pill-name">BHP Billiton</span></div>
-            <div class="client-pill"><span class="client-pill-name">Australian Government</span></div>
-            <div class="client-pill"><span class="client-pill-name">Alcatel-Lucent</span></div>
-            <div class="client-pill"><span class="client-pill-name">Cathay Pacific</span></div>
-            <div class="client-pill"><span class="client-pill-name">Jaguar Land Rover</span></div>
-            <div class="client-pill"><span class="client-pill-name">VFS Global</span></div>
-            <!-- duplicate for seamless loop -->
-            <div class="client-pill"><span class="client-pill-name">Abbott Laboratories</span></div>
-            <div class="client-pill"><span class="client-pill-name">Kraft Foods</span></div>
-            <div class="client-pill"><span class="client-pill-name">United Utilities</span></div>
-            <div class="client-pill"><span class="client-pill-name">BHP Billiton</span></div>
-            <div class="client-pill"><span class="client-pill-name">Australian Government</span></div>
-            <div class="client-pill"><span class="client-pill-name">Alcatel-Lucent</span></div>
-            <div class="client-pill"><span class="client-pill-name">Cathay Pacific</span></div>
-            <div class="client-pill"><span class="client-pill-name">Jaguar Land Rover</span></div>
-            <div class="client-pill"><span class="client-pill-name">VFS Global</span></div>
+            <div class="client-pill"><span class="client-pill-name">Abbott Laboratories</span><span class="client-pill-sector">Healthcare</span></div>
+            <div class="client-pill"><span class="client-pill-name">Kraft Foods</span><span class="client-pill-sector">FMCG</span></div>
+            <div class="client-pill"><span class="client-pill-name">United Utilities</span><span class="client-pill-sector">Utilities</span></div>
+            <div class="client-pill"><span class="client-pill-name">BHP Billiton</span><span class="client-pill-sector">Mining</span></div>
+            <div class="client-pill"><span class="client-pill-name">Anglo American</span><span class="client-pill-sector">Mining</span></div>
+            <div class="client-pill"><span class="client-pill-name">Australian Government</span><span class="client-pill-sector">Public Sector</span></div>
+            <div class="client-pill"><span class="client-pill-name">Alcatel-Lucent</span><span class="client-pill-sector">Telecom</span></div>
+            <div class="client-pill"><span class="client-pill-name">Cathay Pacific</span><span class="client-pill-sector">Aviation</span></div>
+            <div class="client-pill"><span class="client-pill-name">Jaguar Land Rover</span><span class="client-pill-sector">Automotive</span></div>
+            <div class="client-pill"><span class="client-pill-name">VFS Global</span><span class="client-pill-sector">Services</span></div>
+            <!-- duplicate -->
+            <div class="client-pill"><span class="client-pill-name">Abbott Laboratories</span><span class="client-pill-sector">Healthcare</span></div>
+            <div class="client-pill"><span class="client-pill-name">Kraft Foods</span><span class="client-pill-sector">FMCG</span></div>
+            <div class="client-pill"><span class="client-pill-name">United Utilities</span><span class="client-pill-sector">Utilities</span></div>
+            <div class="client-pill"><span class="client-pill-name">BHP Billiton</span><span class="client-pill-sector">Mining</span></div>
+            <div class="client-pill"><span class="client-pill-name">Anglo American</span><span class="client-pill-sector">Mining</span></div>
+            <div class="client-pill"><span class="client-pill-name">Australian Government</span><span class="client-pill-sector">Public Sector</span></div>
+            <div class="client-pill"><span class="client-pill-name">Alcatel-Lucent</span><span class="client-pill-sector">Telecom</span></div>
+            <div class="client-pill"><span class="client-pill-name">Cathay Pacific</span><span class="client-pill-sector">Aviation</span></div>
+            <div class="client-pill"><span class="client-pill-name">Jaguar Land Rover</span><span class="client-pill-sector">Automotive</span></div>
+            <div class="client-pill"><span class="client-pill-name">VFS Global</span><span class="client-pill-sector">Services</span></div>
           </div>
         </div>
       </div>
@@ -1134,37 +1581,429 @@
         <div class="clients-region-label">India — Conglomerates</div>
         <div class="clients-marquee-wrapper">
           <div class="clients-track clients-track-reverse">
-            <div class="client-pill"><span class="client-pill-name">State Bank of India</span></div>
-            <div class="client-pill"><span class="client-pill-name">IDFC FIRST Bank</span></div>
-            <div class="client-pill"><span class="client-pill-name">Aditya Birla Group</span></div>
-            <div class="client-pill"><span class="client-pill-name">Tata Motors</span></div>
-            <div class="client-pill"><span class="client-pill-name">Tata Consultancy Services</span></div>
-            <div class="client-pill"><span class="client-pill-name">JSW Group</span></div>
-            <div class="client-pill"><span class="client-pill-name">Jindal Stainless</span></div>
-            <div class="client-pill"><span class="client-pill-name">Sun Pharmaceutical</span></div>
-            <div class="client-pill"><span class="client-pill-name">Marico</span></div>
-            <div class="client-pill"><span class="client-pill-name">Apollo Tyres</span></div>
-            <div class="client-pill"><span class="client-pill-name">UPL</span></div>
-            <div class="client-pill"><span class="client-pill-name">Thermax</span></div>
-            <div class="client-pill"><span class="client-pill-name">Bajaj Electricals</span></div>
-            <div class="client-pill"><span class="client-pill-name">YASH Technologies</span></div>
-            <div class="client-pill"><span class="client-pill-name">Sterling and Wilson</span></div>
-            <!-- duplicate for seamless loop -->
-            <div class="client-pill"><span class="client-pill-name">State Bank of India</span></div>
-            <div class="client-pill"><span class="client-pill-name">IDFC FIRST Bank</span></div>
-            <div class="client-pill"><span class="client-pill-name">Aditya Birla Group</span></div>
-            <div class="client-pill"><span class="client-pill-name">Tata Motors</span></div>
-            <div class="client-pill"><span class="client-pill-name">Tata Consultancy Services</span></div>
-            <div class="client-pill"><span class="client-pill-name">JSW Group</span></div>
-            <div class="client-pill"><span class="client-pill-name">Jindal Stainless</span></div>
-            <div class="client-pill"><span class="client-pill-name">Sun Pharmaceutical</span></div>
-            <div class="client-pill"><span class="client-pill-name">Marico</span></div>
-            <div class="client-pill"><span class="client-pill-name">Apollo Tyres</span></div>
-            <div class="client-pill"><span class="client-pill-name">UPL</span></div>
-            <div class="client-pill"><span class="client-pill-name">Thermax</span></div>
-            <div class="client-pill"><span class="client-pill-name">Bajaj Electricals</span></div>
-            <div class="client-pill"><span class="client-pill-name">YASH Technologies</span></div>
-            <div class="client-pill"><span class="client-pill-name">Sterling and Wilson</span></div>
+            <div class="client-pill"><span class="client-pill-name">State Bank of India</span><span class="client-pill-sector">BFSI</span></div>
+            <div class="client-pill"><span class="client-pill-name">IDFC FIRST Bank</span><span class="client-pill-sector">BFSI</span></div>
+            <div class="client-pill"><span class="client-pill-name">Aditya Birla Group</span><span class="client-pill-sector">Conglomerate</span></div>
+            <div class="client-pill"><span class="client-pill-name">Tata Motors</span><span class="client-pill-sector">Automotive</span></div>
+            <div class="client-pill"><span class="client-pill-name">Tata Consultancy Services</span><span class="client-pill-sector">IT Services</span></div>
+            <div class="client-pill"><span class="client-pill-name">JSW Group</span><span class="client-pill-sector">Steel &amp; Energy</span></div>
+            <div class="client-pill"><span class="client-pill-name">Jindal Stainless</span><span class="client-pill-sector">Manufacturing</span></div>
+            <div class="client-pill"><span class="client-pill-name">Jindal Steel &amp; Power</span><span class="client-pill-sector">Manufacturing</span></div>
+            <div class="client-pill"><span class="client-pill-name">Sun Pharmaceutical</span><span class="client-pill-sector">Pharma</span></div>
+            <div class="client-pill"><span class="client-pill-name">Marico</span><span class="client-pill-sector">FMCG</span></div>
+            <div class="client-pill"><span class="client-pill-name">Apollo Tyres</span><span class="client-pill-sector">Manufacturing</span></div>
+            <div class="client-pill"><span class="client-pill-name">UPL</span><span class="client-pill-sector">Agri-Science</span></div>
+            <div class="client-pill"><span class="client-pill-name">Thermax</span><span class="client-pill-sector">Industrial</span></div>
+            <div class="client-pill"><span class="client-pill-name">Bajaj Electricals</span><span class="client-pill-sector">Electronics</span></div>
+            <div class="client-pill"><span class="client-pill-name">YASH Technologies</span><span class="client-pill-sector">IT Services</span></div>
+            <div class="client-pill"><span class="client-pill-name">Sterling and Wilson</span><span class="client-pill-sector">EPC</span></div>
+            <!-- duplicate -->
+            <div class="client-pill"><span class="client-pill-name">State Bank of India</span><span class="client-pill-sector">BFSI</span></div>
+            <div class="client-pill"><span class="client-pill-name">IDFC FIRST Bank</span><span class="client-pill-sector">BFSI</span></div>
+            <div class="client-pill"><span class="client-pill-name">Aditya Birla Group</span><span class="client-pill-sector">Conglomerate</span></div>
+            <div class="client-pill"><span class="client-pill-name">Tata Motors</span><span class="client-pill-sector">Automotive</span></div>
+            <div class="client-pill"><span class="client-pill-name">Tata Consultancy Services</span><span class="client-pill-sector">IT Services</span></div>
+            <div class="client-pill"><span class="client-pill-name">JSW Group</span><span class="client-pill-sector">Steel &amp; Energy</span></div>
+            <div class="client-pill"><span class="client-pill-name">Jindal Stainless</span><span class="client-pill-sector">Manufacturing</span></div>
+            <div class="client-pill"><span class="client-pill-name">Jindal Steel &amp; Power</span><span class="client-pill-sector">Manufacturing</span></div>
+            <div class="client-pill"><span class="client-pill-name">Sun Pharmaceutical</span><span class="client-pill-sector">Pharma</span></div>
+            <div class="client-pill"><span class="client-pill-name">Marico</span><span class="client-pill-sector">FMCG</span></div>
+            <div class="client-pill"><span class="client-pill-name">Apollo Tyres</span><span class="client-pill-sector">Manufacturing</span></div>
+            <div class="client-pill"><span class="client-pill-name">UPL</span><span class="client-pill-sector">Agri-Science</span></div>
+            <div class="client-pill"><span class="client-pill-name">Thermax</span><span class="client-pill-sector">Industrial</span></div>
+            <div class="client-pill"><span class="client-pill-name">Bajaj Electricals</span><span class="client-pill-sector">Electronics</span></div>
+            <div class="client-pill"><span class="client-pill-name">YASH Technologies</span><span class="client-pill-sector">IT Services</span></div>
+            <div class="client-pill"><span class="client-pill-name">Sterling and Wilson</span><span class="client-pill-sector">EPC</span></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-inner">
+    <div class="section-label">Client Voice</div>
+    <h2 class="section-heading">What leaders <em>say</em></h2>
+    <p class="testimonials-intro">Verified recommendations from CxOs, CHROs, and senior leaders — sourced directly from LinkedIn. Click any name to read the full recommendation.</p>
+
+    <div class="testimonials-list">
+
+      <div class="t-item">
+        <div class="t-header" onclick="toggleTestimonial(this)">
+          <div class="t-header-left">
+            <div class="t-avatar">JR</div>
+            <div class="t-header-info">
+              <div class="t-name">Jithender Reddy</div>
+              <div class="t-role-line">Vice President – AI Automation · Cloud4C Services</div>
+              <div class="t-relation">Colleague · June 2026</div>
+            </div>
+          </div>
+          <i class="t-chevron">▼</i>
+        </div>
+        <div class="t-body">
+          <span class="t-quote-mark">"</span>
+          <p class="t-text">I had the pleasure of working with Sumit Nandy at Cloud4C. Throughout our time working together, Sumit consistently demonstrated exceptional professionalism, customer-centricity, and a strong commitment to delivering value to clients. He has a remarkable ability to build trusted relationships with customers while effectively managing complex stakeholder expectations. His proactive approach, strong communication skills, and deep understanding of client needs enabled him to drive successful outcomes and maintain high levels of customer satisfaction. What stood out most was his dedication to ensuring client success beyond contractual obligations — he always took ownership of challenges, collaborated effectively across teams, and worked diligently to find solutions that benefited both customers and the organisation. Sumit is a dependable, knowledgeable, and highly motivated professional who brings positivity and accountability to every engagement. I would highly recommend him to any organisation looking for a client-focused leader with strong relationship management and customer success expertise.</p>
+        </div>
+      </div>
+
+      <div class="t-item">
+        <div class="t-header" onclick="toggleTestimonial(this)">
+          <div class="t-header-left">
+            <div class="t-avatar">KJ</div>
+            <div class="t-header-info">
+              <div class="t-name">Kartik Jogi</div>
+              <div class="t-role-line">Vertical Head HR Business Partner · Bajaj Electricals Ltd.</div>
+              <div class="t-relation">Client · August 2023</div>
+            </div>
+          </div>
+          <i class="t-chevron">▼</i>
+        </div>
+        <div class="t-body">
+          <span class="t-quote-mark">"</span>
+          <p class="t-text">Sumit's strengths lie in combining technical expertise with an analytical mindset. He engages with leaders to steer the project in the desired direction while ensuring timelines are met — making him an asset for any cross-functional project team. He is a strategic partner with a long-term vision, identifying potential pitfalls and planning mitigations in advance. He speaks his mind in the interest of the project and ensures the best solution is delivered.</p>
+        </div>
+      </div>
+
+      <div class="t-item">
+        <div class="t-header" onclick="toggleTestimonial(this)">
+          <div class="t-header-left">
+            <div class="t-avatar">RD</div>
+            <div class="t-header-info">
+              <div class="t-name">Ruchir Dave</div>
+              <div class="t-role-line">Head of HR Customer Advisory · SAP SuccessFactors</div>
+              <div class="t-relation">Senior Colleague · July 2023</div>
+            </div>
+          </div>
+          <i class="t-chevron">▼</i>
+        </div>
+        <div class="t-body">
+          <span class="t-quote-mark">"</span>
+          <p class="t-text">I worked with Sumit in SAP India in the SuccessFactors Line of Business. He played the role of Sr. Customer Success Partner, taking care of SuccessFactors solution implementation, adoption, consumption and renewals. In all my interactions I found him extremely client-centric and outcome focused. He has good understanding of customer success frameworks as well as the HR domain. He collaborates well with different teams and ensures engagements are completed on time with good quality. I would recommend him as a great professional and a good team player.</p>
+        </div>
+      </div>
+
+      <div class="t-item">
+        <div class="t-header" onclick="toggleTestimonial(this)">
+          <div class="t-header-left">
+            <div class="t-avatar">KP</div>
+            <div class="t-header-info">
+              <div class="t-name">Kellie Pauley</div>
+              <div class="t-role-line">Talent Management Consultant &amp; Coach · Cornerstone OnDemand</div>
+              <div class="t-relation">Colleague · April 2021</div>
+            </div>
+          </div>
+          <i class="t-chevron">▼</i>
+        </div>
+        <div class="t-body">
+          <span class="t-quote-mark">"</span>
+          <p class="t-text">Sumit was relentless in trying to find product configuration solutions that would make his implementation clients happy. He always had a strong grasp of what his clients needed and was their advocate in trying to achieve it. He was persistent but respectful as he pushed for creative solutions when the product design did not fit a client's requirement. He also made a strong effort to resolve such issues within his own team before enlisting the support of mine.</p>
+        </div>
+      </div>
+
+      <div class="t-item">
+        <div class="t-header" onclick="toggleTestimonial(this)">
+          <div class="t-header-left">
+            <div class="t-avatar">RL</div>
+            <div class="t-header-info">
+              <div class="t-name">Rajesh Lele</div>
+              <div class="t-role-line">General Manager Operations · Tata Motors</div>
+              <div class="t-relation">Client · March 2021</div>
+            </div>
+          </div>
+          <i class="t-chevron">▼</i>
+        </div>
+        <div class="t-body">
+          <span class="t-quote-mark">"</span>
+          <p class="t-text">It has been a pleasure to work with Sumit over a period of 4+ years. His drive to ensure that solutions were used by people rather than just implemented was instrumental in helping us make the right decisions. He works very transparently, making sure the customer is in the know of where things may get stuck and shares best possible ways to get them resolved. All-in-all, Sumit is a consummate professional who ensures a balance between service, customer success and his organisation's interest — creating an all-round win-win.</p>
+        </div>
+      </div>
+
+      <div class="t-item">
+        <div class="t-header" onclick="toggleTestimonial(this)">
+          <div class="t-header-left">
+            <div class="t-avatar">MB</div>
+            <div class="t-header-info">
+              <div class="t-name">Manoj Bhoota</div>
+              <div class="t-role-line">Vice President – IT · Shapoorji Pallonji Group</div>
+              <div class="t-relation">Client · March 2021</div>
+            </div>
+          </div>
+          <i class="t-chevron">▼</i>
+        </div>
+        <div class="t-body">
+          <span class="t-quote-mark">"</span>
+          <p class="t-text">Sumit has closely worked with me for more than a year on our journey to implement SuccessFactors at Shapoorji Pallonji Group. As the customer engagement executive, Sumit pitched in at critical phases to remove bottlenecks and accelerate the implementation. He went out of the way to liaise with the SAP consulting team and implementation partner to ensure the optimum solution is provided. His involvement increased the level of confidence on the product which subsequently led to a successful implementation.</p>
+        </div>
+      </div>
+
+      <div class="t-item">
+        <div class="t-header" onclick="toggleTestimonial(this)">
+          <div class="t-header-left">
+            <div class="t-avatar">MP</div>
+            <div class="t-header-info">
+              <div class="t-name">Mallika Padmanabhan</div>
+              <div class="t-role-line">Head, Gurukul Leadership Development · Quest Global</div>
+              <div class="t-relation">Client · December 2017</div>
+            </div>
+          </div>
+          <i class="t-chevron">▼</i>
+        </div>
+        <div class="t-body">
+          <span class="t-quote-mark">"</span>
+          <p class="t-text">Sumit supported QuEST through a system implementation and displayed great patience and effort in ensuring we successfully completed our project. He has constantly made himself available to the team and found ways to make sure the solution worked for us. Through all our delays and disruptions, he has held our hand and provided support wherever necessary. We were lucky to have had him be part of our journey.</p>
+        </div>
+      </div>
+
+      <div class="t-item">
+        <div class="t-header" onclick="toggleTestimonial(this)">
+          <div class="t-header-left">
+            <div class="t-avatar">VK</div>
+            <div class="t-header-info">
+              <div class="t-name">Vivek Kulkarni</div>
+              <div class="t-role-line">SVP – Human Resources · Radio Mirchi | CHRO, Parksons Packaging</div>
+              <div class="t-relation">Client · May 2016</div>
+            </div>
+          </div>
+          <i class="t-chevron">▼</i>
+        </div>
+        <div class="t-body">
+          <span class="t-quote-mark">"</span>
+          <p class="t-text">Sumit was the Project Manager deployed to manage and execute the PMS Automation project for Radio Mirchi. He displayed very good understanding of the product and with his friendly nature was able to network well between the client and the product team, provide solutions and meet client expectations. Always available to troubleshoot and coach people, he was one big reason why Radio Mirchi could implement the solution seamlessly on time within a span of 4 months. He will be a must-have for any Project Implementation with CSOD.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+<!-- CASE STUDIES -->
+<section id="casestudies">
+  <div class="section-inner">
+    <div class="section-label">Consulting Work</div>
+    <h2 class="section-heading">Case <em>Studies</em></h2>
+
+    <div class="cs-tabs-wrapper">
+      <button class="cs-tab-arrow cs-tab-arrow-left" id="csArrowLeft" onclick="scrollCSTabs(-1)">&#8592;</button>
+      <div class="cs-tabs" id="csTabs">
+        <button class="cs-tab-btn cs-active" onclick="showCS(0, this)">HRMS Transformation</button>
+        <button class="cs-tab-btn" onclick="showCS(1, this)">HRIT Strategy &amp; Adoption</button>
+        <button class="cs-tab-btn" onclick="showCS(2, this)">Change Management</button>
+        <button class="cs-tab-btn" onclick="showCS(3, this)">Global Re-implementation</button>
+        <button class="cs-tab-btn" onclick="showCS(4, this)">Support Transition</button>
+        <button class="cs-tab-btn" onclick="showCS(5, this)">Data Migration</button>
+        <button class="cs-tab-btn" onclick="showCS(6, this)">Process Transition</button>
+      </div>
+      <button class="cs-tab-arrow cs-tab-arrow-right visible" id="csArrowRight" onclick="scrollCSTabs(1)">&#8594;</button>
+    </div>
+
+    <div class="cs-panels">
+
+      <!-- CS1: HRMS Transformation -->
+      <div class="cs-panel cs-visible">
+        <div class="cs-panel-left">
+          <span class="cs-tag">BFSI · HRMS · AI · SaaS</span>
+          <div class="cs-title">Legacy-to-SaaS HRMS Transformation for India's Largest Public Sector Bank</div>
+          <div class="cs-company">Enterprise HRMS · 2025</div>
+          <div class="cs-block">
+            <div class="cs-section-label">Challenge</div>
+            <p class="cs-text">One of India's largest public sector banks — managing payroll, pension, claims, transfers, and core HR for 250K+ employees and 350K+ pensioners across 150+ HR services — was operating on fragmented legacy systems with no structured audit framework, accumulating technical debt and ad-hoc enhancement backlogs with no governance in place.</p>
+          </div>
+          <div class="cs-block">
+            <div class="cs-section-label">Approach</div>
+            <p class="cs-text">Led structured migration of legacy HR data into an enterprise SaaS platform, establishing clean data governance and end-to-end traceability. Introduced formal documentation, SOP frameworks, and approval processes for all enhancements and bug fixes, enabling audit-ready closures. Established target operating models and multi-vendor governance. Developed an AI Roadmap and deployed AI Agents for key transactional processes. Built an AI-powered ticketing tool to prioritise, route, and resolve HR service requests. Designed persona-based dashboards for leadership decision-making.</p>
+          </div>
+        </div>
+        <div class="cs-panel-right">
+          <div class="cs-block" style="margin-top:0">
+            <div class="cs-section-label">Outcome</div>
+            <p class="cs-text">40%+ reduction in manual payroll intervention. Zero-error, audit-ready processing environment established across one of India's most complex BFSI payroll landscapes. Governance frameworks significantly improved issue resolution predictability. AI roadmap approved by senior leadership for phased deployment across 600K+ users and 150+ HR services.</p>
+          </div>
+          <div class="cs-outcomes">
+            <span class="cs-outcome-chip">40%+ Manual Reduction</span>
+            <span class="cs-outcome-chip">600K+ Users</span>
+            <span class="cs-outcome-chip">150+ HR Services</span>
+            <span class="cs-outcome-chip">AI Roadmap Delivered</span>
+            <span class="cs-outcome-chip">Audit-Ready Ops</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CS2: HRIT Strategy & Adoption -->
+      <div class="cs-panel">
+        <div class="cs-panel-left">
+          <span class="cs-tag">HCM · SaaS · CX Advisory · Change Management</span>
+          <div class="cs-title">CxO-Level HRIT Strategy, Outcome Success Plans &amp; Digital Concierge Innovation</div>
+          <div class="cs-company">Enterprise HCM Advisory · India &amp; Japan · 4 Years</div>
+          <div class="cs-block">
+            <div class="cs-section-label">Challenge</div>
+            <p class="cs-text">Enterprise clients across India and Japan had invested significantly in cloud HCM platforms but struggled with low adoption, unclear ROI, and a widening gap between their current HR digital maturity and their desired state. Partner teams lacked the tools to diagnose and resolve complex scenarios independently, leading to escalations and stalled implementations.</p>
+          </div>
+          <div class="cs-block">
+            <div class="cs-section-label">Approach</div>
+            <p class="cs-text">Engaged CxOs as a strategic advisor to co-create Outcome Success Plans and HRIT roadmaps — running current-state diagnostics, GAP analyses, and desired-state blueprints. Initiated and ran SuccessFactors Accreditation (SFX) sessions, enabling product admins to gain deep subject knowledge and complete their accreditation — directly reducing support ticket volumes. Designed and deployed the "Digital Concierge," an AI-powered self-service tool. Executed Outcome Success Plans with CxOs to build complete roadmaps improving NPS, referenceability, and CSAT. Enabled the partner ecosystem through structured enablement programmes.</p>
+          </div>
+        </div>
+        <div class="cs-panel-right">
+          <div class="cs-block" style="margin-top:0">
+            <div class="cs-section-label">Outcome</div>
+            <p class="cs-text">Significant reduction in support ticket volumes post-SFX accreditation. Measurable improvement in NPS, referenceability, and CSAT across the portfolio. Digital Concierge recognised with the APJ Grassroots Innovation Award. Outcome Success Plans drove consistent renewal and expansion. 36% improvement in CSAT. 27% reduction in support tickets.</p>
+          </div>
+          <div class="cs-outcomes">
+            <span class="cs-outcome-chip">APJ Innovation Award</span>
+            <span class="cs-outcome-chip">36% CSAT Uplift</span>
+            <span class="cs-outcome-chip">27% Ticket Reduction</span>
+            <span class="cs-outcome-chip">NPS Improved</span>
+            <span class="cs-outcome-chip">SFX Accreditation</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CS3: Business Process Alignment -->
+      <div class="cs-panel">
+        <div class="cs-panel-left">
+          <span class="cs-tag">SaaS · HCM · Change Management · Business Process Alignment</span>
+          <div class="cs-title">Faster Deployment Through Business Process Alignment &amp; Change Management</div>
+          <div class="cs-company">Global Enterprise HCM · APAC &amp; Europe · 3 Years</div>
+          <div class="cs-block">
+            <div class="cs-section-label">Challenge</div>
+            <p class="cs-text">Large enterprise clients in Aviation, BFSI, and Manufacturing had adopted cloud HCM platforms but faced a fundamental challenge: aligning business processes to the platform's digitisation strategy rather than replicating legacy ways of working. Change resistance was high, adoption was slow, and the path to ROI was unclear — blocking CxO approval for expansion investments.</p>
+          </div>
+          <div class="cs-block">
+            <div class="cs-section-label">Approach</div>
+            <p class="cs-text">Designed and facilitated Business Process Alignment Workshops globally — bringing HR leadership, IT, and business stakeholders together to map current-state processes, identify digitisation opportunities, and align on a future-state operating model. Ran targeted Change Management programmes to drive user adoption and overcome resistance. Focused on speed-to-value: compressing time between go-live and demonstrable ROI by working directly with CxOs on success metrics. Provided hands-on configuration advisory to ensure solutions were robust and sustainable.</p>
+          </div>
+        </div>
+        <div class="cs-panel-right">
+          <div class="cs-block" style="margin-top:0">
+            <div class="cs-section-label">Outcome</div>
+            <p class="cs-text">Rapid ROI delivery demonstrated within compressed timelines, unlocking expansion projects at multiple enterprise accounts. Clear business process alignment achieved — eliminating legacy workarounds and establishing a sustainable, standards-driven operating model. High adoption scores across Performance Management transformations in APAC and Europe.</p>
+          </div>
+          <div class="cs-outcomes">
+            <span class="cs-outcome-chip">Rapid ROI Delivery</span>
+            <span class="cs-outcome-chip">Process Alignment</span>
+            <span class="cs-outcome-chip">Robust Solution</span>
+            <span class="cs-outcome-chip">Expansion Unlocked</span>
+            <span class="cs-outcome-chip">APAC + Europe</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CS4: Global Re-implementation (Mining) -->
+      <div class="cs-panel">
+        <div class="cs-panel-left">
+          <span class="cs-tag">SAP HCM · Re-implementation · Automation · Mining</span>
+          <div class="cs-title">SAP R/3 to ECC 6.0 Re-implementation: From 90% Custom to 95% Standard</div>
+          <div class="cs-company">Global Mining Corporation · Singapore HQ · Full Re-implementation</div>
+          <div class="cs-block">
+            <div class="cs-section-label">Challenge</div>
+            <p class="cs-text">One of the world's largest mining corporations — headquartered in Singapore — was running a heavily customised SAP R/3 4.7 landscape (90% custom code), creating unsustainable maintenance overhead. The objective was a full re-implementation to SAP ECC 6.0 targeting 95% standard solution — requiring complex data migration, configuration translation, and validated parallel run cycles across a massive global footprint.</p>
+          </div>
+          <div class="cs-block">
+            <div class="cs-section-label">Approach</div>
+            <p class="cs-text">Led the re-implementation from design through go-live. Co-developed an automated migration tool with the technical team — reading legacy system values, validating target system configuration, applying translation rules, and updating the target system automatically. This eliminated manual data mapping and enabled high-frequency parallel run cycles for robust go-live validation.</p>
+          </div>
+        </div>
+        <div class="cs-panel-right">
+          <div class="cs-block" style="margin-top:0">
+            <div class="cs-section-label">Outcome</div>
+            <p class="cs-text">Automated tool reduced manual effort by 85+ hours and enabled 20+ parallel runs — providing the rigour needed for confident go-live sign-off. Successfully transitioned from 90% custom to 95% standard SAP ECC 6.0, dramatically reducing future maintenance burden and improving system sustainability.</p>
+          </div>
+          <div class="cs-outcomes">
+            <span class="cs-outcome-chip">85+ Hours Saved</span>
+            <span class="cs-outcome-chip">20+ Parallel Runs</span>
+            <span class="cs-outcome-chip">95% Standard Solution</span>
+            <span class="cs-outcome-chip">Automated Migration Tool</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CS5: Support Transition (Mining - South Africa) -->
+      <div class="cs-panel">
+        <div class="cs-panel-left">
+          <span class="cs-tag">SAP HCM · Support Transition · Predictive Analytics · Mining</span>
+          <div class="cs-title">Offshore Support Transition &amp; Predictive Volume Management</div>
+          <div class="cs-company">Global Mining Corporation · South Africa HQ · Support Transition</div>
+          <div class="cs-block">
+            <div class="cs-section-label">Challenge</div>
+            <p class="cs-text">One of the world's largest mining corporations — headquartered in South Africa — needed to transition its entire SAP HCM support operations from onsite to an India delivery centre within a very short timeframe, without disrupting service continuity. The India team had limited process knowledge, and incoming support volumes were unpredictable — making resourcing and budgeting extremely difficult.</p>
+          </div>
+          <div class="cs-block">
+            <div class="cs-section-label">Approach</div>
+            <p class="cs-text">Built a comprehensive scenario-and-module knowledge database enabling rapid incident analysis and resolution. Trained functional and technical resources across all relevant process areas. Coordinated directly with the client for seamless handover with quick TAT. Built a pattern-based predictive tool analysing historical ticket data to forecast incoming support volumes month-on-month — enabling proactive resourcing and effective budget management.</p>
+          </div>
+        </div>
+        <div class="cs-panel-right">
+          <div class="cs-block" style="margin-top:0">
+            <div class="cs-section-label">Outcome</div>
+            <p class="cs-text">Seamless transition of full SAP HCM support to the India delivery centre within agreed timeline. Significant reduction in average resolution time through the scenario database. Predictive volume tool enabled accurate monthly resourcing — eliminating reactive staffing and improving budget predictability across the engagement.</p>
+          </div>
+          <div class="cs-outcomes">
+            <span class="cs-outcome-chip">Seamless Transition</span>
+            <span class="cs-outcome-chip">Predictive Volume Tool</span>
+            <span class="cs-outcome-chip">Faster Resolution</span>
+            <span class="cs-outcome-chip">Budget Optimised</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CS6: Data Migration (Pharma) -->
+      <div class="cs-panel">
+        <div class="cs-panel-left">
+          <span class="cs-tag">SAP HCM · Data Migration · 160+ Countries · Pharma</span>
+          <div class="cs-title">Mass Data Migration for a Global Pharma Giant Across 160+ Countries</div>
+          <div class="cs-company">North American Pharma Enterprise · Global HCM Implementation</div>
+          <div class="cs-block">
+            <div class="cs-section-label">Challenge</div>
+            <p class="cs-text">A North American pharma giant implementing SAP HCM required mass data migration across 160+ countries. The standard SAP Legacy System Migration Workbench lacked the filtering and validation precision needed at this scale. Bad data was causing failed loads, rework cycles, extended timelines, and quality risks at go-live.</p>
+          </div>
+          <div class="cs-block">
+            <div class="cs-section-label">Approach</div>
+            <p class="cs-text">Developed custom coding within the Legacy System Migration Workbench — adding intelligent filtering logic that identified, categorised, and separated bad data before load execution. Error categorisation enabled the client to quickly understand, fix, and reload data with precision. Migration was structured by geography ensuring controlled, verifiable batch execution with full reconciliation at each stage.</p>
+          </div>
+        </div>
+        <div class="cs-panel-right">
+          <div class="cs-block" style="margin-top:0">
+            <div class="cs-section-label">Outcome</div>
+            <p class="cs-text">Overall data load time reduced significantly. Error categorisation enabled the client to fix data issues rapidly and reload without rework cycles. Clean, reconciled HR data delivered across 160+ countries — providing a high-quality foundation for go-live and eliminating data-related post-live defects.</p>
+          </div>
+          <div class="cs-outcomes">
+            <span class="cs-outcome-chip">160+ Countries</span>
+            <span class="cs-outcome-chip">Reduced Load Time</span>
+            <span class="cs-outcome-chip">Custom Migration Logic</span>
+            <span class="cs-outcome-chip">Clean Go-live Data</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CS7: UK to India Process Transition -->
+      <div class="cs-panel">
+        <div class="cs-panel-left">
+          <span class="cs-tag">SAP HCM · Process Transition · UK to India · Service Continuity</span>
+          <div class="cs-title">UK-to-India SAP HCM Support Transition with Zero Service Disruption</div>
+          <div class="cs-company">Major UK Enterprise · Offshore Transition Programme</div>
+          <div class="cs-block">
+            <div class="cs-section-label">Challenge</div>
+            <p class="cs-text">A major UK-headquartered organisation needed to transition its entire SAP HCM support operations from onsite to an India delivery centre within a very tight timeframe — without disrupting live service. The challenge was threefold: rapidly gaining full business understanding of all processes, establishing effective support from day one, and completing the full transition while maintaining client confidence throughout.</p>
+          </div>
+          <div class="cs-block">
+            <div class="cs-section-label">Approach</div>
+            <p class="cs-text">Engaged directly with the client onsite to rapidly document and understand all functional and technical processes. Designed a structured knowledge transfer framework and trained the India team across both functional and technical domains. Established incident management protocols, escalation paths, and SLA frameworks before transition. Coordinated closely with the client throughout to ensure quick TAT on all live incidents during handover — maintaining confidence and continuity at every stage.</p>
+          </div>
+        </div>
+        <div class="cs-panel-right">
+          <div class="cs-block" style="margin-top:0">
+            <div class="cs-section-label">Outcome</div>
+            <p class="cs-text">Full SAP HCM support transition to India delivery centre completed within the agreed timeline with zero service disruption. India team fully capable and self-sufficient post-transition. Client satisfaction maintained throughout the handover. The engagement established a high-performing offshore support model delivering sustained quality well beyond the transition period.</p>
+          </div>
+          <div class="cs-outcomes">
+            <span class="cs-outcome-chip">Zero Disruption</span>
+            <span class="cs-outcome-chip">On-time Transition</span>
+            <span class="cs-outcome-chip">India Team Enabled</span>
+            <span class="cs-outcome-chip">Client Confidence Maintained</span>
           </div>
         </div>
       </div>
@@ -1183,11 +2022,11 @@
         <div class="skill-cluster-name">AI & Technology</div>
         <ul class="skill-list">
           <li>AI Strategy & Roadmap Leadership</li>
-          <li>LLM Integration & Prompt Engineering</li>
-          <li>Intelligent Automation & Process Optimization</li>
+          <li>Intelligent Automation & Process Optimisation</li>
           <li>Predictive Analytics & Risk Intelligence</li>
           <li>AI Tool Design, Build & Deployment</li>
           <li>AI-Powered Product Management</li>
+          <li>Prompt Engineering & AI Agent Design</li>
         </ul>
       </div>
       <div class="skill-cluster">
@@ -1204,11 +2043,12 @@
       <div class="skill-cluster">
         <div class="skill-cluster-name">Domain Expertise</div>
         <ul class="skill-list">
-          <li>BFSI — Payroll, Pension, Compliance</li>
+          <li>SAP On-Prem Implementation (HCM)</li>
           <li>HCM — SAP SuccessFactors, Cornerstone</li>
           <li>SaaS — Cloud Managed Services</li>
-          <li>Change Management & AI Adoption</li>
-          <li>AI Governance & Regulatory Alignment</li>
+          <li>Business Process Alignment</li>
+          <li>Change Management & Solution Adoption</li>
+          <li>Governance & Regulatory Alignment</li>
           <li>Enterprise Architecture & Blueprinting</li>
         </ul>
       </div>
@@ -1219,35 +2059,44 @@
 <!-- CREDENTIALS -->
 <section id="credentials">
   <div class="section-inner">
-    <div class="section-label">Education & Certifications</div>
+    <div class="section-label">Education &amp; Certifications</div>
     <h2 class="section-heading">Credentials that <em>ground</em> the vision</h2>
     <div class="creds-grid">
       <div>
         <div class="cred-group-title">Education</div>
-        <div class="cred-item">
-          <div class="cred-title">PG Diploma — Information Technology</div>
-          <div class="cred-org">SCDL, Symbiosis — Pune</div>
-          <div class="cred-year">2004 – 2008</div>
-        </div>
-        <div class="cred-item">
-          <div class="cred-title">B.Sc. — Computer Science</div>
-          <div class="cred-org">Nagpur University</div>
-          <div class="cred-year">1996 – 1999</div>
+        <div class="cred-cards">
+          <div class="cred-card">
+            <div class="cred-icon">🎓</div>
+            <div class="cred-title">PG Diploma — Information Technology</div>
+            <div class="cred-org">SCDL, Symbiosis — Pune</div>
+            <div class="cred-year">2004 – 2008</div>
+          </div>
+          <div class="cred-card">
+            <div class="cred-icon">🎓</div>
+            <div class="cred-title">B.Sc. — Computer Science</div>
+            <div class="cred-org">Nagpur University</div>
+            <div class="cred-year">1996 – 1999</div>
+          </div>
         </div>
       </div>
       <div>
         <div class="cred-group-title">Certifications</div>
-        <div class="cred-item">
-          <div class="cred-title">SAP SuccessFactors Employee Central</div>
-          <div class="cred-org">SAP Certified Consultant</div>
-        </div>
-        <div class="cred-item">
-          <div class="cred-title">Cornerstone OnDemand — All Modules</div>
-          <div class="cred-org">Cornerstone Certified</div>
-        </div>
-        <div class="cred-item">
-          <div class="cred-title">ITIL V3 Foundation</div>
-          <div class="cred-org">AXELOS Certified</div>
+        <div class="cred-cards">
+          <div class="cred-card">
+            <div class="cred-icon">📜</div>
+            <div class="cred-title">SAP SuccessFactors Employee Central</div>
+            <div class="cred-org">SAP Certified Consultant</div>
+          </div>
+          <div class="cred-card">
+            <div class="cred-icon">📜</div>
+            <div class="cred-title">Cornerstone OnDemand — All Modules</div>
+            <div class="cred-org">Cornerstone Certified</div>
+          </div>
+          <div class="cred-card">
+            <div class="cred-icon">📜</div>
+            <div class="cred-title">ITIL V3 Foundation</div>
+            <div class="cred-org">AXELOS Certified</div>
+          </div>
         </div>
       </div>
     </div>
@@ -1258,12 +2107,12 @@
 <section id="contact">
   <div class="contact-inner">
     <div>
-      <div class="section-label">Start a Conversation</div>
-      <h2 class="contact-headline">Let's solve your <em>AI challenge</em> together.</h2>
+      <div class="section-label">Get in Touch</div>
+      <h2 class="contact-headline">Let's explore how we can <em>work together.</em></h2>
       <p class="contact-sub">
-        Sumit is available for independent consulting engagements — AI strategy & roadmaps, CX transformation, intelligent automation, and enterprise HCM advisory. Short-term projects, retainers, and board advisory welcome.
+        With 26+ years of enterprise depth across AI, CX transformation, HRMS, and SAP HCM — Sumit brings hands-on leadership and outcome-driven delivery to any engagement. Open to senior leadership roles, advisory mandates, and strategic consulting opportunities.
       </p>
-      <a href="mailto:nandy.sumit@gmail.com" class="btn-primary">Start a Conversation</a>
+      <a href="mailto:nandy.sumit@gmail.com" class="btn-primary">Get in Touch</a>
     </div>
     <div class="contact-details">
       <div class="contact-row">
@@ -1282,21 +2131,36 @@
         <div class="contact-icon">in</div>
         <div class="contact-text"><a href="https://www.linkedin.com/in/sumit-nandy/" target="_blank">linkedin.com/in/sumit-nandy</a></div>
       </div>
-      <div class="contact-row">
-        <div class="contact-icon">↓</div>
-        <div class="contact-text"><a href="#" onclick="alert('Please host the PDF resume alongside this file and update this link.')">Download Resume (PDF)</a></div>
-      </div>
     </div>
   </div>
 </section>
 
 <footer>
-  <div class="footer-note">© 2025 Sumit Nandy — Independent AI & CX Transformation Consultant · Mumbai, India</div>
+  <div class="footer-note">© 2025 Sumit Nandy — AI &amp; CX Transformation Consultant · Mumbai, India</div>
   <div class="footer-note">Built to perform. Designed to impress.</div>
 </footer>
 
 <script>
-  // ── Intersection Observer for timeline fade-in ──
+  // ── Theme Toggle ──
+  const toggle = document.getElementById('themeToggle');
+  const html = document.documentElement;
+  const saved = localStorage.getItem('theme');
+  if (saved === 'dark') { html.setAttribute('data-theme', 'dark'); toggle.textContent = '☀️'; }
+
+  toggle.addEventListener('click', () => {
+    const isDark = html.getAttribute('data-theme') === 'dark';
+    if (isDark) {
+      html.removeAttribute('data-theme');
+      toggle.textContent = '🌙';
+      localStorage.setItem('theme', 'light');
+    } else {
+      html.setAttribute('data-theme', 'dark');
+      toggle.textContent = '☀️';
+      localStorage.setItem('theme', 'dark');
+    }
+  });
+
+  // ── Timeline fade-in ──
   const timelineItems = document.querySelectorAll('.timeline-item');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
@@ -1311,46 +2175,105 @@
   // ── Counter animation ──
   function animateCounter(el) {
     const target = parseInt(el.dataset.target);
-    const duration = 1800;
-    const step = 16;
-    const steps = duration / step;
-    const increment = target / steps;
+    const duration = 1800; const step = 16;
+    const increment = target / (duration / step);
     let current = 0;
     const timer = setInterval(() => {
       current += increment;
-      if (current >= target) {
-        current = target;
-        clearInterval(timer);
-      }
+      if (current >= target) { current = target; clearInterval(timer); }
       el.textContent = Math.floor(current);
     }, step);
   }
-
   const counters = document.querySelectorAll('.counter');
   const counterObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        animateCounter(entry.target);
-        counterObserver.unobserve(entry.target);
-      }
+      if (entry.isIntersecting) { animateCounter(entry.target); counterObserver.unobserve(entry.target); }
     });
   }, { threshold: 0.3 });
   counters.forEach(c => counterObserver.observe(c));
 
-  // ── Smooth active nav highlighting ──
+  // ── Nav active highlight ──
   const sections = document.querySelectorAll('section[id]');
   const navLinks = document.querySelectorAll('.nav-links a');
   window.addEventListener('scroll', () => {
     let current = '';
-    sections.forEach(s => {
-      if (window.scrollY >= s.offsetTop - 120) current = s.id;
-    });
-    navLinks.forEach(a => {
-      a.style.color = a.getAttribute('href') === '#' + current
-        ? 'var(--gold)' : '';
-    });
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
+    navLinks.forEach(a => { a.style.color = a.getAttribute('href') === '#' + current ? 'var(--gold)' : ''; });
   });
-</script>
 
+  // ── Collapsible Testimonials ──
+  function toggleTestimonial(header) {
+    const item = header.closest('.t-item');
+    const isOpen = item.classList.contains('t-open');
+    document.querySelectorAll('.t-item').forEach(i => i.classList.remove('t-open'));
+    if (!isOpen) item.classList.add('t-open');
+  }
+
+  // ── Case Study Tabs + Arrow Scroll + Auto-advance ──
+  let csCurrentIndex = 0;
+  const CS_TOTAL = 7;
+  let csAutoTimer = null;
+
+  function showCS(index, btn) {
+    csCurrentIndex = index;
+    document.querySelectorAll('.cs-panel').forEach((p, i) => {
+      p.classList.toggle('cs-visible', i === index);
+    });
+    document.querySelectorAll('.cs-tab-btn').forEach(b => b.classList.remove('cs-active'));
+    if (btn) btn.classList.add('cs-active');
+    // Scroll active tab into view
+    const tabs = document.getElementById('csTabs');
+    if (btn && tabs) {
+      const btnLeft = btn.offsetLeft;
+      const btnWidth = btn.offsetWidth;
+      const tabsWidth = tabs.offsetWidth;
+      tabs.scrollTo({ left: btnLeft - tabsWidth / 2 + btnWidth / 2, behavior: 'smooth' });
+    }
+    updateCSArrows();
+    resetCSAutoTimer();
+  }
+
+  function scrollCSTabs(dir) {
+    const tabs = document.getElementById('csTabs');
+    tabs.scrollBy({ left: dir * 160, behavior: 'smooth' });
+    setTimeout(updateCSArrows, 320);
+  }
+
+  function updateCSArrows() {
+    const tabs = document.getElementById('csTabs');
+    const left = document.getElementById('csArrowLeft');
+    const right = document.getElementById('csArrowRight');
+    if (!tabs || !left || !right) return;
+    const atStart = tabs.scrollLeft <= 4;
+    const atEnd = tabs.scrollLeft + tabs.offsetWidth >= tabs.scrollWidth - 4;
+    left.classList.toggle('visible', !atStart);
+    right.classList.toggle('visible', !atEnd);
+  }
+
+  function csAutoAdvance() {
+    const nextIndex = (csCurrentIndex + 1) % CS_TOTAL;
+    const btns = document.querySelectorAll('.cs-tab-btn');
+    showCS(nextIndex, btns[nextIndex]);
+  }
+
+  function resetCSAutoTimer() {
+    if (csAutoTimer) clearInterval(csAutoTimer);
+    csAutoTimer = setInterval(csAutoAdvance, 20000);
+  }
+
+  // Init tabs
+  const csTabs = document.getElementById('csTabs');
+  if (csTabs) {
+    csTabs.addEventListener('scroll', updateCSArrows);
+    updateCSArrows();
+    resetCSAutoTimer();
+  }
+
+  // ── Hamburger Menu ──
+  const hamburger = document.getElementById('hamburger');
+  const mobileNav = document.getElementById('mobileNav');
+  hamburger.addEventListener('click', () => mobileNav.classList.toggle('open'));
+  function closeMobileNav() { mobileNav.classList.remove('open'); }
+</script>
 </body>
 </html>
