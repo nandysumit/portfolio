@@ -63,7 +63,7 @@
   nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; padding: 1rem 2rem; background: var(--nav-bg); backdrop-filter: blur(16px); border-bottom: 1px solid var(--line); transition: background 0.35s; }
   .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 300; letter-spacing: 0.15em; color: var(--gold); text-transform: uppercase; flex-shrink: 0; }
   .nav-links { display: flex; gap: 1.4rem; list-style: none; align-items: center; }
-  .nav-links a { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
+  .nav-links a { font-family: 'DM Mono', monospace; font-size: 0.65rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
   .nav-links a:hover { color: var(--gold); }
   .theme-toggle { background: none; border: 1px solid var(--line); color: var(--text-muted); cursor: pointer; width: 34px; height: 34px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.85rem; transition: all 0.3s; flex-shrink: 0; }
   .theme-toggle:hover { border-color: var(--gold); color: var(--gold); }
@@ -80,8 +80,8 @@
   .hero-eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--gold); }
   .hero-name { font-family: 'Cormorant Garamond', serif; font-size: clamp(3.5rem, 6vw, 7rem); font-weight: 300; line-height: 0.92; letter-spacing: -0.01em; color: var(--text-primary); margin-bottom: 0.3rem; }
   .hero-name span { color: var(--gold); font-style: italic; }
-  .hero-title { font-family: 'Syne', sans-serif; font-size: clamp(0.7rem, 1.1vw, 0.9rem); font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent-teal-light); margin: 1.6rem 0 2rem; }
-  .hero-tagline { font-family: 'Cormorant Garamond', serif; font-size: clamp(1rem, 1.4vw, 1.25rem); font-style: italic; font-weight: 400; color: var(--text-secondary); line-height: 1.75; max-width: 500px; margin-bottom: 3rem; border-left: 3px solid var(--gold); padding-left: 1.2rem; }
+  .hero-title { font-family: 'Syne', sans-serif; font-size: clamp(0.8rem, 1.2vw, 1rem); font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent-teal-light); margin: 1.6rem 0 2rem; }
+  .hero-tagline { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.1rem, 1.6vw, 1.4rem); font-style: italic; font-weight: 400; color: var(--text-secondary); line-height: 1.75; max-width: 500px; margin-bottom: 3rem; border-left: 3px solid var(--gold); padding-left: 1.2rem; }
   .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; }
   .btn-primary { background: var(--gold); color: #fff; padding: 0.8rem 2rem; font-family: 'Syne', sans-serif; font-size: 0.7rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; transition: all 0.3s; border-radius: 2px; }
   .btn-primary:hover { background: var(--gold-light); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(196,127,23,0.3); }
@@ -99,9 +99,9 @@
   /* ── SHARED ── */
   section { padding: 6rem 0; }
   .section-inner { max-width: 1200px; margin: 0 auto; padding: 0 3rem; }
-  .section-label { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem; }
+  .section-label { font-family: 'DM Mono', monospace; font-size: 0.68rem; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.8rem; }
   .section-label::after { content: ''; flex: 1; height: 1px; background: linear-gradient(90deg, var(--line), transparent); }
-  .section-heading { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.2rem, 3.5vw, 3.5rem); font-weight: 300; line-height: 1.1; color: var(--text-primary); margin-bottom: 1rem; }
+  .section-heading { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 4vw, 4rem); font-weight: 300; line-height: 1.1; color: var(--text-primary); margin-bottom: 1rem; }
   .section-heading em { color: var(--gold); font-style: italic; }
 
   /* ── ABOUT ── */
@@ -109,7 +109,7 @@
   .about-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 5rem; align-items: start; }
   .about-quote { font-family: 'Cormorant Garamond', serif; font-size: 1.35rem; font-style: italic; font-weight: 400; color: var(--text-primary); line-height: 1.7; border-left: 3px solid var(--gold); padding-left: 1.5rem; margin: 2rem 0; }
   .about-quote-attr { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.12em; color: var(--text-muted); padding-left: 1.5rem; margin-top: -1.2rem; }
-  .about-body { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; line-height: 1.9; color: var(--text-secondary); margin-top: 1.5rem; }
+  .about-body { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; line-height: 1.95; color: var(--text-secondary); margin-top: 1.5rem; }
   .about-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2.5rem; }
   .tag { background: var(--gold-bg); border: 1px solid var(--gold-border); color: var(--gold); padding: 0.35rem 0.9rem; font-family: 'DM Mono', monospace; font-size: 0.57rem; letter-spacing: 0.12em; text-transform: uppercase; border-radius: 2px; transition: all 0.2s; }
   .tag:hover { background: rgba(196,127,23,0.18); }
@@ -129,9 +129,11 @@
   .kpi-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--gold), var(--gold-light)); border-radius: 6px 6px 0 0; }
   .kpi-number { font-family: 'Cormorant Garamond', serif; font-size: 3.2rem; font-weight: 300; line-height: 1; color: var(--gold); margin-bottom: 0.4rem; }
   .kpi-unit { font-size: 1.6rem; color: var(--gold-light); }
-  .kpi-title { font-family: 'Syne', sans-serif; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.05em; color: var(--text-primary); margin-bottom: 0.5rem; text-transform: uppercase; }
-  .kpi-desc { font-family: 'DM Mono', monospace; font-size: 0.57rem; letter-spacing: 0.03em; color: var(--text-muted); line-height: 1.7; }
+  .kpi-title { font-family: 'Syne', sans-serif; font-size: 0.82rem; font-weight: 700; letter-spacing: 0.05em; color: var(--text-primary); margin-bottom: 0.5rem; text-transform: uppercase; }
+  .kpi-desc { font-family: 'DM Mono', monospace; font-size: 0.64rem; letter-spacing: 0.03em; color: var(--text-muted); line-height: 1.7; }
   .kpi-benchmark { margin-top: 0.75rem; font-family: 'DM Mono', monospace; font-size: 0.54rem; letter-spacing: 0.03em; color: var(--accent-teal-light); line-height: 1.6; padding: 0.4rem 0.6rem; background: var(--accent-teal-bg); border-left: 2px solid var(--accent-teal); border-radius: 0 2px 2px 0; }
+  .kpi-benchmark a { color: inherit; text-decoration: underline; text-underline-offset: 2px; transition: opacity 0.2s; }
+  .kpi-benchmark a:hover { opacity: 0.75; }
   .kpi-source { margin-top: 0.8rem; font-family: 'DM Mono', monospace; font-size: 0.52rem; letter-spacing: 0.08em; color: var(--text-muted); opacity: 0.65; text-transform: uppercase; border-top: 1px solid var(--line); padding-top: 0.6rem; }
 
   /* ── CAREER ── */
@@ -146,7 +148,7 @@
   .timeline-period { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.12em; color: var(--gold); background: var(--gold-bg); border: 1px solid var(--gold-border); padding: 0.18rem 0.7rem; border-radius: 2px; }
   .timeline-role { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-style: italic; color: var(--accent-teal-light); margin-bottom: 1.2rem; }
   .timeline-bullets { list-style: none; display: flex; flex-direction: column; gap: 0.8rem; }
-  .timeline-bullets li { font-family: 'Cormorant Garamond', serif; font-size: 1rem; line-height: 1.7; color: var(--text-secondary); padding-left: 1.4rem; position: relative; }
+  .timeline-bullets li { font-family: 'Cormorant Garamond', serif; font-size: 1.12rem; line-height: 1.8; color: var(--text-secondary); padding-left: 1.4rem; position: relative; }
   .timeline-bullets li::before { content: '—'; position: absolute; left: 0; color: var(--gold); font-size: 0.8rem; }
   .timeline-highlights { display: flex; gap: 0.7rem; flex-wrap: wrap; margin-top: 1.2rem; }
   .highlight-chip { background: var(--accent-teal-bg); border: 1px solid rgba(14,116,144,0.25); color: var(--accent-teal-light); padding: 0.28rem 0.8rem; font-family: 'DM Mono', monospace; font-size: 0.56rem; letter-spacing: 0.1em; text-transform: uppercase; border-radius: 2px; }
@@ -160,11 +162,12 @@
   .awards-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
   .award-card { background: var(--surface); border: 1px solid var(--line); border-top: 3px solid var(--gold); padding: 2.5rem 2rem; transition: transform 0.25s, box-shadow 0.25s; position: relative; overflow: hidden; box-shadow: var(--shadow); border-radius: 4px; }
   .award-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(196,127,23,0.12); }
-  .award-card::after { content: attr(data-year); position: absolute; right: 1rem; bottom: 1rem; font-family: 'Cormorant Garamond', serif; font-size: 4rem; font-weight: 300; color: var(--line); line-height: 1; pointer-events: none; }
+  .award-card::after { content: attr(data-year); position: absolute; right: 1rem; bottom: 1rem; font-family: 'Cormorant Garamond', serif; font-size: 3.5rem; font-weight: 300; color: var(--line); line-height: 1; pointer-events: none; opacity: 0.6; }
+  @media (max-width: 600px) { .award-card::after { display: none; } }
   .award-icon { font-size: 1.8rem; margin-bottom: 1.2rem; }
   .award-title { font-family: 'Syne', sans-serif; font-size: 0.95rem; font-weight: 700; color: var(--gold); margin-bottom: 0.4rem; }
   .award-org { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-teal-light); margin-bottom: 1rem; }
-  .award-desc { font-family: 'Cormorant Garamond', serif; font-size: 0.98rem; color: var(--text-secondary); line-height: 1.8; }
+  .award-desc { font-family: 'Cormorant Garamond', serif; font-size: 1.08rem; color: var(--text-secondary); line-height: 1.85; }
 
   /* ── CLIENTS ── */
   #clients { background: var(--surface3); }
@@ -187,27 +190,117 @@
   .clients-stat-num { font-family: 'Cormorant Garamond', serif; font-size: 2.6rem; font-weight: 300; color: var(--gold); line-height: 1; margin-bottom: 0.35rem; }
   .clients-stat-lbl { font-family: 'DM Mono', monospace; font-size: 0.57rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); line-height: 1.5; }
 
-  /* ── TESTIMONIALS ── */
-  #testimonials { background: var(--ink); }
-  .testimonials-intro { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--text-secondary); line-height: 1.9; max-width: 640px; margin-bottom: 2.5rem; }
-  .testimonials-list { display: flex; flex-direction: column; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; box-shadow: var(--shadow-card); }
-  .t-item { border-bottom: 1px solid var(--line); background: var(--surface); transition: background 0.3s; }
-  .t-item:last-child { border-bottom: none; }
-  .t-item.t-open { background: var(--surface2); }
-  .t-header { display: flex; align-items: center; justify-content: space-between; padding: 1.2rem 1.8rem; cursor: pointer; user-select: none; gap: 1rem; }
-  .t-header:hover { background: var(--surface3); }
-  .t-header-left { display: flex; align-items: center; gap: 1.2rem; flex: 1; min-width: 0; }
-  .t-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--gold), var(--gold-light)); flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-family: 'Syne', sans-serif; font-size: 0.78rem; font-weight: 700; color: white; }
-  .t-header-info { min-width: 0; }
-  .t-name { font-family: 'Syne', sans-serif; font-size: 0.88rem; font-weight: 700; color: var(--text-primary); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .t-role-line { font-family: 'DM Mono', monospace; font-size: 0.56rem; letter-spacing: 0.07em; color: var(--accent-teal-light); text-transform: uppercase; line-height: 1.5; margin-top: 0.15rem; }
-  .t-relation { font-family: 'DM Mono', monospace; font-size: 0.52rem; color: var(--text-muted); margin-top: 0.1rem; }
-  .t-chevron { font-size: 0.7rem; color: var(--gold); transition: transform 0.3s; flex-shrink: 0; }
-  .t-open .t-chevron { transform: rotate(180deg); }
-  .t-body { max-height: 0; overflow: hidden; transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1); padding: 0 1.8rem; }
-  .t-open .t-body { max-height: 600px; padding: 0 1.8rem 1.8rem; }
-  .t-quote-mark { font-family: 'Cormorant Garamond', serif; font-size: 3rem; line-height: 0.5; color: var(--gold); opacity: 0.3; display: block; margin-bottom: 0.6rem; }
-  .t-text { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-style: italic; color: var(--text-secondary); line-height: 1.85; border-left: 2px solid var(--gold); padding-left: 1.2rem; }
+  /* ── TESTIMONIALS — Immersive Carousel ── */
+  #testimonials { background: var(--surface2); overflow: hidden; }
+  .testimonials-carousel-wrap {
+    position: relative; margin-top: 3rem;
+    min-height: 420px;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .t-slide {
+    display: none; opacity: 0;
+    transition: opacity 0.6s ease;
+    position: absolute; top: 0; left: 0; right: 0;
+  }
+  .t-slide.t-active {
+    display: block; opacity: 1;
+    position: relative;
+  }
+  .t-slide-inner {
+    display: grid; grid-template-columns: 80px 1fr;
+    gap: 0; align-items: start;
+    padding: 3rem 0;
+  }
+  .t-big-quote {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 10rem; line-height: 0.7;
+    color: var(--gold); opacity: 0.25;
+    font-style: normal; user-select: none;
+    padding-top: 0.5rem;
+  }
+  .t-content { padding-left: 1rem; }
+  .t-main-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1.25rem, 2.2vw, 1.75rem);
+    font-style: italic; font-weight: 300;
+    color: var(--text-primary); line-height: 1.75;
+    margin-bottom: 2.5rem;
+  }
+  .t-attribution {
+    display: flex; align-items: center; gap: 1.5rem;
+  }
+  .t-attr-avatar {
+    width: 52px; height: 52px; border-radius: 50%; flex-shrink: 0;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Syne', sans-serif; font-size: 0.88rem; font-weight: 700; color: #fff;
+    box-shadow: 0 4px 16px rgba(196,127,23,0.25);
+  }
+  .t-attr-line { width: 40px; height: 2px; background: var(--gold); flex-shrink: 0; }
+  .t-attr-info {}
+  .t-attr-name {
+    font-family: 'Syne', sans-serif; font-size: 1rem; font-weight: 700;
+    color: var(--text-primary); margin-bottom: 0.2rem;
+  }
+  .t-attr-role {
+    font-family: 'DM Mono', monospace; font-size: 0.6rem;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--accent-teal-light); line-height: 1.6;
+  }
+  .t-attr-relation {
+    font-family: 'DM Mono', monospace; font-size: 0.54rem;
+    color: var(--text-muted); margin-top: 0.15rem;
+  }
+  /* Background watermark initials */
+  .t-bg-initials {
+    position: absolute; right: -1rem; top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18rem; font-weight: 300; line-height: 1;
+    color: var(--gold); opacity: 0.04;
+    user-select: none; pointer-events: none;
+    letter-spacing: -0.05em;
+  }
+  /* Navigation */
+  .t-nav {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 1rem; padding-top: 2rem;
+    border-top: 1px solid var(--line);
+  }
+  .t-nav-arrows { display: flex; gap: 0.8rem; }
+  .t-arrow-btn {
+    width: 44px; height: 44px;
+    border: 1.5px solid var(--line);
+    background: var(--surface);
+    color: var(--gold); cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem; border-radius: 50%;
+    transition: all 0.25s; box-shadow: var(--shadow);
+  }
+  .t-arrow-btn:hover {
+    border-color: var(--gold); background: var(--gold);
+    color: #fff; transform: scale(1.08);
+    box-shadow: 0 4px 16px rgba(196,127,23,0.25);
+  }
+  .t-dots-row { display: flex; gap: 0.6rem; align-items: center; }
+  .t-dot-btn {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--line); border: none; cursor: pointer;
+    transition: all 0.3s; padding: 0;
+  }
+  .t-dot-btn.t-dot-active {
+    background: var(--gold); transform: scale(1.4);
+  }
+  .t-count {
+    font-family: 'DM Mono', monospace; font-size: 0.6rem;
+    letter-spacing: 0.12em; color: var(--text-muted);
+  }
+  @media (max-width: 768px) {
+    .t-slide-inner { grid-template-columns: 50px 1fr; gap: 0; }
+    .t-big-quote { font-size: 6rem; }
+    .t-main-text { font-size: 1.15rem; }
+    .t-bg-initials { display: none; }
+  }
 
   /* ── CASE STUDIES TABS ── */
   .cs-tabs-wrapper {
@@ -254,7 +347,57 @@
   }
   .cs-tab-arrow:hover { color: var(--gold-light); }
 
-  /* ── CASE STUDIES PANELS ── */
+  /* ── CASE STUDY OUTCOME LIST & IMPACT BAR ── */
+  .cs-outcome-list { list-style: none; display: flex; flex-direction: column; gap: 0.6rem; margin: 0; padding: 0; }
+  .cs-outcome-list li { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; line-height: 1.7; color: var(--text-secondary); padding-left: 1.4rem; position: relative; }
+  .cs-outcome-list li::before { content: '✓'; position: absolute; left: 0; color: var(--gold); font-size: 0.8rem; font-weight: 700; top: 0.15rem; }
+
+  .cs-impact-bar { background: var(--surface3); border: 1px solid var(--line); border-left: 4px solid var(--gold); border-radius: 0 6px 6px 0; padding: 1.4rem 1.5rem; margin-top: 1.8rem; }
+  .cs-impact-label { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 1rem; }
+  .cs-impact-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; }
+  .cs-impact-stat { display: flex; flex-direction: column; align-items: center; text-align: center; }
+  .cs-impact-num { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 600; color: var(--text-primary); line-height: 1.1; }
+  .cs-impact-desc { font-family: 'DM Mono', monospace; font-size: 0.52rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); margin-top: 0.2rem; }
+
+  @media (max-width: 600px) { .cs-impact-stats { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; } }
+
+  /* ── CASE STUDY ENHANCEMENTS ── */
+  .cs-panel-header {
+    display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;
+  }
+  .cs-panel-number {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem; font-weight: 300; line-height: 1;
+    color: var(--gold); opacity: 0.25; flex-shrink: 0;
+    width: 60px;
+  }
+  .cs-panel-header-text { flex: 1; }
+  .cs-divider {
+    height: 1px; background: var(--line); margin: 1.5rem 0;
+  }
+  .cs-outcome-box {
+    background: var(--surface2);
+    border: 1px solid var(--line);
+    border-left: 4px solid var(--gold);
+    padding: 1.5rem;
+    border-radius: 0 4px 4px 0;
+    margin-bottom: 1.5rem;
+  }
+  .cs-outcome-box-label {
+    font-family: 'DM Mono', monospace; font-size: 0.58rem;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--gold); font-weight: 700; margin-bottom: 0.6rem;
+  }
+  .cs-dots {
+    display: flex; gap: 0.5rem; justify-content: center;
+    margin-top: 1.5rem;
+  }
+  .cs-dot {
+    width: 8px; height: 8px; border-radius: 50%;
+    background: var(--line); transition: all 0.3s; cursor: pointer;
+  }
+  .cs-dot.active { background: var(--gold); transform: scale(1.3); }
+
   #casestudies { background: var(--surface2); }
   .cs-panels { margin-top: 0; }
   .cs-panel { display: none; background: var(--surface); border: 1px solid var(--line); border-top: none; padding: 2.5rem; box-shadow: var(--shadow-card); border-radius: 0 0 8px 8px; }
@@ -265,7 +408,7 @@
   .cs-block { margin-bottom: 1.4rem; }
   .cs-section-label { font-family: 'DM Mono', monospace; font-size: 0.57rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 0.45rem; display: flex; align-items: center; gap: 0.5rem; font-weight: 700; }
   .cs-section-label::before { content: ''; width: 16px; height: 2px; background: var(--gold); flex-shrink: 0; }
-  .cs-text { font-family: 'Cormorant Garamond', serif; font-size: 1rem; line-height: 1.85; color: var(--text-secondary); }
+  .cs-text { font-family: 'Cormorant Garamond', serif; font-size: 1.08rem; line-height: 1.9; color: var(--text-secondary); }
   .cs-outcomes { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 0.5rem; }
   .cs-outcome-chip { background: var(--gold-bg); border: 1px solid var(--gold-border); color: var(--gold); padding: 0.28rem 0.8rem; font-family: 'DM Mono', monospace; font-size: 0.55rem; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 2px; }
 
@@ -1150,6 +1293,59 @@
   .corner-deco { position: absolute; width: 60px; height: 60px; pointer-events: none; }
   .corner-deco-tl { top: 0; left: 0; border-top: 2px solid var(--gold); border-left: 2px solid var(--gold); }
   .corner-deco-br { bottom: 0; right: 0; border-bottom: 2px solid var(--gold); border-right: 2px solid var(--gold); }
+
+  /* ── SCALE OF RESPONSIBILITY ── */
+  #scale { background: var(--surface3); }
+  .scale-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 2.5rem; }
+  .scale-card { background: var(--surface); border: 1px solid var(--line); border-top: 3px solid var(--accent-teal); padding: 2rem 1.5rem; text-align: center; border-radius: 4px; box-shadow: var(--shadow); transition: transform 0.2s; }
+  .scale-card:hover { transform: translateY(-3px); }
+  .scale-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; color: var(--accent-teal-light); line-height: 1; margin-bottom: 0.4rem; }
+  .scale-label { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); line-height: 1.5; }
+
+  /* ── LEADERSHIP PHILOSOPHY ── */
+  #philosophy { background: var(--surface2); }
+  .philosophy-inner { max-width: 860px; }
+  .philosophy-text { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-style: italic; font-weight: 300; line-height: 1.9; color: var(--text-secondary); border-left: 4px solid var(--gold); padding-left: 2rem; margin-top: 1.5rem; }
+  .philosophy-text strong { color: var(--text-primary); font-style: normal; font-weight: 600; }
+
+  /* ── WHY ME box ── */
+  .why-me-box { margin-top: 2.5rem; padding: 2rem; background: var(--surface3); border: 1px solid var(--line); border-left: 4px solid var(--gold); border-radius: 0 6px 6px 0; }
+  .why-me-label { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 1rem; }
+  .why-me-text { font-family: 'Cormorant Garamond', serif; font-size: 1.08rem; line-height: 1.85; color: var(--text-secondary); }
+  .why-me-text strong { color: var(--text-primary); font-style: normal; }
+
+  /* ── LANGUAGES & ARTICLES ── */
+  .meta-row { display: flex; gap: 2.5rem; flex-wrap: wrap; margin-top: 2rem; }
+  .meta-block { }
+  .meta-label { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 0.6rem; }
+  .meta-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .meta-tag { font-family: 'Syne', sans-serif; font-size: 0.75rem; font-weight: 600; color: var(--text-secondary); background: var(--surface); border: 1px solid var(--line); padding: 0.3rem 0.8rem; border-radius: 2px; }
+
+
+.scale-card { background: var(--surface); border: 1px solid var(--line); border-top: 3px solid var(--accent-teal); padding: 2rem 1.5rem; text-align: center; border-radius: 4px; box-shadow: var(--shadow); transition: transform 0.2s; }
+  .scale-card:hover { transform: translateY(-3px); }
+  .scale-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; color: var(--accent-teal-light); line-height: 1; margin-bottom: 0.4rem; }
+  .scale-label { font-family: 'DM Mono', monospace; font-size: 0.6rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-muted); line-height: 1.5; }
+
+  /* ── LEADERSHIP PHILOSOPHY ── */
+  #philosophy { background: var(--surface2); }
+  .philosophy-inner { max-width: 860px; }
+  .philosophy-text { font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-style: italic; font-weight: 300; line-height: 1.9; color: var(--text-secondary); border-left: 4px solid var(--gold); padding-left: 2rem; margin-top: 1.5rem; }
+  .philosophy-text strong { color: var(--text-primary); font-style: normal; font-weight: 600; }
+
+  /* ── WHY ME box ── */
+  .why-me-box { margin-top: 2.5rem; padding: 2rem; background: var(--surface3); border: 1px solid var(--line); border-left: 4px solid var(--gold); border-radius: 0 6px 6px 0; }
+  .why-me-label { font-family: 'DM Mono', monospace; font-size: 0.62rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 1rem; }
+  .why-me-text { font-family: 'Cormorant Garamond', serif; font-size: 1.08rem; line-height: 1.85; color: var(--text-secondary); }
+  .why-me-text strong { color: var(--text-primary); font-style: normal; }
+
+  /* ── LANGUAGES & ARTICLES ── */
+  .meta-row { display: flex; gap: 2.5rem; flex-wrap: wrap; margin-top: 2rem; }
+  .meta-block { }
+  .meta-label { font-family: 'DM Mono', monospace; font-size: 0.58rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 700; margin-bottom: 0.6rem; }
+  .meta-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+  .meta-tag { font-family: 'Syne', sans-serif; font-size: 0.75rem; font-weight: 600; color: var(--text-secondary); background: var(--surface); border: 1px solid var(--line); padding: 0.3rem 0.8rem; border-radius: 2px; }
+
 </style>
 </head>
 <body>
@@ -1158,14 +1354,15 @@
 <nav>
   <div class="nav-logo">Sumit Nandy</div>
   <ul class="nav-links">
-    <li><a href="#about">About</a></li>
+    <li><a href="#about">Profile</a></li>
     <li><a href="#impact">Impact</a></li>
-    <li><a href="#career">Experience</a></li>
     <li><a href="#clients">Clients</a></li>
-    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="#career">Journey</a></li>
     <li><a href="#casestudies">Case Studies</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
     <li><a href="#awards">Awards</a></li>
     <li><a href="#skills">Expertise</a></li>
+    <li><a href="#credentials">Credentials</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div style="display:flex;gap:0.6rem;align-items:center;">
@@ -1174,18 +1371,17 @@
   </div>
 </nav>
 <div class="mobile-nav" id="mobileNav">
-  <a href="#about" onclick="closeMobileNav()">About</a>
+  <a href="#about" onclick="closeMobileNav()">Profile</a>
   <a href="#impact" onclick="closeMobileNav()">Impact</a>
-  <a href="#career" onclick="closeMobileNav()">Experience</a>
   <a href="#clients" onclick="closeMobileNav()">Clients</a>
-  <a href="#testimonials" onclick="closeMobileNav()">Testimonials</a>
+  <a href="#career" onclick="closeMobileNav()">Journey</a>
   <a href="#casestudies" onclick="closeMobileNav()">Case Studies</a>
+  <a href="#testimonials" onclick="closeMobileNav()">Testimonials</a>
   <a href="#awards" onclick="closeMobileNav()">Awards</a>
   <a href="#skills" onclick="closeMobileNav()">Expertise</a>
+  <a href="#credentials" onclick="closeMobileNav()">Credentials</a>
   <a href="#contact" onclick="closeMobileNav()">Contact</a>
 </div>
-</nav>
-
 <!-- HERO -->
 <section id="hero">
   <div class="hero-left">
@@ -1198,6 +1394,7 @@
     <div class="hero-ctas">
       <a href="#contact" class="btn-primary">Engage for a Project</a>
       <a href="#impact" class="btn-secondary">View Delivered Impact</a>
+      <a href="#casestudies" class="btn-secondary">Explore Case Studies</a>
     </div>
   </div>
   <div class="hero-right">
@@ -1224,13 +1421,17 @@
   <div class="hero-bottom-bar"></div>
 </section>
 
+<!-- ═══════════════════════════════════════════
+     SECTION 1: EXECUTIVE PROFILE
+     To remove: delete from ABOUT section to closing </section>
+     ═══════════════════════════════════════════ -->
 <!-- ABOUT -->
 <section id="about">
   <div class="section-inner">
     <div class="section-label">Executive Profile</div>
     <div class="about-grid">
       <div class="about-left">
-        <h2 class="section-heading">Advisor. <em>Builder.</em><br>Transformer.</h2>
+        <h2 class="section-heading">Advisor. <em>Architect.</em><br>Transformer.</h2>
         <blockquote class="about-quote">
           "He always took ownership of challenges, collaborated effectively across teams, and worked diligently to find solutions that benefited both customers and the organisation."
         </blockquote>
@@ -1247,37 +1448,121 @@
             <span class="country">Dubai</span>
           </div>
         </div>
+        <div class="meta-row">
+          <div class="meta-block">
+            <div class="meta-label">Languages</div>
+            <div class="meta-tags">
+              <span class="meta-tag">English</span>
+              <span class="meta-tag">Bengali</span>
+              <span class="meta-tag">Hindi</span>
+              <span class="meta-tag">Marathi</span>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="about-right">
         <p class="about-body">
-          Across 26 years and 30+ enterprise engagements, one theme emerges consistently in how clients describe Sumit: he ensures solutions are <em>used</em>, not just implemented. Whether stabilising India's largest PSU Bank's BFSI payroll landscape, steering SuccessFactors transformations across India and Japan, or driving adoption at global enterprises in Hong Kong and the Netherlands — clients note that Sumit's drive to deliver real outcomes sets him apart.
+          For more than 26 years and across 30+ enterprise transformation engagements, Sumit has built a reputation for delivering one thing that matters most: measurable business outcomes. While many leaders focus on implementation, his focus remains on adoption, value realization, and sustainable transformation.
         </p>
         <p class="about-body" style="margin-top:1.5rem">
-          Leaders who have worked with him highlight a rare combination: the technical depth to navigate complex enterprise landscapes, and the strategic instinct to identify risks early and steer programmes before they go off-track. He is described as a long-term thinking partner — someone who speaks his mind in the interest of the project, advocates persistently for the client with product and vendor teams, and builds the kind of trust that outlasts individual engagements.
+          From stabilizing one of India's largest PSU banking payroll ecosystems to leading large-scale HR, Customer Success, AI, and digital transformation initiatives across India, Southeast Asia, North America, Japan, Hong Kong, and Europe, Sumit has consistently helped organizations navigate complexity, accelerate change, and unlock business value.
         </p>
         <p class="about-body" style="margin-top:1.5rem">
-          What clients consistently value most is his accountability beyond the contract. He takes ownership of challenges, collaborates across teams to find solutions that work for both the client and the organisation, and maintains the kind of transparency that keeps everyone aligned — even through delays and disruptions. The result, as one client put it, is always an all-round win-win.
+          Clients and executive stakeholders often describe him as a rare blend of strategist, transformation leader, and trusted advisor. He combines deep functional and technology expertise with the ability to anticipate risks, challenge assumptions, and steer critical programs back on course before issues become business problems. Known for his candid counsel, customer-first mindset, and unwavering commitment to success, he builds trusted partnerships that extend far beyond project lifecycles.
         </p>
-        <div class="about-tags">
+        <p class="about-body" style="margin-top:1.5rem">
+          What distinguishes Sumit is his relentless sense of ownership. He takes accountability beyond contractual obligations, aligns diverse stakeholders around a shared vision, and drives pragmatic solutions that balance business objectives, user adoption, and organizational realities. His transparent leadership style, coupled with a focus on long-term value creation, has earned the confidence of executives, transformation teams, and customers across industries.
+        </p>
+        <p class="about-body" style="margin-top:1.5rem">
+          At the core of every engagement is a simple philosophy: <em>technology creates value only when people embrace it, adopt it, and use it to achieve meaningful outcomes.</em>
+        </p>
+
+        <div class="about-tags" style="margin-top:2rem">
           <span class="tag">AI Strategy & Roadmaps</span>
-          <span class="tag">LLM Integration</span>
-          <span class="tag">Prompt Engineering</span>
+          <span class="tag">HRMS Architecture</span>
+          <span class="tag">SAP HCM</span>
           <span class="tag">CX Transformation</span>
-          <span class="tag">BFSI Advisory</span>
           <span class="tag">HCM Consulting</span>
           <span class="tag">SaaS Transformation</span>
-          <span class="tag">AI Centre of Excellence</span>
-          <span class="tag">Churn Prediction</span>
-          <span class="tag">Intelligent Automation</span>
-          <span class="tag">Board Advisory</span>
+          <span class="tag">Business Process Alignment</span>
           <span class="tag">Change Management</span>
+          <span class="tag">Intelligent Automation</span>
+          <span class="tag">Customer Success</span>
+          <span class="tag">P&amp;L Advisory</span>
+          <span class="tag">Executive Stakeholder Management</span>
         </div>
+      </div>
+    </div>
+
+    <!-- WHY ME box — To remove: delete this div block -->
+    <div class="why-me-box" style="margin-top:3rem">
+      <div class="why-me-label">Where Strategy, Technology, and Adoption Converge — Why Sumit?</div>
+      <p class="why-me-text">
+        What differentiates Sumit is his ability to connect <strong>strategy, technology, people, and business outcomes</strong>. A trusted advisor to enterprise leaders, he combines deep transformation expertise with hands-on execution experience — helping organizations accelerate adoption, mitigate risk, and maximize the value of their technology investments. His focus is simple: turning ambitious transformation goals into measurable business results.
+      </p>
+      <p class="why-me-text" style="margin-top:1rem">
+        By bringing together the perspective of a <strong>strategic advisor</strong>, the expertise of an <strong>enterprise architect</strong>, the discipline of a <strong>delivery leader</strong>, and the accountability of a <strong>customer success executive</strong>, Sumit helps organizations bridge the gap between vision and execution — ensuring transformation initiatives deliver lasting value, not just successful implementations.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 2: LEADERSHIP PHILOSOPHY
+     To remove: delete from this comment to </section>
+     ═══════════════════════════════════════════ -->
+<!-- PHILOSOPHY -->
+<section id="philosophy">
+  <div class="section-inner">
+    <div class="section-label">Leadership Philosophy</div>
+    <h2 class="section-heading">How I <em>lead</em></h2>
+    <p class="philosophy-text">
+      I believe the true measure of leadership is not what gets implemented — it is what gets <strong>adopted, scaled, and sustained</strong>.
+    </p>
+    <p class="philosophy-text" style="margin-top:1.8rem">
+      My leadership style blends <strong>strategic vision with hands-on execution</strong>, ensuring transformation initiatives move beyond plans and presentations to deliver real business impact. I challenge assumptions, align stakeholders, anticipate risks early, and maintain a relentless focus on outcomes.
+    </p>
+    <p class="philosophy-text" style="margin-top:1.8rem">
+      Having led complex global transformations across industries, I know that technology is rarely the hardest part of change. Success comes from bringing <strong>people, processes, and purpose</strong> together around a shared vision — and staying accountable until value is realized.
+    </p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════
+     SECTION 3: SCALE OF RESPONSIBILITY
+     To remove: delete from this comment to </section>
+     ═══════════════════════════════════════════ -->
+<!-- SCALE -->
+<section id="scale">
+  <div class="section-inner">
+    <div class="section-label">Scale of Responsibility</div>
+    <h2 class="section-heading">The <em>scope</em> of delivery</h2>
+    <div class="scale-grid">
+      <div class="scale-card">
+        <div class="scale-num">50<span style="font-size:1.4rem">+</span></div>
+        <div class="scale-label">Professionals<br>Led</div>
+      </div>
+      <div class="scale-card">
+        <div class="scale-num">$7<span style="font-size:1.4rem">M+</span></div>
+        <div class="scale-label">Annual Business<br>Portfolio</div>
+      </div>
+      <div class="scale-card">
+        <div class="scale-num">5</div>
+        <div class="scale-label">Global Regions<br>Covered</div>
+      </div>
+      <div class="scale-card">
+        <div class="scale-num">150<span style="font-size:1.4rem">+</span></div>
+        <div class="scale-label">Enterprise HR<br>Services Managed</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- IMPACT -->
+<!-- ═══════════════════════════════════════════
+     SECTION 4: QUANTIFIED IMPACT
+     To remove: delete from IMPACT comment to </section>
+     ═══════════════════════════════════════════ -->
 <section id="impact">
   <div class="section-inner">
     <div class="section-label">Quantified Impact</div>
@@ -1290,232 +1575,67 @@
         <div class="kpi-number"><span class="counter" data-target="94">0</span><span class="kpi-unit">%</span></div>
         <div class="kpi-title">Customer Retention</div>
         <div class="kpi-desc">Sustained retention via AI-powered health scoring and predictive engagement across 4 CX roles spanning 10 years</div>
-        <div class="kpi-benchmark">Industry avg: 72–85% · Source: Gainsight CS Index 2023</div>
+        <div class="kpi-benchmark">Industry avg: 72–85% · Source: <a href="https://www.gainsight.com/guides/customer-success-index/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:2px;">Gainsight CS Index 2023</a></div>
         <div class="kpi-source">Cornerstone · SAP · M&amp;M · Cloud4C · 2015–2025</div>
       </div>
       <div class="kpi-card">
         <div class="kpi-number"><span class="counter" data-target="40">0</span><span class="kpi-unit">%+</span></div>
         <div class="kpi-title">Manual Process Reduction</div>
         <div class="kpi-desc">Reduction in manual intervention via AI-led automation — 6.6 Lakh users, 150+ HR services across payroll & pension</div>
-        <div class="kpi-benchmark">Industry avg: 20–30% · Source: McKinsey Automation Report 2023</div>
+        <div class="kpi-benchmark">Industry avg: 20–30% · Source: <a href="https://www.mckinsey.com/capabilities/mckinsey-digital/our-insights/the-top-trends-in-tech" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:2px;">McKinsey Automation Report 2023</a></div>
         <div class="kpi-source">SAP · M&amp;M · Cloud4C · ZingHR · 2018–2025</div>
       </div>
       <div class="kpi-card">
         <div class="kpi-number"><span class="counter" data-target="37">0</span><span class="kpi-unit">%</span></div>
         <div class="kpi-title">Operational Efficiency</div>
         <div class="kpi-desc">Efficiency improvement via intelligent automation and AI-augmented decision tools across enterprise accounts</div>
-        <div class="kpi-benchmark">Industry avg: 15–25% · Source: Deloitte AI Enterprise Survey 2023</div>
+        <div class="kpi-benchmark">Industry avg: 15–25% · Source: <a href="https://www2.deloitte.com/us/en/insights/focus/cognitive-technologies/state-of-ai-and-intelligent-automation-in-business-survey.html" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:2px;">Deloitte AI Enterprise Survey 2023</a></div>
         <div class="kpi-source">M&amp;M · Cloud4C · ZingHR · 2022–2025</div>
       </div>
       <div class="kpi-card">
         <div class="kpi-number"><span class="counter" data-target="36">0</span><span class="kpi-unit">%</span></div>
         <div class="kpi-title">CSAT Improvement</div>
         <div class="kpi-desc">Increase in customer satisfaction scores via AI-assisted change management and adoption programmes</div>
-        <div class="kpi-benchmark">Industry avg: 10–15% · Source: Forrester CX Index 2023</div>
+        <div class="kpi-benchmark">Industry avg: 10–15% · Source: <a href="https://www.forrester.com/report/the-forrester-customer-experience-index/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:2px;">Forrester CX Index 2023</a></div>
         <div class="kpi-source">CSOD · SAP · M&amp;M · 2015–2023</div>
       </div>
       <div class="kpi-card">
         <div class="kpi-number"><span class="counter" data-target="27">0</span><span class="kpi-unit">%</span></div>
         <div class="kpi-title">Support Ticket Reduction</div>
         <div class="kpi-desc">Reduction in service tickets via AI-powered Digital Concierge self-service tool — SAP APJ Innovation Award 2021</div>
-        <div class="kpi-benchmark">Industry avg: 15–20% · Source: Gartner IT Service Desk 2022</div>
+        <div class="kpi-benchmark">Industry avg: 15–20% · Source: <a href="https://www.gartner.com/en/information-technology/insights/it-service-desk" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:2px;">Gartner IT Service Desk 2022</a></div>
         <div class="kpi-source">SAP APJ · 2021</div>
       </div>
       <div class="kpi-card">
         <div class="kpi-number"><span class="counter" data-target="20">0</span><span class="kpi-unit">%+</span></div>
         <div class="kpi-title">Expansion Revenue</div>
         <div class="kpi-desc">Revenue growth through AI-assisted health monitoring, behavioural signals analysis and predictive upsell playbooks</div>
-        <div class="kpi-benchmark">Industry NRR avg: 10–15% · Source: OpenView SaaS Benchmarks 2023</div>
+        <div class="kpi-benchmark">Industry NRR avg: 10–15% · Source: <a href="https://openviewpartners.com/saas-benchmarks-report/" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:2px;">OpenView SaaS Benchmarks 2023</a></div>
         <div class="kpi-source">CSOD · SAP · M&amp;M · 2015–2023</div>
       </div>
       <div class="kpi-card">
         <div class="kpi-number"><span class="counter" data-target="18">0</span><span class="kpi-unit">%</span></div>
         <div class="kpi-title">CX Index Uplift</div>
         <div class="kpi-desc">Improvement in customer experience index through data-driven AI strategy and proactive account management</div>
-        <div class="kpi-benchmark">Industry avg: 8–12% · Source: PwC CX Report 2023</div>
+        <div class="kpi-benchmark">Industry avg: 8–12% · Source: <a href="https://www.pwc.com/us/en/services/consulting/library/consumer-intelligence-series/future-of-customer-experience.html" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:2px;">PwC CX Report 2023</a></div>
         <div class="kpi-source">SAP · M&amp;M · CSOD · 2015–2023</div>
       </div>
       <div class="kpi-card">
         <div class="kpi-number"><span class="counter" data-target="12">0</span><span class="kpi-unit">%</span></div>
         <div class="kpi-title">Client Cost Reduction</div>
         <div class="kpi-desc">IT landscape optimisation via AI-driven analysis, cloud rightsizing and intelligent automation advisory</div>
-        <div class="kpi-benchmark">Industry avg: 8–10% · Source: IDC Cloud ROI Study 2023</div>
+        <div class="kpi-benchmark">Industry avg: 8–10% · Source: <a href="https://www.idc.com/getdoc.jsp?containerId=US49420022" target="_blank" rel="noopener" style="color:inherit;text-decoration:underline;text-underline-offset:2px;">IDC Cloud ROI Study 2023</a></div>
         <div class="kpi-source">SAP · M&amp;M · Cloud4C · 2018–2025</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- CAREER -->
-<section id="career">
-  <div class="section-inner">
-    <div class="section-label">Career Timeline</div>
-    <h2 class="section-heading">26 years of <em>enterprise delivery</em></h2>
-    <div class="timeline">
 
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-meta">
-          <span class="timeline-co">Cnergyis Infotech (ZingHR)</span>
-          <span class="timeline-period">Aug 2025 – Present</span>
-        </div>
-        <div class="timeline-role">CX Director & AI Innovation Lead — Enterprise Solutions</div>
-        <ul class="timeline-bullets">
-          <li>Spearheaded large-scale stabilisation and transformation of India's largest PSU Bank's HRMS landscape — spanning payroll, pension, claims, transfers, foreign postings, and core HR for 250K+ employees and 350K+ pensioners — strengthening compliance, resilience, and risk controls.</li>
-          <li>Directed mission-critical payroll and pension operations, ensuring precise, timely, and audit-ready disbursements across one of India's largest BFSI payroll environments.</li>
-          <li>Drove enterprise HR digitisation including onboarding modernisation, AI-led automation, persona-based dashboards, and a fit-for-purpose ticketing platform aligned to complex business and control needs.</li>
-          <li>Established target operating models, SOPs, and governance frameworks — accelerating efficiency, predictability, and issue resolution across HR, IT, payroll, and multi-vendor ecosystems.</li>
-          <li>Advised senior leadership, translating business priorities into scalable architectures, de-risking delivery, and steering complex programmes in a highly regulated BFSI environment.</li>
-          <li>Built an AI-powered Ticketing tool to prioritise, route, and resolve HR service requests — improving resolution speed and operational predictability.</li>
-          <li>Created an AI Roadmap and implemented key AI Agents capable of performing transactions and key process actions based on natural language prompts.</li>
-          <li>Designed persona-based AI dashboards for leadership to drive strategic decisions with real-time operational intelligence.</li>
-        </ul>
-        <div class="timeline-highlights">
-          <span class="highlight-chip">Largest PSU Bank</span>
-          <span class="highlight-chip">AI Dashboards</span>
-          <span class="highlight-chip">NLP Automation</span>
-          <span class="highlight-chip">250K+ Employees</span>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-meta">
-          <span class="timeline-co">Cloud4C Services</span>
-          <span class="timeline-period">Oct 2023 – Aug 2025</span>
-        </div>
-        <div class="timeline-role">Client Partner (VP) & AI Product Manager</div>
-        <ul class="timeline-bullets">
-          <li>Founded and led development of an intelligent AI-powered CX analytics platform — a rules-engine and ML-based tool generating proactive real-time alerts, churn risk prediction, and C-suite actionable insights for Middle East enterprise clients.</li>
-          <li>Drove end-to-end AI product lifecycle: ideation → requirements → model design → UAT → deployment — integrating the tool into live Customer Success workflows.</li>
-          <li>Leveraged AI-driven data analysis to optimize client IT landscapes, identifying inefficiencies and delivering 12% cost reduction across enterprise cloud accounts.</li>
-        </ul>
-        <div class="timeline-highlights">
-          <span class="highlight-chip">AI Product Lifecycle</span>
-          <span class="highlight-chip">Churn Prediction</span>
-          <span class="highlight-chip">Middle East Enterprise</span>
-          <span class="highlight-chip">ML Analytics</span>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-meta">
-          <span class="timeline-co">MarketsandMarkets Research</span>
-          <span class="timeline-period">Jan 2022 – Sep 2023</span>
-        </div>
-        <div class="timeline-role">Head of Customer Success & Delivery Excellence (AVP)</div>
-        <ul class="timeline-bullets">
-          <li>Architected a CS strategy powered by data-driven intelligence and AI-assisted account planning — driving retention to 94%+ and improving customer experience index by 18%.</li>
-          <li>Led digital transformation delivering 37% operational efficiency improvement and proactive risk mitigation through intelligent automation tools.</li>
-          <li>Drove 20%+ expansion revenue through AI-assisted health monitoring, behavioral signals analysis, and predictive cross-sell/upsell playbooks.</li>
-        </ul>
-        <div class="timeline-highlights">
-          <span class="highlight-chip">94% Retention</span>
-          <span class="highlight-chip">37% Efficiency Gain</span>
-          <span class="highlight-chip">20%+ Revenue Expansion</span>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-meta">
-          <span class="timeline-co">SAP India Pvt. Ltd.</span>
-          <span class="timeline-period">Mar 2018 – Jan 2022</span>
-        </div>
-        <div class="timeline-role">Customer Success Partner, Senior Advisor</div>
-        <ul class="timeline-bullets">
-          <li>Conceptualized and deployed the "Digital Concierge" — an AI-powered self-service intelligence tool recognised with the <strong style="color:var(--gold)">SAP APJ Grassroots Innovation Award (2021)</strong> by the APJ President &amp; Board Member, accelerating self-service adoption across enterprise accounts.</li>
-          <li>Directed the $7M+ annual SuccessFactors business, advising enterprise clients across India and Japan on AI-augmented digital HR transformation.</li>
-          <li>Led high-impact CS programs enabling AI-assisted change management, resulting in 36% increase in customer satisfaction scores.</li>
-          <li>Recognized in "League of Customer Champions" (2020) and earned "Business Cloud Champion – Gold" (2019) for highest cloud sales revenue in a single quarter.</li>
-        </ul>
-        <div class="timeline-highlights">
-          <span class="highlight-chip">APJ Innovation Award</span>
-          <span class="highlight-chip">$7M+ Portfolio</span>
-          <span class="highlight-chip">Digital Concierge AI</span>
-          <span class="highlight-chip">India + Japan</span>
-        </div>
-      </div>
-
-      <div class="timeline-item">
-        <div class="timeline-dot"></div>
-        <div class="timeline-meta">
-          <span class="timeline-co">Cornerstone OnDemand</span>
-          <span class="timeline-period">Mar 2015 – Jan 2018</span>
-        </div>
-        <div class="timeline-role">Senior Client Success Consultant</div>
-        <ul class="timeline-bullets">
-          <li>Led large-scale SaaS and HCM transformation programs across Aviation, BFSI, and Manufacturing in Hong Kong and the Netherlands with rigorous governance and CxO stakeholder alignment.</li>
-          <li>Facilitated Business Process Alignment workshops and directed solution design for Performance Management transformations at global industry leaders.</li>
-        </ul>
-        <div class="timeline-highlights">
-          <span class="highlight-chip">Hong Kong</span>
-          <span class="highlight-chip">Netherlands</span>
-          <span class="highlight-chip">HCM Transformation</span>
-        </div>
-      </div>
-
-      <div class="timeline-earlier">
-        <div class="earlier-item">
-          <div class="earlier-co">Accenture Services</div>
-          <div class="earlier-role">Business & Integration Associate Manager (HCM)</div>
-          <div class="earlier-period">Feb 2010 – Mar 2015</div>
-        </div>
-        <div class="earlier-item">
-          <div class="earlier-co">IBM India Pvt. Ltd.</div>
-          <div class="earlier-role">Package Solution Consultant (HCM)</div>
-          <div class="earlier-period">Mar 2004 – Feb 2010</div>
-        </div>
-        <div class="earlier-item">
-          <div class="earlier-co">Convergys Services Pvt. Ltd.</div>
-          <div class="earlier-role">Customer Care Officer</div>
-          <div class="earlier-period">Apr 2003 – Mar 2004</div>
-        </div>
-        <div class="earlier-item">
-          <div class="earlier-co">Phoebus Creations Media Pvt. Ltd.</div>
-          <div class="earlier-role">Senior Executive – Human Resource</div>
-          <div class="earlier-period">Jan 2002 – Apr 2003</div>
-        </div>
-        <div class="earlier-item">
-          <div class="earlier-co">Global Reach Pvt. Ltd.</div>
-          <div class="earlier-role">Senior Executive – Human Resource</div>
-          <div class="earlier-period">Jan 2000 – Jan 2002</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- AWARDS -->
-<section id="awards">
-  <div class="section-inner">
-    <div class="section-label">Recognition</div>
-    <h2 class="section-heading">Awards & <em>Honours</em></h2>
-    <div class="awards-grid">
-      <div class="award-card" data-year="2021">
-        <div class="award-icon">🏆</div>
-        <div class="award-title">SAP APJ Grassroots Innovation Award</div>
-        <div class="award-org">SAP — APJ President & Board Member · 2021</div>
-        <div class="award-desc">Recognised for conceptualising and deploying the AI-powered "Digital Concierge" — a self-service intelligence tool that transformed customer engagement and accelerated self-service adoption across the APJ region.</div>
-      </div>
-      <div class="award-card" data-year="2020">
-        <div class="award-icon">🎖️</div>
-        <div class="award-title">League of Customer Champions</div>
-        <div class="award-org">SAP SuccessFactors · 2020</div>
-        <div class="award-desc">Awarded for leading the SAP Customer Accreditation Series (SFX), driving exceptional customer outcomes and establishing a benchmark for enterprise client excellence across the region.</div>
-      </div>
-      <div class="award-card" data-year="2019">
-        <div class="award-icon">🥇</div>
-        <div class="award-title">Business Cloud Champion – Gold</div>
-        <div class="award-org">SAP Cloud · 2019</div>
-        <div class="award-desc">Awarded for achieving the highest cloud sales revenue in a single quarter through AI-augmented advisory, value-based consulting, and strategic portfolio expansion across enterprise accounts.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
+<!-- ═══════════════════════════════════════════
+     SECTION 5: CLIENT PORTFOLIO
+     To remove: delete from CLIENTS comment to </section>
+     ═══════════════════════════════════════════ -->
 <!-- CLIENTS -->
 <section id="clients">
   <div class="section-inner">
@@ -1536,7 +1656,7 @@
         <div class="clients-stat-lbl">Global<br>Regions</div>
       </div>
       <div class="clients-stat-cell">
-        <div class="clients-stat-num">8</div>
+        <div class="clients-stat-num">19</div>
         <div class="clients-stat-lbl">Industry<br>Sectors</div>
       </div>
       <div class="clients-stat-cell">
@@ -1622,397 +1742,683 @@
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section id="testimonials">
+
+<!-- ═══════════════════════════════════════════
+     SECTION 6: CAREER JOURNEY
+     To remove: delete from CAREER comment to </section>
+     ═══════════════════════════════════════════ -->
+<!-- CAREER -->
+<section id="career">
   <div class="section-inner">
-    <div class="section-label">Client Voice</div>
-    <h2 class="section-heading">What leaders <em>say</em></h2>
-    <p class="testimonials-intro">Verified recommendations from CxOs, CHROs, and senior leaders — sourced directly from LinkedIn. Click any name to read the full recommendation.</p>
+    <div class="section-label">Career Timeline</div>
+    <h2 class="section-heading">26 years of <em>enterprise delivery</em></h2>
+    <div class="timeline">
 
-    <div class="testimonials-list">
-
-      <div class="t-item">
-        <div class="t-header" onclick="toggleTestimonial(this)">
-          <div class="t-header-left">
-            <div class="t-avatar">JR</div>
-            <div class="t-header-info">
-              <div class="t-name">Jithender Reddy</div>
-              <div class="t-role-line">Vice President – AI Automation · Cloud4C Services</div>
-              <div class="t-relation">Colleague · June 2026</div>
-            </div>
-          </div>
-          <i class="t-chevron">▼</i>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-meta">
+          <span class="timeline-co">Cnergyis Infotech (ZingHR)</span>
+          <span class="timeline-period">Aug 2025 – Present</span>
         </div>
-        <div class="t-body">
-          <span class="t-quote-mark">"</span>
-          <p class="t-text">I had the pleasure of working with Sumit Nandy at Cloud4C. Throughout our time working together, Sumit consistently demonstrated exceptional professionalism, customer-centricity, and a strong commitment to delivering value to clients. He has a remarkable ability to build trusted relationships with customers while effectively managing complex stakeholder expectations. His proactive approach, strong communication skills, and deep understanding of client needs enabled him to drive successful outcomes and maintain high levels of customer satisfaction. What stood out most was his dedication to ensuring client success beyond contractual obligations — he always took ownership of challenges, collaborated effectively across teams, and worked diligently to find solutions that benefited both customers and the organisation. Sumit is a dependable, knowledgeable, and highly motivated professional who brings positivity and accountability to every engagement. I would highly recommend him to any organisation looking for a client-focused leader with strong relationship management and customer success expertise.</p>
+        <div class="timeline-role">CX Director & AI Innovation Lead — Enterprise Solutions</div>
+        <ul class="timeline-bullets">
+          <li>Spearheaded large-scale stabilisation and transformation of India's largest PSU Bank's HRMS landscape — spanning payroll, pension, claims, transfers, foreign postings, and core HR for 250K+ employees and 350K+ pensioners — strengthening compliance, resilience, and risk controls.</li>
+          <li>Directed mission-critical payroll and pension operations, ensuring precise, timely, and audit-ready disbursements across one of India's largest BFSI payroll environments.</li>
+          <li>Drove enterprise HR digitisation including onboarding modernisation, AI-led automation, persona-based dashboards, and a fit-for-purpose ticketing platform aligned to complex business and control needs.</li>
+          <li>Established target operating models, SOPs, and governance frameworks — accelerating efficiency, predictability, and issue resolution across HR, IT, payroll, and multi-vendor ecosystems.</li>
+          <li>Advised senior leadership, translating business priorities into scalable architectures, de-risking delivery, and steering complex programmes in a highly regulated BFSI environment.</li>
+          <li>Built an AI-powered Ticketing tool to prioritise, route, and resolve HR service requests — improving resolution speed and operational predictability.</li>
+          <li>Created an AI Roadmap and implemented key AI Agents capable of performing transactions and key process actions based on natural language prompts.</li>
+          <li>Designed persona-based AI dashboards for leadership to drive strategic decisions with real-time operational intelligence.</li>
+        </ul>
+        <div class="timeline-highlights">
+          <span class="highlight-chip">Largest PSU Bank</span>
+          <span class="highlight-chip">AI Dashboards</span>
+          <span class="highlight-chip">NLP Automation</span>
+          <span class="highlight-chip">250K+ Employees</span>
         </div>
       </div>
 
-      <div class="t-item">
-        <div class="t-header" onclick="toggleTestimonial(this)">
-          <div class="t-header-left">
-            <div class="t-avatar">KJ</div>
-            <div class="t-header-info">
-              <div class="t-name">Kartik Jogi</div>
-              <div class="t-role-line">Vertical Head HR Business Partner · Bajaj Electricals Ltd.</div>
-              <div class="t-relation">Client · August 2023</div>
-            </div>
-          </div>
-          <i class="t-chevron">▼</i>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-meta">
+          <span class="timeline-co">Cloud4C Services</span>
+          <span class="timeline-period">Oct 2023 – Aug 2025</span>
         </div>
-        <div class="t-body">
-          <span class="t-quote-mark">"</span>
-          <p class="t-text">Sumit's strengths lie in combining technical expertise with an analytical mindset. He engages with leaders to steer the project in the desired direction while ensuring timelines are met — making him an asset for any cross-functional project team. He is a strategic partner with a long-term vision, identifying potential pitfalls and planning mitigations in advance. He speaks his mind in the interest of the project and ensures the best solution is delivered.</p>
-        </div>
-      </div>
-
-      <div class="t-item">
-        <div class="t-header" onclick="toggleTestimonial(this)">
-          <div class="t-header-left">
-            <div class="t-avatar">RD</div>
-            <div class="t-header-info">
-              <div class="t-name">Ruchir Dave</div>
-              <div class="t-role-line">Head of HR Customer Advisory · SAP SuccessFactors</div>
-              <div class="t-relation">Senior Colleague · July 2023</div>
-            </div>
-          </div>
-          <i class="t-chevron">▼</i>
-        </div>
-        <div class="t-body">
-          <span class="t-quote-mark">"</span>
-          <p class="t-text">I worked with Sumit in SAP India in the SuccessFactors Line of Business. He played the role of Sr. Customer Success Partner, taking care of SuccessFactors solution implementation, adoption, consumption and renewals. In all my interactions I found him extremely client-centric and outcome focused. He has good understanding of customer success frameworks as well as the HR domain. He collaborates well with different teams and ensures engagements are completed on time with good quality. I would recommend him as a great professional and a good team player.</p>
+        <div class="timeline-role">Client Partner (VP) & AI Product Manager</div>
+        <ul class="timeline-bullets">
+          <li>Founded and led development of an intelligent AI-powered CX analytics platform — a rules-engine and ML-based tool generating proactive real-time alerts, churn risk prediction, and C-suite actionable insights for Middle East enterprise clients.</li>
+          <li>Drove end-to-end AI product lifecycle: ideation → requirements → model design → UAT → deployment — integrating the tool into live Customer Success workflows.</li>
+          <li>Leveraged AI-driven data analysis to optimize client IT landscapes, identifying inefficiencies and delivering 12% cost reduction across enterprise cloud accounts.</li>
+        </ul>
+        <div class="timeline-highlights">
+          <span class="highlight-chip">AI Product Lifecycle</span>
+          <span class="highlight-chip">Churn Prediction</span>
+          <span class="highlight-chip">Middle East Enterprise</span>
+          <span class="highlight-chip">ML Analytics</span>
         </div>
       </div>
 
-      <div class="t-item">
-        <div class="t-header" onclick="toggleTestimonial(this)">
-          <div class="t-header-left">
-            <div class="t-avatar">KP</div>
-            <div class="t-header-info">
-              <div class="t-name">Kellie Pauley</div>
-              <div class="t-role-line">Talent Management Consultant &amp; Coach · Cornerstone OnDemand</div>
-              <div class="t-relation">Colleague · April 2021</div>
-            </div>
-          </div>
-          <i class="t-chevron">▼</i>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-meta">
+          <span class="timeline-co">MarketsandMarkets Research</span>
+          <span class="timeline-period">Jan 2022 – Sep 2023</span>
         </div>
-        <div class="t-body">
-          <span class="t-quote-mark">"</span>
-          <p class="t-text">Sumit was relentless in trying to find product configuration solutions that would make his implementation clients happy. He always had a strong grasp of what his clients needed and was their advocate in trying to achieve it. He was persistent but respectful as he pushed for creative solutions when the product design did not fit a client's requirement. He also made a strong effort to resolve such issues within his own team before enlisting the support of mine.</p>
-        </div>
-      </div>
-
-      <div class="t-item">
-        <div class="t-header" onclick="toggleTestimonial(this)">
-          <div class="t-header-left">
-            <div class="t-avatar">RL</div>
-            <div class="t-header-info">
-              <div class="t-name">Rajesh Lele</div>
-              <div class="t-role-line">General Manager Operations · Tata Motors</div>
-              <div class="t-relation">Client · March 2021</div>
-            </div>
-          </div>
-          <i class="t-chevron">▼</i>
-        </div>
-        <div class="t-body">
-          <span class="t-quote-mark">"</span>
-          <p class="t-text">It has been a pleasure to work with Sumit over a period of 4+ years. His drive to ensure that solutions were used by people rather than just implemented was instrumental in helping us make the right decisions. He works very transparently, making sure the customer is in the know of where things may get stuck and shares best possible ways to get them resolved. All-in-all, Sumit is a consummate professional who ensures a balance between service, customer success and his organisation's interest — creating an all-round win-win.</p>
+        <div class="timeline-role">Head of Customer Success & Delivery Excellence (AVP)</div>
+        <ul class="timeline-bullets">
+          <li>Architected a CS strategy powered by data-driven intelligence and AI-assisted account planning — driving retention to 94%+ and improving customer experience index by 18%.</li>
+          <li>Led digital transformation delivering 37% operational efficiency improvement and proactive risk mitigation through intelligent automation tools.</li>
+          <li>Drove 20%+ expansion revenue through AI-assisted health monitoring, behavioral signals analysis, and predictive cross-sell/upsell playbooks.</li>
+        </ul>
+        <div class="timeline-highlights">
+          <span class="highlight-chip">94% Retention</span>
+          <span class="highlight-chip">37% Efficiency Gain</span>
+          <span class="highlight-chip">20%+ Revenue Expansion</span>
         </div>
       </div>
 
-      <div class="t-item">
-        <div class="t-header" onclick="toggleTestimonial(this)">
-          <div class="t-header-left">
-            <div class="t-avatar">MB</div>
-            <div class="t-header-info">
-              <div class="t-name">Manoj Bhoota</div>
-              <div class="t-role-line">Vice President – IT · Shapoorji Pallonji Group</div>
-              <div class="t-relation">Client · March 2021</div>
-            </div>
-          </div>
-          <i class="t-chevron">▼</i>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-meta">
+          <span class="timeline-co">SAP India Pvt. Ltd.</span>
+          <span class="timeline-period">Mar 2018 – Jan 2022</span>
         </div>
-        <div class="t-body">
-          <span class="t-quote-mark">"</span>
-          <p class="t-text">Sumit has closely worked with me for more than a year on our journey to implement SuccessFactors at Shapoorji Pallonji Group. As the customer engagement executive, Sumit pitched in at critical phases to remove bottlenecks and accelerate the implementation. He went out of the way to liaise with the SAP consulting team and implementation partner to ensure the optimum solution is provided. His involvement increased the level of confidence on the product which subsequently led to a successful implementation.</p>
-        </div>
-      </div>
-
-      <div class="t-item">
-        <div class="t-header" onclick="toggleTestimonial(this)">
-          <div class="t-header-left">
-            <div class="t-avatar">MP</div>
-            <div class="t-header-info">
-              <div class="t-name">Mallika Padmanabhan</div>
-              <div class="t-role-line">Head, Gurukul Leadership Development · Quest Global</div>
-              <div class="t-relation">Client · December 2017</div>
-            </div>
-          </div>
-          <i class="t-chevron">▼</i>
-        </div>
-        <div class="t-body">
-          <span class="t-quote-mark">"</span>
-          <p class="t-text">Sumit supported QuEST through a system implementation and displayed great patience and effort in ensuring we successfully completed our project. He has constantly made himself available to the team and found ways to make sure the solution worked for us. Through all our delays and disruptions, he has held our hand and provided support wherever necessary. We were lucky to have had him be part of our journey.</p>
+        <div class="timeline-role">Customer Success Partner, Senior Advisor</div>
+        <ul class="timeline-bullets">
+          <li>Conceptualized and deployed the "Digital Concierge" — an AI-powered self-service intelligence tool recognised with the <strong style="color:var(--gold)">SAP APJ Grassroots Innovation Award (2021)</strong> by the APJ President &amp; Board Member, accelerating self-service adoption across enterprise accounts.</li>
+          <li>Directed the $7M+ annual SuccessFactors business, advising enterprise clients across India and Japan on AI-augmented digital HR transformation.</li>
+          <li>Led high-impact CS programs enabling AI-assisted change management, resulting in 36% increase in customer satisfaction scores.</li>
+          <li>Recognised with the <strong style="color:var(--gold)">League of Customer Champions (2020)</strong> for leading the SAP Customer Accreditation Series and driving exceptional customer outcomes, and awarded <strong style="color:var(--gold)">Business Cloud Champion – Gold (2019)</strong> for achieving the highest cloud sales revenue in a single quarter.</li>
+        </ul>
+        <div class="timeline-highlights">
+          <span class="highlight-chip">APJ Innovation Award</span>
+          <span class="highlight-chip">$7M+ Portfolio</span>
+          <span class="highlight-chip">Digital Concierge AI</span>
+          <span class="highlight-chip">India + Japan</span>
         </div>
       </div>
 
-      <div class="t-item">
-        <div class="t-header" onclick="toggleTestimonial(this)">
-          <div class="t-header-left">
-            <div class="t-avatar">VK</div>
-            <div class="t-header-info">
-              <div class="t-name">Vivek Kulkarni</div>
-              <div class="t-role-line">SVP – Human Resources · Radio Mirchi | CHRO, Parksons Packaging</div>
-              <div class="t-relation">Client · May 2016</div>
-            </div>
-          </div>
-          <i class="t-chevron">▼</i>
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-meta">
+          <span class="timeline-co">Cornerstone OnDemand</span>
+          <span class="timeline-period">Mar 2015 – Jan 2018</span>
         </div>
-        <div class="t-body">
-          <span class="t-quote-mark">"</span>
-          <p class="t-text">Sumit was the Project Manager deployed to manage and execute the PMS Automation project for Radio Mirchi. He displayed very good understanding of the product and with his friendly nature was able to network well between the client and the product team, provide solutions and meet client expectations. Always available to troubleshoot and coach people, he was one big reason why Radio Mirchi could implement the solution seamlessly on time within a span of 4 months. He will be a must-have for any Project Implementation with CSOD.</p>
+        <div class="timeline-role">Senior Client Success Consultant</div>
+        <ul class="timeline-bullets">
+          <li>Led large-scale SaaS and HCM transformation programs across Aviation, BFSI, and Manufacturing in Hong Kong and the Netherlands with rigorous governance and CxO stakeholder alignment.</li>
+          <li>Facilitated Business Process Alignment workshops and directed solution design for Performance Management transformations at global industry leaders.</li>
+        </ul>
+        <div class="timeline-highlights">
+          <span class="highlight-chip">Hong Kong</span>
+          <span class="highlight-chip">Netherlands</span>
+          <span class="highlight-chip">HCM Transformation</span>
         </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-meta">
+          <span class="timeline-co">Accenture Services</span>
+          <span class="timeline-period">Feb 2010 – Mar 2015</span>
+        </div>
+        <div class="timeline-role">Business &amp; Integration Associate Manager — HCM</div>
+        <ul class="timeline-bullets">
+          <li>Led end-to-end SAP HCM implementations for two of the world's largest mining corporations — designing global HR templates, managing data migration across 72+ countries, and delivering from blueprint through go-live and post-live support.</li>
+          <li>Built an automated data migration tool that reduced manual effort by 85+ hours and enabled 20+ parallel validation runs — enabling confident go-live sign-off on a major re-implementation from SAP R/3 4.7 to ECC 6.0.</li>
+          <li>Headed HCM Landscape Configuration in Australia and designed the SaaS delivery model for SAP HCM within Accenture's capability centre — establishing reusable accelerators for future programmes.</li>
+        </ul>
+        <div class="timeline-highlights">
+          <span class="highlight-chip">72+ Countries</span>
+          <span class="highlight-chip">Global HR Template</span>
+          <span class="highlight-chip">Automated Migration Tool</span>
+          <span class="highlight-chip">Australia</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-meta">
+          <span class="timeline-co">IBM India Pvt. Ltd.</span>
+          <span class="timeline-period">Mar 2004 – Feb 2010</span>
+        </div>
+        <div class="timeline-role">Package Solution Consultant — SAP HCM</div>
+        <ul class="timeline-bullets">
+          <li>Led Org Management and Personnel Administration modules for North American enterprise clients — contributing to a large-scale SAP HCM rollout with structured data migration, configuration, and validation across 160+ countries for a global pharma giant.</li>
+          <li>Developed custom coding within SAP's Legacy System Migration Workbench to filter and categorise bad data before load execution — significantly reducing overall load time and providing clean, reconciled HR data at go-live.</li>
+          <li>Designed and executed the UK-to-India support transition for a major UK enterprise — building a comprehensive scenario database, training the India team, and establishing SLA frameworks for seamless handover with zero service disruption.</li>
+        </ul>
+        <div class="timeline-highlights">
+          <span class="highlight-chip">160+ Countries</span>
+          <span class="highlight-chip">Custom LSMW Tool</span>
+          <span class="highlight-chip">UK–India Transition</span>
+          <span class="highlight-chip">North America</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-meta">
+          <span class="timeline-co">Convergys Services Pvt. Ltd.</span>
+          <span class="timeline-period">Apr 2003 – Mar 2004</span>
+        </div>
+        <div class="timeline-role">Customer Care Officer</div>
+        <ul class="timeline-bullets">
+          <li>Delivered frontline customer support for enterprise clients, handling service requests and resolving queries with a focus on customer satisfaction and first-contact resolution.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-meta">
+          <span class="timeline-co">Phoebus Creations Media Pvt. Ltd.</span>
+          <span class="timeline-period">Jan 2002 – Apr 2003</span>
+        </div>
+        <div class="timeline-role">Senior Executive — Human Resource</div>
+        <ul class="timeline-bullets">
+          <li>Managed core HR operations including recruitment, onboarding, and employee lifecycle management for a fast-growing media organisation.</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-dot"></div>
+        <div class="timeline-meta">
+          <span class="timeline-co">Global Reach Pvt. Ltd.</span>
+          <span class="timeline-period">Jan 2000 – Jan 2002</span>
+        </div>
+        <div class="timeline-role">Senior Executive — Human Resource</div>
+        <ul class="timeline-bullets">
+          <li>Handled end-to-end HR functions including talent acquisition, employee relations, and HR administration — building foundational people management skills that underpinned a 26-year enterprise career.</li>
+        </ul>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- CASE STUDIES -->
+
+
+<!-- ═══════════════════════════════════════════
+     SECTION 7: CASE STUDIES
+     To remove: delete from this comment to </section>
+     ═══════════════════════════════════════════ -->
 <!-- CASE STUDIES -->
 <section id="casestudies">
   <div class="section-inner">
     <div class="section-label">Consulting Work</div>
     <h2 class="section-heading">Case <em>Studies</em></h2>
+    <p style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:var(--text-secondary);line-height:1.8;max-width:700px;margin-bottom:2.5rem;">
+      Six engagements. Spanning banking, technology, retail, and global enterprise transformation. Each anchored in measurable outcomes.
+    </p>
 
     <div class="cs-tabs-wrapper">
       <button class="cs-tab-arrow cs-tab-arrow-left" id="csArrowLeft" onclick="scrollCSTabs(-1)">&#8592;</button>
       <div class="cs-tabs" id="csTabs">
         <button class="cs-tab-btn cs-active" onclick="showCS(0, this)">HRMS Transformation</button>
-        <button class="cs-tab-btn" onclick="showCS(1, this)">HRIT Strategy &amp; Adoption</button>
-        <button class="cs-tab-btn" onclick="showCS(2, this)">Change Management</button>
-        <button class="cs-tab-btn" onclick="showCS(3, this)">Global Re-implementation</button>
-        <button class="cs-tab-btn" onclick="showCS(4, this)">Support Transition</button>
-        <button class="cs-tab-btn" onclick="showCS(5, this)">Data Migration</button>
-        <button class="cs-tab-btn" onclick="showCS(6, this)">Process Transition</button>
+        <button class="cs-tab-btn" onclick="showCS(1, this)">Global HR Rollout</button>
+        <button class="cs-tab-btn" onclick="showCS(2, this)">AI Digital Concierge</button>
+        <button class="cs-tab-btn" onclick="showCS(3, this)">CS Platform</button>
+        <button class="cs-tab-btn" onclick="showCS(4, this)">Revenue Growth Engine</button>
       </div>
       <button class="cs-tab-arrow cs-tab-arrow-right visible" id="csArrowRight" onclick="scrollCSTabs(1)">&#8594;</button>
     </div>
 
     <div class="cs-panels">
 
-      <!-- CS1: HRMS Transformation -->
       <div class="cs-panel cs-visible">
         <div class="cs-panel-left">
-          <span class="cs-tag">BFSI · HRMS · AI · SaaS</span>
+          <span class="cs-tag">BFSI &middot; HRMS &middot; AI &middot; SaaS &middot; India</span>
           <div class="cs-title">Legacy-to-SaaS HRMS Transformation for India's Largest Public Sector Bank</div>
-          <div class="cs-company">Enterprise HRMS · 2025</div>
+          <div class="cs-company">Transformation Advisor &nbsp;&middot;&nbsp; HRMS Architect &nbsp;&middot;&nbsp; AI Strategist</div>
           <div class="cs-block">
             <div class="cs-section-label">Challenge</div>
-            <p class="cs-text">One of India's largest public sector banks — managing payroll, pension, claims, transfers, and core HR for 250K+ employees and 350K+ pensioners across 150+ HR services — was operating on fragmented legacy systems with no structured audit framework, accumulating technical debt and ad-hoc enhancement backlogs with no governance in place.</p>
+            <p class="cs-text">One of India's largest public sector banks was operating a highly complex HR ecosystem supporting 250,000+ employees, 350,000+ pensioners, and over 150 HR services. Fragmented legacy systems, growing technical debt, and the absence of structured governance created operational inefficiencies, audit risks, and increasing complexity across payroll, pensions, claims, and workforce administration.</p>
           </div>
           <div class="cs-block">
             <div class="cs-section-label">Approach</div>
-            <p class="cs-text">Led structured migration of legacy HR data into an enterprise SaaS platform, establishing clean data governance and end-to-end traceability. Introduced formal documentation, SOP frameworks, and approval processes for all enhancements and bug fixes, enabling audit-ready closures. Established target operating models and multi-vendor governance. Developed an AI Roadmap and deployed AI Agents for key transactional processes. Built an AI-powered ticketing tool to prioritise, route, and resolve HR service requests. Designed persona-based dashboards for leadership decision-making.</p>
+            <p class="cs-text">Led the modernization of the HR landscape through enterprise SaaS adoption, data governance, process standardization, and multi-vendor governance. Established audit-ready operating procedures, enhancement governance, and end-to-end traceability. Defined the AI roadmap for HR operations and introduced AI-powered service management capabilities.</p>
           </div>
         </div>
         <div class="cs-panel-right">
           <div class="cs-block" style="margin-top:0">
-            <div class="cs-section-label">Outcome</div>
-            <p class="cs-text">40%+ reduction in manual payroll intervention. Zero-error, audit-ready processing environment established across one of India's most complex BFSI payroll landscapes. Governance frameworks significantly improved issue resolution predictability. AI roadmap approved by senior leadership for phased deployment across 600K+ users and 150+ HR services.</p>
+            <div class="cs-section-label">Outcomes</div>
+            <ul class="cs-outcome-list">
+              <li>40%+ reduction in manual payroll interventions</li>
+              <li>Audit-ready governance and process controls established</li>
+              <li>Improved vendor accountability and issue-resolution predictability</li>
+              <li>AI roadmap approved for 600,000+ users across 150+ HR services</li>
+              <li>Scalable foundation created for future workforce transformation</li>
+            </ul>
           </div>
-          <div class="cs-outcomes">
+          <div class="cs-impact-bar">
+            <div class="cs-impact-label">Impact at a Glance</div>
+            <div class="cs-impact-stats">
+              <div class="cs-impact-stat"><span class="cs-impact-num">600K+</span><span class="cs-impact-desc">Users</span></div>
+              <div class="cs-impact-stat"><span class="cs-impact-num">250K+</span><span class="cs-impact-desc">Employees</span></div>
+              <div class="cs-impact-stat"><span class="cs-impact-num">350K+</span><span class="cs-impact-desc">Pensioners</span></div>
+              <div class="cs-impact-stat"><span class="cs-impact-num">150+</span><span class="cs-impact-desc">HR Services</span></div>
+            </div>
+          </div>
+          <div class="cs-outcomes" style="margin-top:1rem">
             <span class="cs-outcome-chip">40%+ Manual Reduction</span>
-            <span class="cs-outcome-chip">600K+ Users</span>
-            <span class="cs-outcome-chip">150+ HR Services</span>
-            <span class="cs-outcome-chip">AI Roadmap Delivered</span>
             <span class="cs-outcome-chip">Audit-Ready Ops</span>
+            <span class="cs-outcome-chip">AI Roadmap Delivered</span>
           </div>
         </div>
       </div>
 
-      <!-- CS2: HRIT Strategy & Adoption -->
       <div class="cs-panel">
         <div class="cs-panel-left">
-          <span class="cs-tag">HCM · SaaS · CX Advisory · Change Management</span>
-          <div class="cs-title">CxO-Level HRIT Strategy, Outcome Success Plans &amp; Digital Concierge Innovation</div>
-          <div class="cs-company">Enterprise HCM Advisory · India &amp; Japan · 4 Years</div>
+          <span class="cs-tag">SAP HCM &middot; Global &middot; Multi-Country &middot; Enterprise</span>
+          <div class="cs-title">Global HR Transformation Across 72+ Countries</div>
+          <div class="cs-company">Global Solution Architect &nbsp;&middot;&nbsp; Transformation Lead</div>
           <div class="cs-block">
             <div class="cs-section-label">Challenge</div>
-            <p class="cs-text">Enterprise clients across India and Japan had invested significantly in cloud HCM platforms but struggled with low adoption, unclear ROI, and a widening gap between their current HR digital maturity and their desired state. Partner teams lacked the tools to diagnose and resolve complex scenarios independently, leading to escalations and stalled implementations.</p>
+            <p class="cs-text">A multinational enterprise sought to replace fragmented HR systems with a unified global platform while balancing local compliance requirements, regional processes, and executive expectations across multiple geographies.</p>
           </div>
           <div class="cs-block">
             <div class="cs-section-label">Approach</div>
-            <p class="cs-text">Engaged CxOs as a strategic advisor to co-create Outcome Success Plans and HRIT roadmaps — running current-state diagnostics, GAP analyses, and desired-state blueprints. Initiated and ran SuccessFactors Accreditation (SFX) sessions, enabling product admins to gain deep subject knowledge and complete their accreditation — directly reducing support ticket volumes. Designed and deployed the "Digital Concierge," an AI-powered self-service tool. Executed Outcome Success Plans with CxOs to build complete roadmaps improving NPS, referenceability, and CSAT. Enabled the partner ecosystem through structured enablement programmes.</p>
+            <p class="cs-text">Led global design workshops, stakeholder alignment, process harmonization, and deployment strategy across multiple regions. Developed a scalable operating model that balanced global standardization with local flexibility.</p>
           </div>
         </div>
         <div class="cs-panel-right">
           <div class="cs-block" style="margin-top:0">
-            <div class="cs-section-label">Outcome</div>
-            <p class="cs-text">Significant reduction in support ticket volumes post-SFX accreditation. Measurable improvement in NPS, referenceability, and CSAT across the portfolio. Digital Concierge recognised with the APJ Grassroots Innovation Award. Outcome Success Plans drove consistent renewal and expansion. 36% improvement in CSAT. 27% reduction in support tickets.</p>
+            <div class="cs-section-label">Outcomes</div>
+            <ul class="cs-outcome-list">
+              <li>Standardized HR processes across 72+ countries</li>
+              <li>Improved workforce visibility and reporting accuracy</li>
+              <li>Accelerated adoption through targeted change management</li>
+              <li>Reduced complexity from legacy systems and disparate processes</li>
+            </ul>
           </div>
-          <div class="cs-outcomes">
+          <div class="cs-impact-bar">
+            <div class="cs-impact-label">Impact at a Glance</div>
+            <div class="cs-impact-stats">
+              <div class="cs-impact-stat"><span class="cs-impact-num">72+</span><span class="cs-impact-desc">Countries</span></div>
+              <div class="cs-impact-stat"><span class="cs-impact-num">Global</span><span class="cs-impact-desc">Workforce</span></div>
+              <div class="cs-impact-stat"><span class="cs-impact-num">Multi</span><span class="cs-impact-desc">Region</span></div>
+            </div>
+          </div>
+          <div class="cs-outcomes" style="margin-top:1rem">
+            <span class="cs-outcome-chip">72+ Countries</span>
+            <span class="cs-outcome-chip">Global HR Template</span>
+            <span class="cs-outcome-chip">Change Management</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="cs-panel">
+        <div class="cs-panel-left">
+          <span class="cs-tag">AI &middot; Innovation &middot; Customer Success &middot; Self-Service</span>
+          <div class="cs-title">Building SAP's AI-Powered Digital Concierge</div>
+          <div class="cs-company">Innovation Lead &nbsp;&middot;&nbsp; Customer Success Strategist</div>
+          <div class="cs-block">
+            <div class="cs-section-label">Challenge</div>
+            <p class="cs-text">Enterprise customers frequently depended on consultants and support teams for product guidance, issue resolution, and adoption assistance — resulting in slower time-to-value and increased support dependency across the portfolio.</p>
+          </div>
+          <div class="cs-block">
+            <div class="cs-section-label">Approach</div>
+            <p class="cs-text">Designed and launched an AI-powered Digital Concierge capable of guiding customers through implementation, adoption, troubleshooting, and best-practice recommendations. The solution leveraged contextual intelligence to provide personalized guidance and accelerate self-service.</p>
+          </div>
+        </div>
+        <div class="cs-panel-right">
+          <div class="cs-block" style="margin-top:0">
+            <div class="cs-section-label">Outcomes</div>
+            <ul class="cs-outcome-list">
+              <li>Reduced dependency on support and consulting teams</li>
+              <li>Accelerated customer onboarding and adoption journeys</li>
+              <li>Improved customer experience through personalized assistance</li>
+              <li>Created a scalable digital engagement model</li>
+            </ul>
+          </div>
+          <div class="cs-impact-bar">
+            <div class="cs-impact-label">Impact at a Glance</div>
+            <div class="cs-impact-stats">
+              <div class="cs-impact-stat"><span class="cs-impact-num">&#127942;</span><span class="cs-impact-desc">APJ Award</span></div>
+              <div class="cs-impact-stat"><span class="cs-impact-num">27%&#8595;</span><span class="cs-impact-desc">Tickets</span></div>
+              <div class="cs-impact-stat"><span class="cs-impact-num">36%&#8593;</span><span class="cs-impact-desc">CSAT</span></div>
+            </div>
+          </div>
+          <div class="cs-outcomes" style="margin-top:1rem">
             <span class="cs-outcome-chip">APJ Innovation Award</span>
-            <span class="cs-outcome-chip">36% CSAT Uplift</span>
-            <span class="cs-outcome-chip">27% Ticket Reduction</span>
-            <span class="cs-outcome-chip">NPS Improved</span>
-            <span class="cs-outcome-chip">SFX Accreditation</span>
+            <span class="cs-outcome-chip">Adoption Accelerated</span>
+            <span class="cs-outcome-chip">Scalable Self-Service</span>
           </div>
         </div>
       </div>
 
-      <!-- CS3: Business Process Alignment -->
       <div class="cs-panel">
         <div class="cs-panel-left">
-          <span class="cs-tag">SaaS · HCM · Change Management · Business Process Alignment</span>
-          <div class="cs-title">Faster Deployment Through Business Process Alignment &amp; Change Management</div>
-          <div class="cs-company">Global Enterprise HCM · APAC &amp; Europe · 3 Years</div>
+          <span class="cs-tag">AI &middot; Product Strategy &middot; Customer Success &middot; SaaS</span>
+          <div class="cs-title">Designing an Autonomous Customer Success Platform</div>
+          <div class="cs-company">Product Strategist &nbsp;&middot;&nbsp; AI Solution Architect</div>
           <div class="cs-block">
             <div class="cs-section-label">Challenge</div>
-            <p class="cs-text">Large enterprise clients in Aviation, BFSI, and Manufacturing had adopted cloud HCM platforms but faced a fundamental challenge: aligning business processes to the platform's digitisation strategy rather than replicating legacy ways of working. Change resistance was high, adoption was slow, and the path to ROI was unclear — blocking CxO approval for expansion investments.</p>
+            <p class="cs-text">Customer Success teams struggled to proactively identify adoption risks, predict churn, and scale engagement across growing customer portfolios — relying on reactive signals rather than predictive intelligence.</p>
           </div>
           <div class="cs-block">
             <div class="cs-section-label">Approach</div>
-            <p class="cs-text">Designed and facilitated Business Process Alignment Workshops globally — bringing HR leadership, IT, and business stakeholders together to map current-state processes, identify digitisation opportunities, and align on a future-state operating model. Ran targeted Change Management programmes to drive user adoption and overcome resistance. Focused on speed-to-value: compressing time between go-live and demonstrable ROI by working directly with CxOs on success metrics. Provided hands-on configuration advisory to ensure solutions were robust and sustainable.</p>
+            <p class="cs-text">Designed an AI-driven Customer Success platform combining health scores, sentiment analysis, stakeholder intelligence, renewal forecasting, adoption analytics, and automated playbooks to enable proactive, scalable portfolio management.</p>
           </div>
         </div>
         <div class="cs-panel-right">
           <div class="cs-block" style="margin-top:0">
-            <div class="cs-section-label">Outcome</div>
-            <p class="cs-text">Rapid ROI delivery demonstrated within compressed timelines, unlocking expansion projects at multiple enterprise accounts. Clear business process alignment achieved — eliminating legacy workarounds and establishing a sustainable, standards-driven operating model. High adoption scores across Performance Management transformations in APAC and Europe.</p>
+            <div class="cs-section-label">Outcomes</div>
+            <ul class="cs-outcome-list">
+              <li>Proactive identification of churn and renewal risks</li>
+              <li>Improved visibility into customer health and adoption trends</li>
+              <li>Increased operational efficiency through automation</li>
+              <li>Created a scalable framework for portfolio management</li>
+            </ul>
           </div>
-          <div class="cs-outcomes">
-            <span class="cs-outcome-chip">Rapid ROI Delivery</span>
-            <span class="cs-outcome-chip">Process Alignment</span>
-            <span class="cs-outcome-chip">Robust Solution</span>
-            <span class="cs-outcome-chip">Expansion Unlocked</span>
-            <span class="cs-outcome-chip">APAC + Europe</span>
+          <div class="cs-impact-bar">
+            <div class="cs-impact-label">Impact at a Glance</div>
+            <div class="cs-impact-stats">
+              <div class="cs-impact-stat"><span class="cs-impact-num">AI</span><span class="cs-impact-desc">Predictive</span></div>
+              <div class="cs-impact-stat"><span class="cs-impact-num">Risk</span><span class="cs-impact-desc">Mitigated</span></div>
+              <div class="cs-impact-stat"><span class="cs-impact-num">Revenue</span><span class="cs-impact-desc">Protected</span></div>
+            </div>
+          </div>
+          <div class="cs-outcomes" style="margin-top:1rem">
+            <span class="cs-outcome-chip">Churn Prediction</span>
+            <span class="cs-outcome-chip">Health Scoring</span>
+            <span class="cs-outcome-chip">Automated Playbooks</span>
           </div>
         </div>
       </div>
 
-      <!-- CS4: Global Re-implementation (Mining) -->
       <div class="cs-panel">
         <div class="cs-panel-left">
-          <span class="cs-tag">SAP HCM · Re-implementation · Automation · Mining</span>
-          <div class="cs-title">SAP R/3 to ECC 6.0 Re-implementation: From 90% Custom to 95% Standard</div>
-          <div class="cs-company">Global Mining Corporation · Singapore HQ · Full Re-implementation</div>
+          <span class="cs-tag">Customer Success &middot; Revenue &middot; Retention &middot; SaaS</span>
+          <div class="cs-title">Transforming Customer Success into a Revenue Growth Engine</div>
+          <div class="cs-company">Customer Success Leader &nbsp;&middot;&nbsp; Strategic Advisor</div>
           <div class="cs-block">
             <div class="cs-section-label">Challenge</div>
-            <p class="cs-text">One of the world's largest mining corporations — headquartered in Singapore — was running a heavily customised SAP R/3 4.7 landscape (90% custom code), creating unsustainable maintenance overhead. The objective was a full re-implementation to SAP ECC 6.0 targeting 95% standard solution — requiring complex data migration, configuration translation, and validated parallel run cycles across a massive global footprint.</p>
+            <p class="cs-text">Organizations viewed Customer Success primarily as a support function rather than a strategic driver of retention, expansion, and customer advocacy — leaving significant revenue potential unrealized.</p>
           </div>
           <div class="cs-block">
             <div class="cs-section-label">Approach</div>
-            <p class="cs-text">Led the re-implementation from design through go-live. Co-developed an automated migration tool with the technical team — reading legacy system values, validating target system configuration, applying translation rules, and updating the target system automatically. This eliminated manual data mapping and enabled high-frequency parallel run cycles for robust go-live validation.</p>
+            <p class="cs-text">Built customer success frameworks focused on onboarding excellence, adoption, value realization, executive engagement, renewal readiness, and expansion planning. Established data-driven operating models supported by customer health indicators and success plans.</p>
           </div>
         </div>
         <div class="cs-panel-right">
           <div class="cs-block" style="margin-top:0">
-            <div class="cs-section-label">Outcome</div>
-            <p class="cs-text">Automated tool reduced manual effort by 85+ hours and enabled 20+ parallel runs — providing the rigour needed for confident go-live sign-off. Successfully transitioned from 90% custom to 95% standard SAP ECC 6.0, dramatically reducing future maintenance burden and improving system sustainability.</p>
+            <div class="cs-section-label">Outcomes</div>
+            <ul class="cs-outcome-list">
+              <li>Managed portfolios exceeding $7M ARR</li>
+              <li>Achieved 94% customer retention rates</li>
+              <li>Improved customer adoption and executive engagement</li>
+              <li>Increased expansion and upsell opportunities through proactive value management</li>
+            </ul>
           </div>
-          <div class="cs-outcomes">
-            <span class="cs-outcome-chip">85+ Hours Saved</span>
-            <span class="cs-outcome-chip">20+ Parallel Runs</span>
-            <span class="cs-outcome-chip">95% Standard Solution</span>
-            <span class="cs-outcome-chip">Automated Migration Tool</span>
+          <div class="cs-impact-bar">
+            <div class="cs-impact-label">Impact at a Glance</div>
+            <div class="cs-impact-stats">
+              <div class="cs-impact-stat"><span class="cs-impact-num">94%</span><span class="cs-impact-desc">Retention</span></div>
+              <div class="cs-impact-stat"><span class="cs-impact-num">$7M+</span><span class="cs-impact-desc">Portfolio</span></div>
+              <div class="cs-impact-stat"><span class="cs-impact-num">20%+</span><span class="cs-impact-desc">Expansion</span></div>
+            </div>
           </div>
-        </div>
-      </div>
-
-      <!-- CS5: Support Transition (Mining - South Africa) -->
-      <div class="cs-panel">
-        <div class="cs-panel-left">
-          <span class="cs-tag">SAP HCM · Support Transition · Predictive Analytics · Mining</span>
-          <div class="cs-title">Offshore Support Transition &amp; Predictive Volume Management</div>
-          <div class="cs-company">Global Mining Corporation · South Africa HQ · Support Transition</div>
-          <div class="cs-block">
-            <div class="cs-section-label">Challenge</div>
-            <p class="cs-text">One of the world's largest mining corporations — headquartered in South Africa — needed to transition its entire SAP HCM support operations from onsite to an India delivery centre within a very short timeframe, without disrupting service continuity. The India team had limited process knowledge, and incoming support volumes were unpredictable — making resourcing and budgeting extremely difficult.</p>
-          </div>
-          <div class="cs-block">
-            <div class="cs-section-label">Approach</div>
-            <p class="cs-text">Built a comprehensive scenario-and-module knowledge database enabling rapid incident analysis and resolution. Trained functional and technical resources across all relevant process areas. Coordinated directly with the client for seamless handover with quick TAT. Built a pattern-based predictive tool analysing historical ticket data to forecast incoming support volumes month-on-month — enabling proactive resourcing and effective budget management.</p>
-          </div>
-        </div>
-        <div class="cs-panel-right">
-          <div class="cs-block" style="margin-top:0">
-            <div class="cs-section-label">Outcome</div>
-            <p class="cs-text">Seamless transition of full SAP HCM support to the India delivery centre within agreed timeline. Significant reduction in average resolution time through the scenario database. Predictive volume tool enabled accurate monthly resourcing — eliminating reactive staffing and improving budget predictability across the engagement.</p>
-          </div>
-          <div class="cs-outcomes">
-            <span class="cs-outcome-chip">Seamless Transition</span>
-            <span class="cs-outcome-chip">Predictive Volume Tool</span>
-            <span class="cs-outcome-chip">Faster Resolution</span>
-            <span class="cs-outcome-chip">Budget Optimised</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- CS6: Data Migration (Pharma) -->
-      <div class="cs-panel">
-        <div class="cs-panel-left">
-          <span class="cs-tag">SAP HCM · Data Migration · 160+ Countries · Pharma</span>
-          <div class="cs-title">Mass Data Migration for a Global Pharma Giant Across 160+ Countries</div>
-          <div class="cs-company">North American Pharma Enterprise · Global HCM Implementation</div>
-          <div class="cs-block">
-            <div class="cs-section-label">Challenge</div>
-            <p class="cs-text">A North American pharma giant implementing SAP HCM required mass data migration across 160+ countries. The standard SAP Legacy System Migration Workbench lacked the filtering and validation precision needed at this scale. Bad data was causing failed loads, rework cycles, extended timelines, and quality risks at go-live.</p>
-          </div>
-          <div class="cs-block">
-            <div class="cs-section-label">Approach</div>
-            <p class="cs-text">Developed custom coding within the Legacy System Migration Workbench — adding intelligent filtering logic that identified, categorised, and separated bad data before load execution. Error categorisation enabled the client to quickly understand, fix, and reload data with precision. Migration was structured by geography ensuring controlled, verifiable batch execution with full reconciliation at each stage.</p>
-          </div>
-        </div>
-        <div class="cs-panel-right">
-          <div class="cs-block" style="margin-top:0">
-            <div class="cs-section-label">Outcome</div>
-            <p class="cs-text">Overall data load time reduced significantly. Error categorisation enabled the client to fix data issues rapidly and reload without rework cycles. Clean, reconciled HR data delivered across 160+ countries — providing a high-quality foundation for go-live and eliminating data-related post-live defects.</p>
-          </div>
-          <div class="cs-outcomes">
-            <span class="cs-outcome-chip">160+ Countries</span>
-            <span class="cs-outcome-chip">Reduced Load Time</span>
-            <span class="cs-outcome-chip">Custom Migration Logic</span>
-            <span class="cs-outcome-chip">Clean Go-live Data</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- CS7: UK to India Process Transition -->
-      <div class="cs-panel">
-        <div class="cs-panel-left">
-          <span class="cs-tag">SAP HCM · Process Transition · UK to India · Service Continuity</span>
-          <div class="cs-title">UK-to-India SAP HCM Support Transition with Zero Service Disruption</div>
-          <div class="cs-company">Major UK Enterprise · Offshore Transition Programme</div>
-          <div class="cs-block">
-            <div class="cs-section-label">Challenge</div>
-            <p class="cs-text">A major UK-headquartered organisation needed to transition its entire SAP HCM support operations from onsite to an India delivery centre within a very tight timeframe — without disrupting live service. The challenge was threefold: rapidly gaining full business understanding of all processes, establishing effective support from day one, and completing the full transition while maintaining client confidence throughout.</p>
-          </div>
-          <div class="cs-block">
-            <div class="cs-section-label">Approach</div>
-            <p class="cs-text">Engaged directly with the client onsite to rapidly document and understand all functional and technical processes. Designed a structured knowledge transfer framework and trained the India team across both functional and technical domains. Established incident management protocols, escalation paths, and SLA frameworks before transition. Coordinated closely with the client throughout to ensure quick TAT on all live incidents during handover — maintaining confidence and continuity at every stage.</p>
-          </div>
-        </div>
-        <div class="cs-panel-right">
-          <div class="cs-block" style="margin-top:0">
-            <div class="cs-section-label">Outcome</div>
-            <p class="cs-text">Full SAP HCM support transition to India delivery centre completed within the agreed timeline with zero service disruption. India team fully capable and self-sufficient post-transition. Client satisfaction maintained throughout the handover. The engagement established a high-performing offshore support model delivering sustained quality well beyond the transition period.</p>
-          </div>
-          <div class="cs-outcomes">
-            <span class="cs-outcome-chip">Zero Disruption</span>
-            <span class="cs-outcome-chip">On-time Transition</span>
-            <span class="cs-outcome-chip">India Team Enabled</span>
-            <span class="cs-outcome-chip">Client Confidence Maintained</span>
+          <div class="cs-outcomes" style="margin-top:1rem">
+            <span class="cs-outcome-chip">94% Retention</span>
+            <span class="cs-outcome-chip">$7M+ ARR Managed</span>
+            <span class="cs-outcome-chip">Growth-Focused CS</span>
           </div>
         </div>
       </div>
 
     </div>
+
+    <div class="cs-dots" id="csDots">
+      <div class="cs-dot active" onclick="showCS(0, document.querySelectorAll('.cs-tab-btn')[0])"></div>
+      <div class="cs-dot" onclick="showCS(1, document.querySelectorAll('.cs-tab-btn')[1])"></div>
+      <div class="cs-dot" onclick="showCS(2, document.querySelectorAll('.cs-tab-btn')[2])"></div>
+      <div class="cs-dot" onclick="showCS(3, document.querySelectorAll('.cs-tab-btn')[3])"></div>
+      <div class="cs-dot" onclick="showCS(4, document.querySelectorAll('.cs-tab-btn')[4])"></div>
+    </div>
+
   </div>
 </section>
 
-<!-- SKILLS -->
+
+<!-- ═══════════════════════════════════════════
+     SECTION 8: CLIENT VOICE / TESTIMONIALS
+     To remove: delete from TESTIMONIALS comment to </section>
+     ═══════════════════════════════════════════ -->
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="section-inner">
+    <div class="section-label">Client Voice</div>
+    <h2 class="section-heading">What leaders <em>say</em></h2>
+    <p class="testimonials-intro">Verified recommendations from CxOs, CHROs, and senior leaders — sourced directly from LinkedIn.</p>
+
+    <div class="testimonials-carousel-wrap">
+
+      <!-- Slide 1 -->
+      <div class="t-slide t-active" data-initials="JR">
+        <div class="t-bg-initials">JR</div>
+        <div class="t-slide-inner">
+          <div class="t-big-quote">&ldquo;</div>
+          <div class="t-content">
+            <p class="t-main-text">Sumit consistently demonstrated exceptional professionalism, customer-centricity, and a strong commitment to delivering value to clients. He has a remarkable ability to build trusted relationships while effectively managing complex stakeholder expectations. What stood out most was his dedication to ensuring client success beyond contractual obligations — he always took ownership of challenges and worked diligently to find solutions that benefited both customers and the organisation.</p>
+            <div class="t-attribution">
+              <div class="t-attr-avatar">JR</div>
+              <div class="t-attr-line"></div>
+              <div class="t-attr-info">
+                <div class="t-attr-name">Jithender Reddy</div>
+                <div class="t-attr-role">Vice President – AI Automation · Cloud4C Services</div>
+                <div class="t-attr-relation">Colleague · June 2026</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="t-slide" data-initials="KJ">
+        <div class="t-bg-initials">KJ</div>
+        <div class="t-slide-inner">
+          <div class="t-big-quote">&ldquo;</div>
+          <div class="t-content">
+            <p class="t-main-text">Sumit's strengths lie in combining technical expertise with an analytical mindset. He is a strategic partner with a long-term vision, identifying potential pitfalls and planning mitigations in advance. He speaks his mind in the interest of the project and ensures the best solution is delivered. He is an asset for any cross-functional project team.</p>
+            <div class="t-attribution">
+              <div class="t-attr-avatar">KJ</div>
+              <div class="t-attr-line"></div>
+              <div class="t-attr-info">
+                <div class="t-attr-name">Kartik Jogi</div>
+                <div class="t-attr-role">Vertical Head HR Business Partner · Bajaj Electricals Ltd.</div>
+                <div class="t-attr-relation">Client · August 2023</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="t-slide" data-initials="RD">
+        <div class="t-bg-initials">RD</div>
+        <div class="t-slide-inner">
+          <div class="t-big-quote">&ldquo;</div>
+          <div class="t-content">
+            <p class="t-main-text">I found him extremely client-centric and outcome focused. He has good understanding of customer success frameworks as well as the HR domain. He collaborates well with different teams and ensures engagements are completed on time with good quality. I would recommend him as a great professional and a good team player.</p>
+            <div class="t-attribution">
+              <div class="t-attr-avatar">RD</div>
+              <div class="t-attr-line"></div>
+              <div class="t-attr-info">
+                <div class="t-attr-name">Ruchir Dave</div>
+                <div class="t-attr-role">Head of HR Customer Advisory · SAP SuccessFactors</div>
+                <div class="t-attr-relation">Senior Colleague · July 2023</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 4 -->
+      <div class="t-slide" data-initials="RL">
+        <div class="t-bg-initials">RL</div>
+        <div class="t-slide-inner">
+          <div class="t-big-quote">&ldquo;</div>
+          <div class="t-content">
+            <p class="t-main-text">His drive to ensure that solutions were used by people rather than just implemented was instrumental in helping us make the right decisions. He works very transparently, making sure the customer is in the know of where things may get stuck. Sumit is a consummate professional who ensures a balance between service, customer success and his organisation's interest — an all-round win-win.</p>
+            <div class="t-attribution">
+              <div class="t-attr-avatar">RL</div>
+              <div class="t-attr-line"></div>
+              <div class="t-attr-info">
+                <div class="t-attr-name">Rajesh Lele</div>
+                <div class="t-attr-role">General Manager Operations · Tata Motors</div>
+                <div class="t-attr-relation">Client · March 2021</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 5 -->
+      <div class="t-slide" data-initials="MB">
+        <div class="t-bg-initials">MB</div>
+        <div class="t-slide-inner">
+          <div class="t-big-quote">&ldquo;</div>
+          <div class="t-content">
+            <p class="t-main-text">Sumit pitched in at critical phases to remove bottlenecks and accelerate the implementation. He went out of the way to liaise with the SAP consulting team and implementation partner to ensure the optimum solution is provided. His involvement increased the level of confidence on the product which subsequently led to a successful implementation.</p>
+            <div class="t-attribution">
+              <div class="t-attr-avatar">MB</div>
+              <div class="t-attr-line"></div>
+              <div class="t-attr-info">
+                <div class="t-attr-name">Manoj Bhoota</div>
+                <div class="t-attr-role">Vice President – IT · Shapoorji Pallonji Group</div>
+                <div class="t-attr-relation">Client · March 2021</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 6 -->
+      <div class="t-slide" data-initials="KP">
+        <div class="t-bg-initials">KP</div>
+        <div class="t-slide-inner">
+          <div class="t-big-quote">&ldquo;</div>
+          <div class="t-content">
+            <p class="t-main-text">Sumit was relentless in trying to find product configuration solutions that would make his clients happy. He always had a strong grasp of what his clients needed and was their advocate in trying to achieve it. He was persistent but respectful as he pushed for creative solutions when the product design did not fit a client's requirement.</p>
+            <div class="t-attribution">
+              <div class="t-attr-avatar">KP</div>
+              <div class="t-attr-line"></div>
+              <div class="t-attr-info">
+                <div class="t-attr-name">Kellie Pauley</div>
+                <div class="t-attr-role">Talent Management Consultant &amp; Coach · Cornerstone OnDemand</div>
+                <div class="t-attr-relation">Colleague · April 2021</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 7 -->
+      <div class="t-slide" data-initials="MP">
+        <div class="t-bg-initials">MP</div>
+        <div class="t-slide-inner">
+          <div class="t-big-quote">&ldquo;</div>
+          <div class="t-content">
+            <p class="t-main-text">Sumit supported QuEST through a system implementation and displayed great patience and effort in ensuring we successfully completed our project. Through all our delays and disruptions, he held our hand and provided support wherever necessary. We were lucky to have had him be part of our journey.</p>
+            <div class="t-attribution">
+              <div class="t-attr-avatar">MP</div>
+              <div class="t-attr-line"></div>
+              <div class="t-attr-info">
+                <div class="t-attr-name">Mallika Padmanabhan</div>
+                <div class="t-attr-role">Head, Gurukul Leadership Development · Quest Global</div>
+                <div class="t-attr-relation">Client · December 2017</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Slide 8 -->
+      <div class="t-slide" data-initials="VK">
+        <div class="t-bg-initials">VK</div>
+        <div class="t-slide-inner">
+          <div class="t-big-quote">&ldquo;</div>
+          <div class="t-content">
+            <p class="t-main-text">Sumit displayed very good understanding of the product and was able to network well between the client and the product team. Always available to troubleshoot and coach people, he was one big reason why the solution was implemented seamlessly on time within a span of 4 months. He will be a must-have for any Project Implementation.</p>
+            <div class="t-attribution">
+              <div class="t-attr-avatar">VK</div>
+              <div class="t-attr-line"></div>
+              <div class="t-attr-info">
+                <div class="t-attr-name">Vivek Kulkarni</div>
+                <div class="t-attr-role">SVP – Human Resources, Radio Mirchi · CHRO, Parksons Packaging</div>
+                <div class="t-attr-relation">Client · May 2016</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- end carousel-wrap -->
+
+    <!-- Navigation bar -->
+    <div class="t-nav">
+      <div class="t-nav-arrows">
+        <button class="t-arrow-btn" id="tPrev" aria-label="Previous">&#8592;</button>
+        <button class="t-arrow-btn" id="tNext" aria-label="Next">&#8594;</button>
+      </div>
+      <div class="t-dots-row" id="tDots">
+        <button class="t-dot-btn t-dot-active" onclick="goToSlide(0)"></button>
+        <button class="t-dot-btn" onclick="goToSlide(1)"></button>
+        <button class="t-dot-btn" onclick="goToSlide(2)"></button>
+        <button class="t-dot-btn" onclick="goToSlide(3)"></button>
+        <button class="t-dot-btn" onclick="goToSlide(4)"></button>
+        <button class="t-dot-btn" onclick="goToSlide(5)"></button>
+        <button class="t-dot-btn" onclick="goToSlide(6)"></button>
+        <button class="t-dot-btn" onclick="goToSlide(7)"></button>
+      </div>
+      <div class="t-count" id="tCount">1 / 8</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CASE STUDIES -->
+
+<!-- ═══════════════════════════════════════════
+     SECTION 9: AWARDS & HONOURS
+     To remove: delete from AWARDS comment to </section>
+     ═══════════════════════════════════════════ -->
+<!-- AWARDS -->
+<section id="awards">
+  <div class="section-inner">
+    <div class="section-label">Recognition</div>
+    <h2 class="section-heading">Awards & <em>Honours</em></h2>
+    <div class="awards-grid">
+      <div class="award-card" data-year="2021">
+        <div class="award-icon">🏆</div>
+        <div class="award-title">SAP APJ Grassroots Innovation Award</div>
+        <div class="award-org">SAP — APJ President & Board Member · 2021</div>
+        <div class="award-desc">Recognised for conceptualising and deploying the AI-powered "Digital Concierge" — a self-service intelligence tool that transformed customer engagement and accelerated self-service adoption across the APJ region.</div>
+      </div>
+      <div class="award-card" data-year="2020">
+        <div class="award-icon">🎖️</div>
+        <div class="award-title">League of Customer Champions</div>
+        <div class="award-org">SAP SuccessFactors · 2020</div>
+        <div class="award-desc">Awarded for leading the SAP Customer Accreditation Series (SFX), driving exceptional customer outcomes and establishing a benchmark for enterprise client excellence across the region.</div>
+      </div>
+      <div class="award-card" data-year="2019">
+        <div class="award-icon">🥇</div>
+        <div class="award-title">Business Cloud Champion – Gold</div>
+        <div class="award-org">SAP Cloud · 2019</div>
+        <div class="award-desc">Awarded for achieving the highest cloud sales revenue in a single quarter through AI-augmented advisory, value-based consulting, and strategic portfolio expansion across enterprise accounts.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ═══════════════════════════════════════════
+     SECTION 10: CORE COMPETENCIES
+     To remove: delete from section id skills to </section>
+     ═══════════════════════════════════════════ -->
+</section>
 <section id="skills">
   <div class="section-inner">
     <div class="section-label">Core Competencies</div>
@@ -2056,6 +2462,11 @@
   </div>
 </section>
 
+
+<!-- ═══════════════════════════════════════════
+     SECTION 11: EDUCATION & CERTIFICATIONS
+     To remove: delete from CREDENTIALS comment to </section>
+     ═══════════════════════════════════════════ -->
 <!-- CREDENTIALS -->
 <section id="credentials">
   <div class="section-inner">
@@ -2103,6 +2514,13 @@
   </div>
 </section>
 
+
+<!-- ═══════════════════════════════════════════
+     SECTION 12: CONTACT
+     To remove: delete from this comment to </section>
+     ═══════════════════════════════════════════ -->
+<!-- CONTACT -->
+
 <!-- CONTACT -->
 <section id="contact">
   <div class="contact-inner">
@@ -2120,10 +2538,6 @@
         <div class="contact-text"><a href="mailto:nandy.sumit@gmail.com">nandy.sumit@gmail.com</a></div>
       </div>
       <div class="contact-row">
-        <div class="contact-icon">📱</div>
-        <div class="contact-text"><a href="tel:+919082243191">+91 908-224-3191</a></div>
-      </div>
-      <div class="contact-row">
         <div class="contact-icon">📍</div>
         <div class="contact-text">Mumbai, India</div>
       </div>
@@ -2136,61 +2550,51 @@
 </section>
 
 <footer>
-  <div class="footer-note">© 2025 Sumit Nandy — AI &amp; CX Transformation Consultant · Mumbai, India</div>
-  <div class="footer-note">Built to perform. Designed to impress.</div>
+  <div class="footer-note">© 2026 Sumit Nandy — AI &amp; CX Transformation Leader · Mumbai, India</div>
+  <div class="footer-note" style="font-style:italic;opacity:0.8;">26 years of enterprise depth. One consistent outcome: results that last.</div>
 </footer>
 
 <script>
+document.addEventListener('DOMContentLoaded', function() {
+
   // ── Theme Toggle ──
   const toggle = document.getElementById('themeToggle');
   const html = document.documentElement;
   const saved = localStorage.getItem('theme');
   if (saved === 'dark') { html.setAttribute('data-theme', 'dark'); toggle.textContent = '☀️'; }
-
   toggle.addEventListener('click', () => {
     const isDark = html.getAttribute('data-theme') === 'dark';
-    if (isDark) {
-      html.removeAttribute('data-theme');
-      toggle.textContent = '🌙';
-      localStorage.setItem('theme', 'light');
-    } else {
-      html.setAttribute('data-theme', 'dark');
-      toggle.textContent = '☀️';
-      localStorage.setItem('theme', 'dark');
-    }
+    if (isDark) { html.removeAttribute('data-theme'); toggle.textContent = '🌙'; localStorage.setItem('theme', 'light'); }
+    else { html.setAttribute('data-theme', 'dark'); toggle.textContent = '☀️'; localStorage.setItem('theme', 'dark'); }
   });
 
   // ── Timeline fade-in ──
   const timelineItems = document.querySelectorAll('.timeline-item');
-  const observer = new IntersectionObserver((entries) => {
+  const tlObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry, i) => {
-      if (entry.isIntersecting) {
-        setTimeout(() => entry.target.classList.add('visible'), i * 120);
-        observer.unobserve(entry.target);
-      }
+      if (entry.isIntersecting) { setTimeout(() => entry.target.classList.add('visible'), i * 120); tlObserver.unobserve(entry.target); }
     });
-  }, { threshold: 0.15 });
-  timelineItems.forEach(item => observer.observe(item));
+  }, { threshold: 0.1 });
+  timelineItems.forEach(item => tlObserver.observe(item));
 
   // ── Counter animation ──
   function animateCounter(el) {
     const target = parseInt(el.dataset.target);
-    const duration = 1800; const step = 16;
-    const increment = target / (duration / step);
+    if (!target) return;
+    const increment = target / (1800 / 16);
     let current = 0;
+    el.textContent = '0';
     const timer = setInterval(() => {
       current += increment;
       if (current >= target) { current = target; clearInterval(timer); }
       el.textContent = Math.floor(current);
-    }, step);
+    }, 16);
   }
   const counters = document.querySelectorAll('.counter');
-  const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) { animateCounter(entry.target); counterObserver.unobserve(entry.target); }
-    });
-  }, { threshold: 0.3 });
-  counters.forEach(c => counterObserver.observe(c));
+  const ctrObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) { animateCounter(entry.target); ctrObserver.unobserve(entry.target); } });
+  }, { threshold: 0.2 });
+  counters.forEach(c => ctrObserver.observe(c));
 
   // ── Nav active highlight ──
   const sections = document.querySelectorAll('section[id]');
@@ -2202,78 +2606,78 @@
   });
 
   // ── Collapsible Testimonials ──
-  function toggleTestimonial(header) {
+  window.toggleTestimonial = function(header) {
     const item = header.closest('.t-item');
     const isOpen = item.classList.contains('t-open');
     document.querySelectorAll('.t-item').forEach(i => i.classList.remove('t-open'));
     if (!isOpen) item.classList.add('t-open');
-  }
+  };
 
-  // ── Case Study Tabs + Arrow Scroll + Auto-advance ──
+  // ── Case Study Tabs ──
   let csCurrentIndex = 0;
-  const CS_TOTAL = 7;
-  let csAutoTimer = null;
-
-  function showCS(index, btn) {
+  window.showCS = function(index, btn) {
     csCurrentIndex = index;
-    document.querySelectorAll('.cs-panel').forEach((p, i) => {
-      p.classList.toggle('cs-visible', i === index);
-    });
+    document.querySelectorAll('.cs-panel').forEach((p, i) => p.classList.toggle('cs-visible', i === index));
     document.querySelectorAll('.cs-tab-btn').forEach(b => b.classList.remove('cs-active'));
     if (btn) btn.classList.add('cs-active');
-    // Scroll active tab into view
+    document.querySelectorAll('.cs-dot').forEach((d, i) => d.classList.toggle('active', i === index));
     const tabs = document.getElementById('csTabs');
-    if (btn && tabs) {
-      const btnLeft = btn.offsetLeft;
-      const btnWidth = btn.offsetWidth;
-      const tabsWidth = tabs.offsetWidth;
-      tabs.scrollTo({ left: btnLeft - tabsWidth / 2 + btnWidth / 2, behavior: 'smooth' });
-    }
+    if (btn && tabs) tabs.scrollTo({ left: btn.offsetLeft - tabs.offsetWidth / 2 + btn.offsetWidth / 2, behavior: 'smooth' });
     updateCSArrows();
-    resetCSAutoTimer();
-  }
-
-  function scrollCSTabs(dir) {
+  };
+  window.scrollCSTabs = function(dir) {
     const tabs = document.getElementById('csTabs');
-    tabs.scrollBy({ left: dir * 160, behavior: 'smooth' });
-    setTimeout(updateCSArrows, 320);
-  }
-
+    if (tabs) { tabs.scrollBy({ left: dir * 160, behavior: 'smooth' }); setTimeout(updateCSArrows, 320); }
+  };
   function updateCSArrows() {
     const tabs = document.getElementById('csTabs');
     const left = document.getElementById('csArrowLeft');
     const right = document.getElementById('csArrowRight');
     if (!tabs || !left || !right) return;
-    const atStart = tabs.scrollLeft <= 4;
-    const atEnd = tabs.scrollLeft + tabs.offsetWidth >= tabs.scrollWidth - 4;
-    left.classList.toggle('visible', !atStart);
-    right.classList.toggle('visible', !atEnd);
+    left.classList.toggle('visible', tabs.scrollLeft > 4);
+    right.classList.toggle('visible', tabs.scrollLeft + tabs.offsetWidth < tabs.scrollWidth - 4);
   }
-
-  function csAutoAdvance() {
-    const nextIndex = (csCurrentIndex + 1) % CS_TOTAL;
-    const btns = document.querySelectorAll('.cs-tab-btn');
-    showCS(nextIndex, btns[nextIndex]);
-  }
-
-  function resetCSAutoTimer() {
-    if (csAutoTimer) clearInterval(csAutoTimer);
-    csAutoTimer = setInterval(csAutoAdvance, 20000);
-  }
-
-  // Init tabs
   const csTabs = document.getElementById('csTabs');
-  if (csTabs) {
-    csTabs.addEventListener('scroll', updateCSArrows);
-    updateCSArrows();
-    resetCSAutoTimer();
-  }
+  if (csTabs) { csTabs.addEventListener('scroll', updateCSArrows); updateCSArrows(); }
 
-  // ── Hamburger Menu ──
+  // ── Testimonials Carousel ──
+  let tCurrent = 0;
+  const tSlides = document.querySelectorAll('.t-slide');
+  const tDotBtns = document.querySelectorAll('.t-dot-btn');
+  const tCount = document.getElementById('tCount');
+  const tTotal = tSlides.length;
+
+  function goToSlide(index) {
+    tSlides[tCurrent].classList.remove('t-active');
+    tDotBtns[tCurrent].classList.remove('t-dot-active');
+    tCurrent = (index + tTotal) % tTotal;
+    tSlides[tCurrent].classList.add('t-active');
+    tDotBtns[tCurrent].classList.add('t-dot-active');
+    if (tCount) tCount.textContent = (tCurrent + 1) + ' / ' + tTotal;
+  }
+  window.goToSlide = goToSlide;
+
+  const tPrev = document.getElementById('tPrev');
+  const tNext = document.getElementById('tNext');
+  if (tPrev) tPrev.addEventListener('click', () => goToSlide(tCurrent - 1));
+  if (tNext) tNext.addEventListener('click', () => goToSlide(tCurrent + 1));
+
+  // Swipe support for mobile
+  let tTouchStartX = 0;
+  const tWrap = document.querySelector('.testimonials-carousel-wrap');
+  if (tWrap) {
+    tWrap.addEventListener('touchstart', e => { tTouchStartX = e.changedTouches[0].screenX; }, { passive: true });
+    tWrap.addEventListener('touchend', e => {
+      const diff = tTouchStartX - e.changedTouches[0].screenX;
+      if (Math.abs(diff) > 50) goToSlide(diff > 0 ? tCurrent + 1 : tCurrent - 1);
+    }, { passive: true });
+  }
   const hamburger = document.getElementById('hamburger');
   const mobileNav = document.getElementById('mobileNav');
-  hamburger.addEventListener('click', () => mobileNav.classList.toggle('open'));
-  function closeMobileNav() { mobileNav.classList.remove('open'); }
+  if (hamburger) hamburger.addEventListener('click', () => mobileNav.classList.toggle('open'));
+  window.closeMobileNav = function() { if (mobileNav) mobileNav.classList.remove('open'); };
+
+}); // end DOMContentLoaded
 </script>
 </body>
 </html>
